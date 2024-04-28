@@ -1,0 +1,3068 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Tue Mar 21 18:47:56 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_init
+    43                           	FNCALL	_main,_lcd_cmd
+    44                           	FNCALL	_main,_lcd_display
+    45                           	FNCALL	_main,_delay
+    46                           	FNCALL	_main,_lcd_data
+    47                           	FNCALL	_main,___awdiv
+    48                           	FNCALL	_main,___awmod
+    49                           	FNCALL	_lcd_display,_lcd_data
+    50                           	FNCALL	_init,_lcd_cmd
+    51                           	FNCALL	_lcd_cmd,_delay
+    52                           	FNCALL	_lcd_data,_delay
+    53                           	FNROOT	_main
+    54                           	global	_d
+    55                           	global	_dv2
+    56                           psect	idataBANK0,class=CODE,space=0,delta=2
+    57                           global __pidataBANK0
+    58  0381                     __pidataBANK0:
+    59                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+    60                           	line	20
+    61                           
+    62                           ;initializer for _d
+    63  0381  3401               	retlw	01h
+    64  0382  3400               	retlw	0
+    65                           
+    66                           	line	22
+    67                           
+    68                           ;initializer for _dv2
+    69  0383  3401               	retlw	01h
+    70  0384  3400               	retlw	0
+    71                           
+    72                           	global	_b
+    73                           	global	_a
+    74                           	global	_c
+    75                           	global	_dv1
+    76                           	global	_i
+    77                           	global	_j
+    78                           	global	_k
+    79                           	global	_PORTB
+    80  0006                     _PORTB	set	6
+    81                           	global	_PORTC
+    82  0007                     _PORTC	set	7
+    83                           	global	_PORTD
+    84  0008                     _PORTD	set	8
+    85                           	global	_RB0
+    86  0030                     _RB0	set	48
+    87                           	global	_RB1
+    88  0031                     _RB1	set	49
+    89                           	global	_RB2
+    90  0032                     _RB2	set	50
+    91                           	global	_RB3
+    92  0033                     _RB3	set	51
+    93                           	global	_RB4
+    94  0034                     _RB4	set	52
+    95                           	global	_RB5
+    96  0035                     _RB5	set	53
+    97                           	global	_RB6
+    98  0036                     _RB6	set	54
+    99                           	global	_RB7
+   100  0037                     _RB7	set	55
+   101                           	global	_RC0
+   102  0038                     _RC0	set	56
+   103                           	global	_RC1
+   104  0039                     _RC1	set	57
+   105                           	global	_RC2
+   106  003A                     _RC2	set	58
+   107                           	global	_RC4
+   108  003C                     _RC4	set	60
+   109                           	global	_RC5
+   110  003D                     _RC5	set	61
+   111                           	global	_RC6
+   112  003E                     _RC6	set	62
+   113                           	global	_TRISB
+   114  0086                     _TRISB	set	134
+   115                           	global	_TRISC
+   116  0087                     _TRISC	set	135
+   117                           	global	_TRISD
+   118  0088                     _TRISD	set	136
+   119                           psect	strings,class=STRING,delta=2
+   120                           global __pstrings
+   121  0003                     __pstrings:
+   122                           ;	global	stringdir,stringtab,__stringbase
+   123  0003                     stringtab:
+   124                           ;	String table - string pointers are 1 byte each
+   125  0003                     stringcode:stringdir:
+      + 0003                     stringdir:	
+   126  0003  3000               movlw high(stringdir)
+   127  0004  008A               movwf pclath
+   128  0005  0804               movf fsr,w
+   129  0006  0A84               incf fsr
+   130  0007  0782               	addwf pc
+   131  0008                     __stringbase:
+   132  0008  3400               	retlw	0
+   133                           psect	strings
+   134                           	
+   135  0009                     STR_3:	
+   136  0009  3463               	retlw	99	;'c'
+   137  000A  346F               	retlw	111	;'o'
+   138  000B  346E               	retlw	110	;'n'
+   139  000C  346E               	retlw	110	;'n'
+   140  000D  3465               	retlw	101	;'e'
+   141  000E  3463               	retlw	99	;'c'
+   142  000F  3474               	retlw	116	;'t'
+   143  0010  3469               	retlw	105	;'i'
+   144  0011  346E               	retlw	110	;'n'
+   145  0012  3467               	retlw	103	;'g'
+   146  0013  342E               	retlw	46	;'.'
+   147  0014  342E               	retlw	46	;'.'
+   148  0015  342E               	retlw	46	;'.'
+   149  0016  342E               	retlw	46	;'.'
+   150  0017  342E               	retlw	46	;'.'
+   151  0018  342E               	retlw	46	;'.'
+   152  0019  342E               	retlw	46	;'.'
+   153  001A  3400               	retlw	0
+   154                           psect	strings
+   155                           	
+   156  001B                     STR_4:	
+   157  001B  3463               	retlw	99	;'c'
+   158  001C  3461               	retlw	97	;'a'
+   159  001D  346C               	retlw	108	;'l'
+   160  001E  346C               	retlw	108	;'l'
+   161  001F  3420               	retlw	32	;' '
+   162  0020  3465               	retlw	101	;'e'
+   163  0021  346E               	retlw	110	;'n'
+   164  0022  3464               	retlw	100	;'d'
+   165  0023  3465               	retlw	101	;'e'
+   166  0024  3464               	retlw	100	;'d'
+   167  0025  3420               	retlw	32	;' '
+   168  0026  3420               	retlw	32	;' '
+   169  0027  3420               	retlw	32	;' '
+   170  0028  3420               	retlw	32	;' '
+   171  0029  3420               	retlw	32	;' '
+   172  002A  3400               	retlw	0
+   173                           psect	strings
+   174                           	
+   175  002B                     STR_2:	
+   176  002B  3464               	retlw	100	;'d'
+   177  002C  3469               	retlw	105	;'i'
+   178  002D  3461               	retlw	97	;'a'
+   179  002E  346C               	retlw	108	;'l'
+   180  002F  3420               	retlw	32	;' '
+   181  0030  3474               	retlw	116	;'t'
+   182  0031  3468               	retlw	104	;'h'
+   183  0032  3465               	retlw	101	;'e'
+   184  0033  3420               	retlw	32	;' '
+   185  0034  346E               	retlw	110	;'n'
+   186  0035  3475               	retlw	117	;'u'
+   187  0036  346D               	retlw	109	;'m'
+   188  0037  3462               	retlw	98	;'b'
+   189  0038  3465               	retlw	101	;'e'
+   190  0039  3472               	retlw	114	;'r'
+   191  003A  3400               	retlw	0
+   192                           psect	strings
+   193                           	
+   194  003B                     STR_1:	
+   195  003B  3464               	retlw	100	;'d'
+   196  003C  3472               	retlw	114	;'r'
+   197  003D  346F               	retlw	111	;'o'
+   198  003E  3470               	retlw	112	;'p'
+   199  003F  3420               	retlw	32	;' '
+   200  0040  3463               	retlw	99	;'c'
+   201  0041  346F               	retlw	111	;'o'
+   202  0042  3469               	retlw	105	;'i'
+   203  0043  346E               	retlw	110	;'n'
+   204  0044  3400               	retlw	0
+   205                           psect	strings
+   206                           	file	"one rupee coin box.as"
+   207                           	line	#
+   208                           psect cinit,class=CODE,delta=2
+   209                           global start_initialization
+   210  03EE                     start_initialization:
+   211                           
+   212                           psect	bssCOMMON,class=COMMON,space=1
+   213                           global __pbssCOMMON
+   214  007A                     __pbssCOMMON:
+   215  007A                     _j:
+   216  007A                            ds      2
+   217                           
+   218  007C                     _k:
+   219  007C                            ds      2
+   220                           
+   221                           psect	bssBANK0,class=BANK0,space=1
+   222                           global __pbssBANK0
+   223  0020                     __pbssBANK0:
+   224  0020                     _b:
+   225  0020                            ds      18
+   226                           
+   227  0032                     _a:
+   228  0032                            ds      2
+   229                           
+   230  0034                     _c:
+   231  0034                            ds      2
+   232                           
+   233  0036                     _dv1:
+   234  0036                            ds      2
+   235                           
+   236  0038                     _i:
+   237  0038                            ds      2
+   238                           
+   239                           psect	dataBANK0,class=BANK0,space=1
+   240                           global __pdataBANK0
+   241  003A                     __pdataBANK0:
+   242                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+   243                           	line	20
+   244  003A                     _d:
+   245  003A                            ds      2
+   246                           
+   247                           psect	dataBANK0
+   248                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+   249                           	line	22
+   250  003C                     _dv2:
+   251  003C                            ds      2
+   252                           
+   253                           psect clrtext,class=CODE,delta=2
+   254                           global clear_ram
+   255                           ;	Called with FSR containing the base address, and
+   256                           ;	W with the last address+1
+   257  0385                     clear_ram:
+   258  0385  0064               	clrwdt			;clear the watchdog before getting into this loop
+   259  0386                     clrloop:
+   260  0386  0180               	clrf	indf		;clear RAM location pointed to by FSR
+   261  0387  0A84               	incf	fsr,f		;increment pointer
+   262  0388  0604               	xorwf	fsr,w		;XOR with final address
+   263  0389  1903               	btfsc	status,2	;have we reached the end yet?
+   264  038A  3400               	retlw	0		;all done for this memory range, return
+   265  038B  0604               	xorwf	fsr,w		;XOR again to restore value
+   266  038C  2B86               	goto	clrloop		;do the next byte
+   267                           
+   268                           ; Clear objects allocated to COMMON
+   269                           psect cinit,class=CODE,delta=2
+   270  03EE  01FA               	clrf	((__pbssCOMMON)+0)&07Fh
+   271  03EF  01FB               	clrf	((__pbssCOMMON)+1)&07Fh
+   272  03F0  01FC               	clrf	((__pbssCOMMON)+2)&07Fh
+   273  03F1  01FD               	clrf	((__pbssCOMMON)+3)&07Fh
+   274                           ; Clear objects allocated to BANK0
+   275                           psect cinit,class=CODE,delta=2
+   276  03F2  1383               	bcf	status, 7	;select IRP bank0
+   277  03F3  3020               	movlw	low(__pbssBANK0)
+   278  03F4  0084               	movwf	fsr
+   279  03F5  303A               	movlw	low((__pbssBANK0)+01Ah)
+   280  03F6  120A  118A  2385   	fcall	clear_ram
+              120A  118A         
+   281                           ; Initialize objects allocated to BANK0
+   282                           	global __pidataBANK0
+   283                           psect cinit,class=CODE,delta=2
+   284  03FB  120A  118A  2381   	fcall	__pidataBANK0+0		;fetch initializer
+              120A  118A         
+   285  0400  00BA               	movwf	__pdataBANK0+0&07fh		
+   286  0401  120A  118A  2382   	fcall	__pidataBANK0+1		;fetch initializer
+              120A  118A         
+   287  0406  00BB               	movwf	__pdataBANK0+1&07fh		
+   288  0407  120A  118A  2383   	fcall	__pidataBANK0+2		;fetch initializer
+              120A  118A         
+   289  040C  00BC               	movwf	__pdataBANK0+2&07fh		
+   290  040D  120A  118A  2384   	fcall	__pidataBANK0+3		;fetch initializer
+              120A  118A         
+   291  0412  00BD               	movwf	__pdataBANK0+3&07fh		
+   292                           psect cinit,class=CODE,delta=2
+   293                           global end_of_initialization
+   294                           
+   295                           ;End of C runtime variable initialization code
+   296                           
+   297  0413                     end_of_initialization:
+   298  0413  0183               clrf status
+   299  0414  120A  118A  2D12   ljmp _main	;jump to C main() function
+   300                           psect	cstackCOMMON,class=COMMON,space=1
+   301                           global __pcstackCOMMON
+   302  0070                     __pcstackCOMMON:
+   303                           	global	?_delay
+   304  0070                     ?_delay:	; 0 bytes @ 0x0
+   305                           	global	?_lcd_data
+   306  0070                     ?_lcd_data:	; 0 bytes @ 0x0
+   307                           	global	?_lcd_cmd
+   308  0070                     ?_lcd_cmd:	; 0 bytes @ 0x0
+   309                           	global	?_init
+   310  0070                     ?_init:	; 0 bytes @ 0x0
+   311                           	global	?_lcd_display
+   312  0070                     ?_lcd_display:	; 0 bytes @ 0x0
+   313                           	global	?_main
+   314  0070                     ?_main:	; 2 bytes @ 0x0
+   315                           	global	?___awdiv
+   316  0070                     ?___awdiv:	; 2 bytes @ 0x0
+   317                           	global	?___awmod
+   318  0070                     ?___awmod:	; 2 bytes @ 0x0
+   319                           	global	delay@x
+   320  0070                     delay@x:	; 2 bytes @ 0x0
+   321                           	global	___awdiv@divisor
+   322  0070                     ___awdiv@divisor:	; 2 bytes @ 0x0
+   323                           	global	___awmod@divisor
+   324  0070                     ___awmod@divisor:	; 2 bytes @ 0x0
+   325  0070                     	ds	2
+   326                           	global	??_delay
+   327  0072                     ??_delay:	; 0 bytes @ 0x2
+   328                           	global	??_lcd_data
+   329  0072                     ??_lcd_data:	; 0 bytes @ 0x2
+   330                           	global	??_lcd_cmd
+   331  0072                     ??_lcd_cmd:	; 0 bytes @ 0x2
+   332                           	global	lcd_data@data
+   333  0072                     lcd_data@data:	; 1 bytes @ 0x2
+   334                           	global	lcd_cmd@cmd
+   335  0072                     lcd_cmd@cmd:	; 1 bytes @ 0x2
+   336                           	global	___awdiv@dividend
+   337  0072                     ___awdiv@dividend:	; 2 bytes @ 0x2
+   338                           	global	___awmod@dividend
+   339  0072                     ___awmod@dividend:	; 2 bytes @ 0x2
+   340  0072                     	ds	1
+   341                           	global	??_init
+   342  0073                     ??_init:	; 0 bytes @ 0x3
+   343                           	global	??_lcd_display
+   344  0073                     ??_lcd_display:	; 0 bytes @ 0x3
+   345                           	global	lcd_display@m
+   346  0073                     lcd_display@m:	; 1 bytes @ 0x3
+   347  0073                     	ds	1
+   348                           	global	??___awdiv
+   349  0074                     ??___awdiv:	; 0 bytes @ 0x4
+   350                           	global	??___awmod
+   351  0074                     ??___awmod:	; 0 bytes @ 0x4
+   352  0074                     	ds	1
+   353                           	global	___awdiv@counter
+   354  0075                     ___awdiv@counter:	; 1 bytes @ 0x5
+   355                           	global	___awmod@counter
+   356  0075                     ___awmod@counter:	; 1 bytes @ 0x5
+   357  0075                     	ds	1
+   358                           	global	___awdiv@sign
+   359  0076                     ___awdiv@sign:	; 1 bytes @ 0x6
+   360                           	global	___awmod@sign
+   361  0076                     ___awmod@sign:	; 1 bytes @ 0x6
+   362  0076                     	ds	1
+   363                           	global	___awdiv@quotient
+   364  0077                     ___awdiv@quotient:	; 2 bytes @ 0x7
+   365  0077                     	ds	2
+   366                           	global	??_main
+   367  0079                     ??_main:	; 0 bytes @ 0x9
+   368  0079                     	ds	1
+   369 ;;Data sizes: Strings 60, constant 0, data 4, bss 30, persistent 0 stack 0
+   370 ;;Auto spaces:   Size  Autos    Used
+   371 ;; COMMON          14     10      14
+   372 ;; BANK0           80      0      30
+   373 ;; BANK1           80      0       0
+   374 ;; BANK3           96      0       0
+   375 ;; BANK2           96      0       0
+   376                           
+   377 ;;
+   378 ;; Pointer list with targets:
+   379                           
+   380 ;; ?___awmod	int  size(1) Largest target is 0
+   381 ;;
+   382 ;; ?___awdiv	int  size(1) Largest target is 0
+   383 ;;
+   384 ;; lcd_display@m	PTR unsigned char  size(1) Largest target is 18
+   385 ;;		 -> STR_4(CODE[16]), STR_3(CODE[18]), STR_2(CODE[16]), STR_1(CODE[10]), 
+   386 ;;
+   387                           
+   388                           
+   389 ;;
+   390 ;; Critical Paths under _main in COMMON
+   391 ;;
+   392 ;;   _main->___awdiv
+   393 ;;   _lcd_display->_lcd_data
+   394 ;;   _init->_lcd_cmd
+   395 ;;   _lcd_cmd->_delay
+   396 ;;   _lcd_data->_delay
+   397 ;;
+   398 ;; Critical Paths under _main in BANK0
+   399 ;;
+   400 ;;   None.
+   401 ;;
+   402 ;; Critical Paths under _main in BANK1
+   403 ;;
+   404 ;;   None.
+   405 ;;
+   406 ;; Critical Paths under _main in BANK3
+   407 ;;
+   408 ;;   None.
+   409 ;;
+   410 ;; Critical Paths under _main in BANK2
+   411 ;;
+   412 ;;   None.
+   413                           
+   414 ;;
+   415 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   416 ;;
+   417                           
+   418 ;;
+   419 ;;Call Graph Tables:
+   420 ;;
+   421 ;; ---------------------------------------------------------------------------------
+   422 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   423 ;; ---------------------------------------------------------------------------------
+   424 ;; (0) _main                                                 1     1      0     838
+   425 ;;                                              9 COMMON     1     1      0
+   426 ;;                               _init
+   427 ;;                            _lcd_cmd
+   428 ;;                        _lcd_display
+   429 ;;                              _delay
+   430 ;;                           _lcd_data
+   431 ;;                            ___awdiv
+   432 ;;                            ___awmod
+   433 ;; ---------------------------------------------------------------------------------
+   434 ;; (1) _lcd_display                                          1     1      0      88
+   435 ;;                                              3 COMMON     1     1      0
+   436 ;;                           _lcd_data
+   437 ;; ---------------------------------------------------------------------------------
+   438 ;; (1) _init                                                 0     0      0      44
+   439 ;;                            _lcd_cmd
+   440 ;; ---------------------------------------------------------------------------------
+   441 ;; (1) _lcd_cmd                                              1     1      0      44
+   442 ;;                                              2 COMMON     1     1      0
+   443 ;;                              _delay
+   444 ;; ---------------------------------------------------------------------------------
+   445 ;; (1) _lcd_data                                             1     1      0      44
+   446 ;;                                              2 COMMON     1     1      0
+   447 ;;                              _delay
+   448 ;; ---------------------------------------------------------------------------------
+   449 ;; (1) ___awmod                                              7     3      4     296
+   450 ;;                                              0 COMMON     7     3      4
+   451 ;; ---------------------------------------------------------------------------------
+   452 ;; (1) ___awdiv                                              9     5      4     300
+   453 ;;                                              0 COMMON     9     5      4
+   454 ;; ---------------------------------------------------------------------------------
+   455 ;; (2) _delay                                                2     0      2      22
+   456 ;;                                              0 COMMON     2     0      2
+   457 ;; ---------------------------------------------------------------------------------
+   458 ;; Estimated maximum stack depth 2
+   459 ;; ---------------------------------------------------------------------------------
+   460                           
+   461 ;; Call Graph Graphs:
+   462                           
+   463 ;; _main (ROOT)
+   464 ;;   _init
+   465 ;;     _lcd_cmd
+   466 ;;       _delay
+   467 ;;   _lcd_cmd
+   468 ;;     _delay
+   469 ;;   _lcd_display
+   470 ;;     _lcd_data
+   471 ;;       _delay
+   472 ;;   _delay
+   473 ;;   _lcd_data
+   474 ;;     _delay
+   475 ;;   ___awdiv
+   476 ;;   ___awmod
+   477 ;;
+   478                           
+   479 ;; Address spaces:
+   480                           
+   481 ;;Name               Size   Autos  Total    Cost      Usage
+   482 ;;BANK3               60      0       0       9        0.0%
+   483 ;;BITBANK3            60      0       0       8        0.0%
+   484 ;;SFR3                 0      0       0       4        0.0%
+   485 ;;BITSFR3              0      0       0       4        0.0%
+   486 ;;BANK2               60      0       0      11        0.0%
+   487 ;;BITBANK2            60      0       0      10        0.0%
+   488 ;;SFR2                 0      0       0       5        0.0%
+   489 ;;BITSFR2              0      0       0       5        0.0%
+   490 ;;SFR1                 0      0       0       2        0.0%
+   491 ;;BITSFR1              0      0       0       2        0.0%
+   492 ;;BANK1               50      0       0       7        0.0%
+   493 ;;BITBANK1            50      0       0       6        0.0%
+   494 ;;CODE                 0      0       0       0        0.0%
+   495 ;;DATA                 0      0      2F      12        0.0%
+   496 ;;ABS                  0      0      2C       3        0.0%
+   497 ;;NULL                 0      0       0       0        0.0%
+   498 ;;STACK                0      0       3       2        0.0%
+   499 ;;BANK0               50      0      1E       5       37.5%
+   500 ;;BITBANK0            50      0       0       4        0.0%
+   501 ;;SFR0                 0      0       0       1        0.0%
+   502 ;;BITSFR0              0      0       0       1        0.0%
+   503 ;;COMMON               E      A       E       1      100.0%
+   504 ;;BITCOMMON            E      0       0       0        0.0%
+   505 ;;EEDATA             100      0       0       0        0.0%
+   506                           
+   507                           	global	_main
+   508                           psect	maintext,global,class=CODE,delta=2
+   509                           global __pmaintext
+   510  0512                     __pmaintext:
+   511                           
+   512 ;; *************** function _main *****************
+   513 ;; Defined at:
+   514 ;;		line 62 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+   515 ;; Parameters:    Size  Location     Type
+   516 ;;		None
+   517 ;; Auto vars:     Size  Location     Type
+   518 ;;		None
+   519 ;; Return value:  Size  Location     Type
+   520 ;;                  2  597[COMMON] int 
+   521 ;; Registers used:
+   522 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, pclath, cstack
+   523 ;; Tracked objects:
+   524 ;;		On entry : 17F/0
+   525 ;;		On exit  : 0/0
+   526 ;;		Unchanged: 0/0
+   527 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   528 ;;      Params:         0       0       0       0       0
+   529 ;;      Locals:         0       0       0       0       0
+   530 ;;      Temps:          1       0       0       0       0
+   531 ;;      Totals:         1       0       0       0       0
+   532 ;;Total ram usage:        1 bytes
+   533 ;; Hardware stack levels required when called:    3
+   534 ;; This function calls:
+   535 ;;		_init
+   536 ;;		_lcd_cmd
+   537 ;;		_lcd_display
+   538 ;;		_delay
+   539 ;;		_lcd_data
+   540 ;;		___awdiv
+   541 ;;		___awmod
+   542 ;; This function is called by:
+   543 ;;		Startup code after reset
+   544 ;; This function uses a non-reentrant model
+   545 ;;
+   546                           psect	maintext
+   547                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+   548                           	line	62
+   549                           	global	__size_of_main
+   550  02EE                     	__size_of_main	equ	__end_of_main-_main
+   551                           	
+   552  0512                     _main:	
+   553                           	opt	stack 8
+   554                           ; Regs used in _main: [wreg-fsr0h+status,2-btemp+0+pclath+cstack]
+   555                           	line	63
+   556                           	
+   557  0512                     l2222:	
+   558                           ;one rupee coin box.c: 63: TRISC=0x00;
+   559  0512  1683               	bsf	status, 5	;RP0=1, select bank1
+   560  0513  1303               	bcf	status, 6	;RP1=0, select bank1
+   561  0514  0187               	clrf	(135)^080h	;volatile
+   562                           	line	64
+   563                           ;one rupee coin box.c: 64: PORTC=0x00;
+   564  0515  1283               	bcf	status, 5	;RP0=0, select bank0
+   565  0516  1303               	bcf	status, 6	;RP1=0, select bank0
+   566  0517  0187               	clrf	(7)	;volatile
+   567                           	line	65
+   568                           	
+   569  0518                     l2224:	
+   570                           ;one rupee coin box.c: 65: TRISB=0x0F;
+   571  0518  300F               	movlw	(0Fh)
+   572  0519  1683               	bsf	status, 5	;RP0=1, select bank1
+   573  051A  1303               	bcf	status, 6	;RP1=0, select bank1
+   574  051B  0086               	movwf	(134)^080h	;volatile
+   575                           	line	66
+   576                           	
+   577  051C                     l2226:	
+   578                           ;one rupee coin box.c: 66: PORTB=0x00;
+   579  051C  1283               	bcf	status, 5	;RP0=0, select bank0
+   580  051D  1303               	bcf	status, 6	;RP1=0, select bank0
+   581  051E  0186               	clrf	(6)	;volatile
+   582                           	line	67
+   583                           	
+   584  051F                     l2228:	
+   585                           ;one rupee coin box.c: 67: TRISD=0x00;
+   586  051F  1683               	bsf	status, 5	;RP0=1, select bank1
+   587  0520  1303               	bcf	status, 6	;RP1=0, select bank1
+   588  0521  0188               	clrf	(136)^080h	;volatile
+   589                           	line	68
+   590                           	
+   591  0522                     l2230:	
+   592                           ;one rupee coin box.c: 68: PORTD=0x00;
+   593  0522  1283               	bcf	status, 5	;RP0=0, select bank0
+   594  0523  1303               	bcf	status, 6	;RP1=0, select bank0
+   595  0524  0188               	clrf	(8)	;volatile
+   596                           	line	69
+   597                           	
+   598  0525                     l2232:	
+   599                           ;one rupee coin box.c: 69: init();
+   600  0525  120A  118A  23C9   	fcall	_init
+              120A  118A         
+   601                           	line	70
+   602                           ;one rupee coin box.c: 70: while(1)
+   603                           	
+   604  052A                     l598:	
+   605                           	line	72
+   606                           	
+   607  052A                     l2234:	
+   608                           ;one rupee coin box.c: 71: {
+   609                           ;one rupee coin box.c: 72: if(RB4==1)
+   610  052A  1283               	bcf	status, 5	;RP0=0, select bank0
+   611  052B  1303               	bcf	status, 6	;RP1=0, select bank0
+   612  052C  1E06               	btfss	(52/8),(52)&7
+   613  052D  2D2F               	goto	u2741
+   614  052E  2D30               	goto	u2740
+   615  052F                     u2741:
+   616  052F  2D70               	goto	l599
+   617  0530                     u2740:
+   618                           	line	74
+   619                           	
+   620  0530                     l2236:	
+   621                           ;one rupee coin box.c: 73: {
+   622                           ;one rupee coin box.c: 74: while(RB4==1);
+   623  0530  2D31               	goto	l600
+   624                           	
+   625  0531                     l601:	
+   626                           	
+   627  0531                     l600:	
+   628  0531  1A06               	btfsc	(52/8),(52)&7
+   629  0532  2D34               	goto	u2751
+   630  0533  2D35               	goto	u2750
+   631  0534                     u2751:
+   632  0534  2D31               	goto	l601
+   633  0535                     u2750:
+   634                           	
+   635  0535                     l602:	
+   636                           	line	75
+   637                           	
+   638  0535                     l2238:	
+   639                           ;one rupee coin box.c: 75: lcd_cmd(0x80);
+   640  0535  3080               	movlw	(080h)
+   641  0536  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+   642                           	line	76
+   643                           	
+   644  053B                     l2240:	
+   645                           ;one rupee coin box.c: 76: lcd_display("drop coin");
+   646  053B  3033               	movlw	((STR_1-__stringbase))&0ffh
+   647  053C  120A  118A  2417   	fcall	_lcd_display
+              120A  118A         
+   648                           	line	77
+   649                           ;one rupee coin box.c: 77: while(RB5==0);
+   650  0541  2D42               	goto	l603
+   651                           	
+   652  0542                     l604:	
+   653                           	
+   654  0542                     l603:	
+   655  0542  1283               	bcf	status, 5	;RP0=0, select bank0
+   656  0543  1303               	bcf	status, 6	;RP1=0, select bank0
+   657  0544  1E86               	btfss	(53/8),(53)&7
+   658  0545  2D47               	goto	u2761
+   659  0546  2D48               	goto	u2760
+   660  0547                     u2761:
+   661  0547  2D42               	goto	l604
+   662  0548                     u2760:
+   663                           	
+   664  0548                     l605:	
+   665                           	line	78
+   666                           ;one rupee coin box.c: 78: if(RB5==1)
+   667  0548  1E86               	btfss	(53/8),(53)&7
+   668  0549  2D4B               	goto	u2771
+   669  054A  2D4C               	goto	u2770
+   670  054B                     u2771:
+   671  054B  2D70               	goto	l606
+   672  054C                     u2770:
+   673                           	line	80
+   674                           	
+   675  054C                     l2242:	
+   676                           ;one rupee coin box.c: 79: {
+   677                           ;one rupee coin box.c: 80: while(RB5==1);
+   678  054C  2D4D               	goto	l607
+   679                           	
+   680  054D                     l608:	
+   681                           	
+   682  054D                     l607:	
+   683  054D  1A86               	btfsc	(53/8),(53)&7
+   684  054E  2D50               	goto	u2781
+   685  054F  2D51               	goto	u2780
+   686  0550                     u2781:
+   687  0550  2D4D               	goto	l608
+   688  0551                     u2780:
+   689                           	
+   690  0551                     l609:	
+   691                           	line	81
+   692                           	
+   693  0551                     l2244:	
+   694                           ;one rupee coin box.c: 81: dv1=1;
+   695  0551  3001               	movlw	low(01h)
+   696  0552  00B6               	movwf	(_dv1)
+   697  0553  3000               	movlw	high(01h)
+   698  0554  00B7               	movwf	((_dv1))+1
+   699                           	line	82
+   700                           	
+   701  0555                     l2246:	
+   702                           ;one rupee coin box.c: 82: lcd_cmd(0x80);
+   703  0555  3080               	movlw	(080h)
+   704  0556  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+   705                           	line	83
+   706                           	
+   707  055B                     l2248:	
+   708                           ;one rupee coin box.c: 83: lcd_display("dial the number");
+   709  055B  3023               	movlw	((STR_2-__stringbase))&0ffh
+   710  055C  120A  118A  2417   	fcall	_lcd_display
+              120A  118A         
+   711                           	line	84
+   712                           	
+   713  0561                     l2250:	
+   714                           ;one rupee coin box.c: 84: delay(10000);
+   715  0561  3010               	movlw	low(02710h)
+   716  0562  00F0               	movwf	(?_delay)
+   717  0563  3027               	movlw	high(02710h)
+   718  0564  00F1               	movwf	((?_delay))+1
+   719  0565  120A  118A  238D   	fcall	_delay
+              120A  118A         
+   720                           	line	85
+   721                           	
+   722  056A                     l2252:	
+   723                           ;one rupee coin box.c: 85: lcd_cmd(0x01);
+   724  056A  3001               	movlw	(01h)
+   725  056B  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+   726                           	line	86
+   727                           	
+   728  0570                     l606:	
+   729                           	line	87
+   730                           	
+   731  0570                     l599:	
+   732                           	line	88
+   733                           	
+   734  0570                     l2254:	
+   735                           ;one rupee coin box.c: 86: }
+   736                           ;one rupee coin box.c: 87: }
+   737                           ;one rupee coin box.c: 88: if(dv1==1)
+   738  0570  3001               	movlw	01h
+   739  0571  1283               	bcf	status, 5	;RP0=0, select bank0
+   740  0572  1303               	bcf	status, 6	;RP1=0, select bank0
+   741  0573  0636               	xorwf	(_dv1),w
+   742  0574  0437               	iorwf	(_dv1+1),w
+   743  0575  1D03               	skipz
+   744  0576  2D78               	goto	u2791
+   745  0577  2D79               	goto	u2790
+   746  0578                     u2791:
+   747  0578  2EF6               	goto	l610
+   748  0579                     u2790:
+   749                           	line	90
+   750                           	
+   751  0579                     l2256:	
+   752                           ;one rupee coin box.c: 89: {
+   753                           ;one rupee coin box.c: 90: RC0=1;RC1=0;RC2=0;
+   754  0579  1407               	bsf	(56/8),(56)&7
+   755  057A  1087               	bcf	(57/8),(57)&7
+   756  057B  1107               	bcf	(58/8),(58)&7
+   757                           	line	91
+   758                           ;one rupee coin box.c: 91: if(RB0==1)
+   759  057C  1C06               	btfss	(48/8),(48)&7
+   760  057D  2D7F               	goto	u2801
+   761  057E  2D80               	goto	u2800
+   762  057F                     u2801:
+   763  057F  2D9C               	goto	l611
+   764  0580                     u2800:
+   765                           	line	93
+   766                           	
+   767  0580                     l2258:	
+   768                           ;one rupee coin box.c: 92: {
+   769                           ;one rupee coin box.c: 93: while(RB0==1);
+   770  0580  2D81               	goto	l612
+   771                           	
+   772  0581                     l613:	
+   773                           	
+   774  0581                     l612:	
+   775  0581  1806               	btfsc	(48/8),(48)&7
+   776  0582  2D84               	goto	u2811
+   777  0583  2D85               	goto	u2810
+   778  0584                     u2811:
+   779  0584  2D81               	goto	l613
+   780  0585                     u2810:
+   781                           	
+   782  0585                     l614:	
+   783                           	line	94
+   784                           	
+   785  0585                     l2260:	
+   786                           ;one rupee coin box.c: 94: lcd_data('1');
+   787  0585  3031               	movlw	(031h)
+   788  0586  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+   789                           	line	95
+   790                           	
+   791  058B                     l2262:	
+   792                           ;one rupee coin box.c: 95: b[j]=1;
+   793  058B  087A               	movf	(_j),w
+   794  058C  00F9               	movwf	(??_main+0)+0
+   795  058D  0779               	addwf	(??_main+0)+0,w
+   796  058E  3E20               	addlw	_b&0ffh
+   797  058F  0084               	movwf	fsr0
+   798  0590  3001               	movlw	low(01h)
+   799  0591  1383               	bcf	status, 7	;select IRP bank0
+   800  0592  0080               	movwf	indf
+   801  0593  0A84               	incf	fsr0,f
+   802  0594  3000               	movlw	high(01h)
+   803  0595  0080               	movwf	indf
+   804                           	line	96
+   805                           	
+   806  0596                     l2264:	
+   807                           ;one rupee coin box.c: 96: j++;
+   808  0596  3001               	movlw	low(01h)
+   809  0597  07FA               	addwf	(_j),f
+   810  0598  1803               	skipnc
+   811  0599  0AFB               	incf	(_j+1),f
+   812  059A  3000               	movlw	high(01h)
+   813  059B  07FB               	addwf	(_j+1),f
+   814                           	line	97
+   815                           	
+   816  059C                     l611:	
+   817                           	line	99
+   818                           	
+   819  059C                     l2266:	
+   820                           ;one rupee coin box.c: 97: }
+   821                           ;one rupee coin box.c: 99: if(RB1==1)
+   822  059C  1283               	bcf	status, 5	;RP0=0, select bank0
+   823  059D  1303               	bcf	status, 6	;RP1=0, select bank0
+   824  059E  1C86               	btfss	(49/8),(49)&7
+   825  059F  2DA1               	goto	u2821
+   826  05A0  2DA2               	goto	u2820
+   827  05A1                     u2821:
+   828  05A1  2DBE               	goto	l615
+   829  05A2                     u2820:
+   830                           	line	101
+   831                           	
+   832  05A2                     l2268:	
+   833                           ;one rupee coin box.c: 100: {
+   834                           ;one rupee coin box.c: 101: while(RB1==1);
+   835  05A2  2DA3               	goto	l616
+   836                           	
+   837  05A3                     l617:	
+   838                           	
+   839  05A3                     l616:	
+   840  05A3  1886               	btfsc	(49/8),(49)&7
+   841  05A4  2DA6               	goto	u2831
+   842  05A5  2DA7               	goto	u2830
+   843  05A6                     u2831:
+   844  05A6  2DA3               	goto	l617
+   845  05A7                     u2830:
+   846                           	
+   847  05A7                     l618:	
+   848                           	line	102
+   849                           	
+   850  05A7                     l2270:	
+   851                           ;one rupee coin box.c: 102: lcd_data('4');
+   852  05A7  3034               	movlw	(034h)
+   853  05A8  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+   854                           	line	103
+   855                           	
+   856  05AD                     l2272:	
+   857                           ;one rupee coin box.c: 103: b[j]=4;
+   858  05AD  087A               	movf	(_j),w
+   859  05AE  00F9               	movwf	(??_main+0)+0
+   860  05AF  0779               	addwf	(??_main+0)+0,w
+   861  05B0  3E20               	addlw	_b&0ffh
+   862  05B1  0084               	movwf	fsr0
+   863  05B2  3004               	movlw	low(04h)
+   864  05B3  1383               	bcf	status, 7	;select IRP bank0
+   865  05B4  0080               	movwf	indf
+   866  05B5  0A84               	incf	fsr0,f
+   867  05B6  3000               	movlw	high(04h)
+   868  05B7  0080               	movwf	indf
+   869                           	line	104
+   870                           	
+   871  05B8                     l2274:	
+   872                           ;one rupee coin box.c: 104: j++;
+   873  05B8  3001               	movlw	low(01h)
+   874  05B9  07FA               	addwf	(_j),f
+   875  05BA  1803               	skipnc
+   876  05BB  0AFB               	incf	(_j+1),f
+   877  05BC  3000               	movlw	high(01h)
+   878  05BD  07FB               	addwf	(_j+1),f
+   879                           	line	105
+   880                           	
+   881  05BE                     l615:	
+   882                           	line	106
+   883                           	
+   884  05BE                     l2276:	
+   885                           ;one rupee coin box.c: 105: }
+   886                           ;one rupee coin box.c: 106: if(RB2==1)
+   887  05BE  1283               	bcf	status, 5	;RP0=0, select bank0
+   888  05BF  1303               	bcf	status, 6	;RP1=0, select bank0
+   889  05C0  1D06               	btfss	(50/8),(50)&7
+   890  05C1  2DC3               	goto	u2841
+   891  05C2  2DC4               	goto	u2840
+   892  05C3                     u2841:
+   893  05C3  2DE0               	goto	l619
+   894  05C4                     u2840:
+   895                           	line	108
+   896                           	
+   897  05C4                     l2278:	
+   898                           ;one rupee coin box.c: 107: {
+   899                           ;one rupee coin box.c: 108: while(RB2==1);
+   900  05C4  2DC5               	goto	l620
+   901                           	
+   902  05C5                     l621:	
+   903                           	
+   904  05C5                     l620:	
+   905  05C5  1906               	btfsc	(50/8),(50)&7
+   906  05C6  2DC8               	goto	u2851
+   907  05C7  2DC9               	goto	u2850
+   908  05C8                     u2851:
+   909  05C8  2DC5               	goto	l621
+   910  05C9                     u2850:
+   911                           	
+   912  05C9                     l622:	
+   913                           	line	109
+   914                           	
+   915  05C9                     l2280:	
+   916                           ;one rupee coin box.c: 109: lcd_data('7');
+   917  05C9  3037               	movlw	(037h)
+   918  05CA  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+   919                           	line	110
+   920                           	
+   921  05CF                     l2282:	
+   922                           ;one rupee coin box.c: 110: b[j]=7;
+   923  05CF  087A               	movf	(_j),w
+   924  05D0  00F9               	movwf	(??_main+0)+0
+   925  05D1  0779               	addwf	(??_main+0)+0,w
+   926  05D2  3E20               	addlw	_b&0ffh
+   927  05D3  0084               	movwf	fsr0
+   928  05D4  3007               	movlw	low(07h)
+   929  05D5  1383               	bcf	status, 7	;select IRP bank0
+   930  05D6  0080               	movwf	indf
+   931  05D7  0A84               	incf	fsr0,f
+   932  05D8  3000               	movlw	high(07h)
+   933  05D9  0080               	movwf	indf
+   934                           	line	111
+   935                           	
+   936  05DA                     l2284:	
+   937                           ;one rupee coin box.c: 111: j++;
+   938  05DA  3001               	movlw	low(01h)
+   939  05DB  07FA               	addwf	(_j),f
+   940  05DC  1803               	skipnc
+   941  05DD  0AFB               	incf	(_j+1),f
+   942  05DE  3000               	movlw	high(01h)
+   943  05DF  07FB               	addwf	(_j+1),f
+   944                           	line	112
+   945                           	
+   946  05E0                     l619:	
+   947                           	line	113
+   948                           	
+   949  05E0                     l2286:	
+   950                           ;one rupee coin box.c: 112: }
+   951                           ;one rupee coin box.c: 113: if(RB3==1)
+   952  05E0  1283               	bcf	status, 5	;RP0=0, select bank0
+   953  05E1  1303               	bcf	status, 6	;RP1=0, select bank0
+   954  05E2  1D86               	btfss	(51/8),(51)&7
+   955  05E3  2DE5               	goto	u2861
+   956  05E4  2DE6               	goto	u2860
+   957  05E5                     u2861:
+   958  05E5  2DF1               	goto	l623
+   959  05E6                     u2860:
+   960                           	line	115
+   961                           	
+   962  05E6                     l2288:	
+   963                           ;one rupee coin box.c: 114: {
+   964                           ;one rupee coin box.c: 115: while(RB3==1);
+   965  05E6  2DE7               	goto	l624
+   966                           	
+   967  05E7                     l625:	
+   968                           	
+   969  05E7                     l624:	
+   970  05E7  1986               	btfsc	(51/8),(51)&7
+   971  05E8  2DEA               	goto	u2871
+   972  05E9  2DEB               	goto	u2870
+   973  05EA                     u2871:
+   974  05EA  2DE7               	goto	l625
+   975  05EB                     u2870:
+   976                           	
+   977  05EB                     l626:	
+   978                           	line	116
+   979                           	
+   980  05EB                     l2290:	
+   981                           ;one rupee coin box.c: 116: lcd_data('*');
+   982  05EB  302A               	movlw	(02Ah)
+   983  05EC  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+   984                           	line	117
+   985                           	
+   986  05F1                     l623:	
+   987                           	line	118
+   988                           	
+   989  05F1                     l2292:	
+   990                           ;one rupee coin box.c: 117: }
+   991                           ;one rupee coin box.c: 118: RC0=0;RC1=1;RC2=0;
+   992  05F1  1283               	bcf	status, 5	;RP0=0, select bank0
+   993  05F2  1303               	bcf	status, 6	;RP1=0, select bank0
+   994  05F3  1007               	bcf	(56/8),(56)&7
+   995                           	
+   996  05F4                     l2294:	
+   997  05F4  1487               	bsf	(57/8),(57)&7
+   998                           	
+   999  05F5                     l2296:	
+  1000  05F5  1107               	bcf	(58/8),(58)&7
+  1001                           	line	119
+  1002                           	
+  1003  05F6                     l2298:	
+  1004                           ;one rupee coin box.c: 119: if(RB0==1)
+  1005  05F6  1C06               	btfss	(48/8),(48)&7
+  1006  05F7  2DF9               	goto	u2881
+  1007  05F8  2DFA               	goto	u2880
+  1008  05F9                     u2881:
+  1009  05F9  2E16               	goto	l627
+  1010  05FA                     u2880:
+  1011                           	line	121
+  1012                           	
+  1013  05FA                     l2300:	
+  1014                           ;one rupee coin box.c: 120: {
+  1015                           ;one rupee coin box.c: 121: while(RB0==1);
+  1016  05FA  2DFB               	goto	l628
+  1017                           	
+  1018  05FB                     l629:	
+  1019                           	
+  1020  05FB                     l628:	
+  1021  05FB  1806               	btfsc	(48/8),(48)&7
+  1022  05FC  2DFE               	goto	u2891
+  1023  05FD  2DFF               	goto	u2890
+  1024  05FE                     u2891:
+  1025  05FE  2DFB               	goto	l629
+  1026  05FF                     u2890:
+  1027                           	
+  1028  05FF                     l630:	
+  1029                           	line	122
+  1030                           	
+  1031  05FF                     l2302:	
+  1032                           ;one rupee coin box.c: 122: lcd_data('2');
+  1033  05FF  3032               	movlw	(032h)
+  1034  0600  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1035                           	line	123
+  1036                           	
+  1037  0605                     l2304:	
+  1038                           ;one rupee coin box.c: 123: b[j]=2;
+  1039  0605  087A               	movf	(_j),w
+  1040  0606  00F9               	movwf	(??_main+0)+0
+  1041  0607  0779               	addwf	(??_main+0)+0,w
+  1042  0608  3E20               	addlw	_b&0ffh
+  1043  0609  0084               	movwf	fsr0
+  1044  060A  3002               	movlw	low(02h)
+  1045  060B  1383               	bcf	status, 7	;select IRP bank0
+  1046  060C  0080               	movwf	indf
+  1047  060D  0A84               	incf	fsr0,f
+  1048  060E  3000               	movlw	high(02h)
+  1049  060F  0080               	movwf	indf
+  1050                           	line	124
+  1051                           	
+  1052  0610                     l2306:	
+  1053                           ;one rupee coin box.c: 124: j++;
+  1054  0610  3001               	movlw	low(01h)
+  1055  0611  07FA               	addwf	(_j),f
+  1056  0612  1803               	skipnc
+  1057  0613  0AFB               	incf	(_j+1),f
+  1058  0614  3000               	movlw	high(01h)
+  1059  0615  07FB               	addwf	(_j+1),f
+  1060                           	line	125
+  1061                           	
+  1062  0616                     l627:	
+  1063                           	line	126
+  1064                           	
+  1065  0616                     l2308:	
+  1066                           ;one rupee coin box.c: 125: }
+  1067                           ;one rupee coin box.c: 126: if(RB1==1)
+  1068  0616  1283               	bcf	status, 5	;RP0=0, select bank0
+  1069  0617  1303               	bcf	status, 6	;RP1=0, select bank0
+  1070  0618  1C86               	btfss	(49/8),(49)&7
+  1071  0619  2E1B               	goto	u2901
+  1072  061A  2E1C               	goto	u2900
+  1073  061B                     u2901:
+  1074  061B  2E38               	goto	l631
+  1075  061C                     u2900:
+  1076                           	line	128
+  1077                           	
+  1078  061C                     l2310:	
+  1079                           ;one rupee coin box.c: 127: {
+  1080                           ;one rupee coin box.c: 128: while(RB1==1);
+  1081  061C  2E1D               	goto	l632
+  1082                           	
+  1083  061D                     l633:	
+  1084                           	
+  1085  061D                     l632:	
+  1086  061D  1886               	btfsc	(49/8),(49)&7
+  1087  061E  2E20               	goto	u2911
+  1088  061F  2E21               	goto	u2910
+  1089  0620                     u2911:
+  1090  0620  2E1D               	goto	l633
+  1091  0621                     u2910:
+  1092                           	
+  1093  0621                     l634:	
+  1094                           	line	129
+  1095                           	
+  1096  0621                     l2312:	
+  1097                           ;one rupee coin box.c: 129: lcd_data('5');
+  1098  0621  3035               	movlw	(035h)
+  1099  0622  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1100                           	line	130
+  1101                           	
+  1102  0627                     l2314:	
+  1103                           ;one rupee coin box.c: 130: b[j]=5;
+  1104  0627  087A               	movf	(_j),w
+  1105  0628  00F9               	movwf	(??_main+0)+0
+  1106  0629  0779               	addwf	(??_main+0)+0,w
+  1107  062A  3E20               	addlw	_b&0ffh
+  1108  062B  0084               	movwf	fsr0
+  1109  062C  3005               	movlw	low(05h)
+  1110  062D  1383               	bcf	status, 7	;select IRP bank0
+  1111  062E  0080               	movwf	indf
+  1112  062F  0A84               	incf	fsr0,f
+  1113  0630  3000               	movlw	high(05h)
+  1114  0631  0080               	movwf	indf
+  1115                           	line	131
+  1116                           	
+  1117  0632                     l2316:	
+  1118                           ;one rupee coin box.c: 131: j++;
+  1119  0632  3001               	movlw	low(01h)
+  1120  0633  07FA               	addwf	(_j),f
+  1121  0634  1803               	skipnc
+  1122  0635  0AFB               	incf	(_j+1),f
+  1123  0636  3000               	movlw	high(01h)
+  1124  0637  07FB               	addwf	(_j+1),f
+  1125                           	line	132
+  1126                           	
+  1127  0638                     l631:	
+  1128                           	line	133
+  1129                           	
+  1130  0638                     l2318:	
+  1131                           ;one rupee coin box.c: 132: }
+  1132                           ;one rupee coin box.c: 133: if(RB2==1)
+  1133  0638  1283               	bcf	status, 5	;RP0=0, select bank0
+  1134  0639  1303               	bcf	status, 6	;RP1=0, select bank0
+  1135  063A  1D06               	btfss	(50/8),(50)&7
+  1136  063B  2E3D               	goto	u2921
+  1137  063C  2E3E               	goto	u2920
+  1138  063D                     u2921:
+  1139  063D  2E5A               	goto	l635
+  1140  063E                     u2920:
+  1141                           	line	135
+  1142                           	
+  1143  063E                     l2320:	
+  1144                           ;one rupee coin box.c: 134: {
+  1145                           ;one rupee coin box.c: 135: while(RB2==1);
+  1146  063E  2E3F               	goto	l636
+  1147                           	
+  1148  063F                     l637:	
+  1149                           	
+  1150  063F                     l636:	
+  1151  063F  1906               	btfsc	(50/8),(50)&7
+  1152  0640  2E42               	goto	u2931
+  1153  0641  2E43               	goto	u2930
+  1154  0642                     u2931:
+  1155  0642  2E3F               	goto	l637
+  1156  0643                     u2930:
+  1157                           	
+  1158  0643                     l638:	
+  1159                           	line	136
+  1160                           	
+  1161  0643                     l2322:	
+  1162                           ;one rupee coin box.c: 136: lcd_data('8');
+  1163  0643  3038               	movlw	(038h)
+  1164  0644  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1165                           	line	137
+  1166                           	
+  1167  0649                     l2324:	
+  1168                           ;one rupee coin box.c: 137: b[j]=8;
+  1169  0649  087A               	movf	(_j),w
+  1170  064A  00F9               	movwf	(??_main+0)+0
+  1171  064B  0779               	addwf	(??_main+0)+0,w
+  1172  064C  3E20               	addlw	_b&0ffh
+  1173  064D  0084               	movwf	fsr0
+  1174  064E  3008               	movlw	low(08h)
+  1175  064F  1383               	bcf	status, 7	;select IRP bank0
+  1176  0650  0080               	movwf	indf
+  1177  0651  0A84               	incf	fsr0,f
+  1178  0652  3000               	movlw	high(08h)
+  1179  0653  0080               	movwf	indf
+  1180                           	line	138
+  1181                           	
+  1182  0654                     l2326:	
+  1183                           ;one rupee coin box.c: 138: j++;
+  1184  0654  3001               	movlw	low(01h)
+  1185  0655  07FA               	addwf	(_j),f
+  1186  0656  1803               	skipnc
+  1187  0657  0AFB               	incf	(_j+1),f
+  1188  0658  3000               	movlw	high(01h)
+  1189  0659  07FB               	addwf	(_j+1),f
+  1190                           	line	139
+  1191                           	
+  1192  065A                     l635:	
+  1193                           	line	140
+  1194                           	
+  1195  065A                     l2328:	
+  1196                           ;one rupee coin box.c: 139: }
+  1197                           ;one rupee coin box.c: 140: if(RB3==1)
+  1198  065A  1283               	bcf	status, 5	;RP0=0, select bank0
+  1199  065B  1303               	bcf	status, 6	;RP1=0, select bank0
+  1200  065C  1D86               	btfss	(51/8),(51)&7
+  1201  065D  2E5F               	goto	u2941
+  1202  065E  2E60               	goto	u2940
+  1203  065F                     u2941:
+  1204  065F  2E7C               	goto	l639
+  1205  0660                     u2940:
+  1206                           	line	142
+  1207                           	
+  1208  0660                     l2330:	
+  1209                           ;one rupee coin box.c: 141: {
+  1210                           ;one rupee coin box.c: 142: while(RB3==1);
+  1211  0660  2E61               	goto	l640
+  1212                           	
+  1213  0661                     l641:	
+  1214                           	
+  1215  0661                     l640:	
+  1216  0661  1986               	btfsc	(51/8),(51)&7
+  1217  0662  2E64               	goto	u2951
+  1218  0663  2E65               	goto	u2950
+  1219  0664                     u2951:
+  1220  0664  2E61               	goto	l641
+  1221  0665                     u2950:
+  1222                           	
+  1223  0665                     l642:	
+  1224                           	line	143
+  1225                           	
+  1226  0665                     l2332:	
+  1227                           ;one rupee coin box.c: 143: lcd_data('0');
+  1228  0665  3030               	movlw	(030h)
+  1229  0666  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1230                           	line	144
+  1231                           	
+  1232  066B                     l2334:	
+  1233                           ;one rupee coin box.c: 144: b[j]=0;
+  1234  066B  087A               	movf	(_j),w
+  1235  066C  00F9               	movwf	(??_main+0)+0
+  1236  066D  0779               	addwf	(??_main+0)+0,w
+  1237  066E  3E20               	addlw	_b&0ffh
+  1238  066F  0084               	movwf	fsr0
+  1239  0670  3000               	movlw	low(0)
+  1240  0671  1383               	bcf	status, 7	;select IRP bank0
+  1241  0672  0080               	movwf	indf
+  1242  0673  0A84               	incf	fsr0,f
+  1243  0674  3000               	movlw	high(0)
+  1244  0675  0080               	movwf	indf
+  1245                           	line	145
+  1246                           	
+  1247  0676                     l2336:	
+  1248                           ;one rupee coin box.c: 145: j++;
+  1249  0676  3001               	movlw	low(01h)
+  1250  0677  07FA               	addwf	(_j),f
+  1251  0678  1803               	skipnc
+  1252  0679  0AFB               	incf	(_j+1),f
+  1253  067A  3000               	movlw	high(01h)
+  1254  067B  07FB               	addwf	(_j+1),f
+  1255                           	line	146
+  1256                           	
+  1257  067C                     l639:	
+  1258                           	line	147
+  1259                           	
+  1260  067C                     l2338:	
+  1261                           ;one rupee coin box.c: 146: }
+  1262                           ;one rupee coin box.c: 147: RC0=0;RC1=0;RC2=1;
+  1263  067C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1264  067D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1265  067E  1007               	bcf	(56/8),(56)&7
+  1266                           	
+  1267  067F                     l2340:	
+  1268  067F  1087               	bcf	(57/8),(57)&7
+  1269                           	
+  1270  0680                     l2342:	
+  1271  0680  1507               	bsf	(58/8),(58)&7
+  1272                           	line	148
+  1273                           	
+  1274  0681                     l2344:	
+  1275                           ;one rupee coin box.c: 148: if(RB0==1)
+  1276  0681  1C06               	btfss	(48/8),(48)&7
+  1277  0682  2E84               	goto	u2961
+  1278  0683  2E85               	goto	u2960
+  1279  0684                     u2961:
+  1280  0684  2EA1               	goto	l643
+  1281  0685                     u2960:
+  1282                           	line	150
+  1283                           	
+  1284  0685                     l2346:	
+  1285                           ;one rupee coin box.c: 149: {
+  1286                           ;one rupee coin box.c: 150: while(RB0==1);
+  1287  0685  2E86               	goto	l644
+  1288                           	
+  1289  0686                     l645:	
+  1290                           	
+  1291  0686                     l644:	
+  1292  0686  1806               	btfsc	(48/8),(48)&7
+  1293  0687  2E89               	goto	u2971
+  1294  0688  2E8A               	goto	u2970
+  1295  0689                     u2971:
+  1296  0689  2E86               	goto	l645
+  1297  068A                     u2970:
+  1298                           	
+  1299  068A                     l646:	
+  1300                           	line	151
+  1301                           	
+  1302  068A                     l2348:	
+  1303                           ;one rupee coin box.c: 151: lcd_data('3');
+  1304  068A  3033               	movlw	(033h)
+  1305  068B  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1306                           	line	152
+  1307                           	
+  1308  0690                     l2350:	
+  1309                           ;one rupee coin box.c: 152: b[j]=3;
+  1310  0690  087A               	movf	(_j),w
+  1311  0691  00F9               	movwf	(??_main+0)+0
+  1312  0692  0779               	addwf	(??_main+0)+0,w
+  1313  0693  3E20               	addlw	_b&0ffh
+  1314  0694  0084               	movwf	fsr0
+  1315  0695  3003               	movlw	low(03h)
+  1316  0696  1383               	bcf	status, 7	;select IRP bank0
+  1317  0697  0080               	movwf	indf
+  1318  0698  0A84               	incf	fsr0,f
+  1319  0699  3000               	movlw	high(03h)
+  1320  069A  0080               	movwf	indf
+  1321                           	line	153
+  1322                           	
+  1323  069B                     l2352:	
+  1324                           ;one rupee coin box.c: 153: j++;
+  1325  069B  3001               	movlw	low(01h)
+  1326  069C  07FA               	addwf	(_j),f
+  1327  069D  1803               	skipnc
+  1328  069E  0AFB               	incf	(_j+1),f
+  1329  069F  3000               	movlw	high(01h)
+  1330  06A0  07FB               	addwf	(_j+1),f
+  1331                           	line	154
+  1332                           	
+  1333  06A1                     l643:	
+  1334                           	line	155
+  1335                           	
+  1336  06A1                     l2354:	
+  1337                           ;one rupee coin box.c: 154: }
+  1338                           ;one rupee coin box.c: 155: if(RB1==1)
+  1339  06A1  1283               	bcf	status, 5	;RP0=0, select bank0
+  1340  06A2  1303               	bcf	status, 6	;RP1=0, select bank0
+  1341  06A3  1C86               	btfss	(49/8),(49)&7
+  1342  06A4  2EA6               	goto	u2981
+  1343  06A5  2EA7               	goto	u2980
+  1344  06A6                     u2981:
+  1345  06A6  2EC3               	goto	l647
+  1346  06A7                     u2980:
+  1347                           	line	157
+  1348                           	
+  1349  06A7                     l2356:	
+  1350                           ;one rupee coin box.c: 156: {
+  1351                           ;one rupee coin box.c: 157: while(RB1==1);
+  1352  06A7  2EA8               	goto	l648
+  1353                           	
+  1354  06A8                     l649:	
+  1355                           	
+  1356  06A8                     l648:	
+  1357  06A8  1886               	btfsc	(49/8),(49)&7
+  1358  06A9  2EAB               	goto	u2991
+  1359  06AA  2EAC               	goto	u2990
+  1360  06AB                     u2991:
+  1361  06AB  2EA8               	goto	l649
+  1362  06AC                     u2990:
+  1363                           	
+  1364  06AC                     l650:	
+  1365                           	line	158
+  1366                           	
+  1367  06AC                     l2358:	
+  1368                           ;one rupee coin box.c: 158: lcd_data('6');
+  1369  06AC  3036               	movlw	(036h)
+  1370  06AD  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1371                           	line	159
+  1372                           	
+  1373  06B2                     l2360:	
+  1374                           ;one rupee coin box.c: 159: b[j]=6;
+  1375  06B2  087A               	movf	(_j),w
+  1376  06B3  00F9               	movwf	(??_main+0)+0
+  1377  06B4  0779               	addwf	(??_main+0)+0,w
+  1378  06B5  3E20               	addlw	_b&0ffh
+  1379  06B6  0084               	movwf	fsr0
+  1380  06B7  3006               	movlw	low(06h)
+  1381  06B8  1383               	bcf	status, 7	;select IRP bank0
+  1382  06B9  0080               	movwf	indf
+  1383  06BA  0A84               	incf	fsr0,f
+  1384  06BB  3000               	movlw	high(06h)
+  1385  06BC  0080               	movwf	indf
+  1386                           	line	160
+  1387                           	
+  1388  06BD                     l2362:	
+  1389                           ;one rupee coin box.c: 160: j++;
+  1390  06BD  3001               	movlw	low(01h)
+  1391  06BE  07FA               	addwf	(_j),f
+  1392  06BF  1803               	skipnc
+  1393  06C0  0AFB               	incf	(_j+1),f
+  1394  06C1  3000               	movlw	high(01h)
+  1395  06C2  07FB               	addwf	(_j+1),f
+  1396                           	line	161
+  1397                           	
+  1398  06C3                     l647:	
+  1399                           	line	162
+  1400                           	
+  1401  06C3                     l2364:	
+  1402                           ;one rupee coin box.c: 161: }
+  1403                           ;one rupee coin box.c: 162: if(RB2==1)
+  1404  06C3  1283               	bcf	status, 5	;RP0=0, select bank0
+  1405  06C4  1303               	bcf	status, 6	;RP1=0, select bank0
+  1406  06C5  1D06               	btfss	(50/8),(50)&7
+  1407  06C6  2EC8               	goto	u3001
+  1408  06C7  2EC9               	goto	u3000
+  1409  06C8                     u3001:
+  1410  06C8  2EE5               	goto	l651
+  1411  06C9                     u3000:
+  1412                           	line	164
+  1413                           	
+  1414  06C9                     l2366:	
+  1415                           ;one rupee coin box.c: 163: {
+  1416                           ;one rupee coin box.c: 164: while(RB2==1);
+  1417  06C9  2ECA               	goto	l652
+  1418                           	
+  1419  06CA                     l653:	
+  1420                           	
+  1421  06CA                     l652:	
+  1422  06CA  1906               	btfsc	(50/8),(50)&7
+  1423  06CB  2ECD               	goto	u3011
+  1424  06CC  2ECE               	goto	u3010
+  1425  06CD                     u3011:
+  1426  06CD  2ECA               	goto	l653
+  1427  06CE                     u3010:
+  1428                           	
+  1429  06CE                     l654:	
+  1430                           	line	165
+  1431                           	
+  1432  06CE                     l2368:	
+  1433                           ;one rupee coin box.c: 165: lcd_data('9');
+  1434  06CE  3039               	movlw	(039h)
+  1435  06CF  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1436                           	line	166
+  1437                           	
+  1438  06D4                     l2370:	
+  1439                           ;one rupee coin box.c: 166: b[j]=9;
+  1440  06D4  087A               	movf	(_j),w
+  1441  06D5  00F9               	movwf	(??_main+0)+0
+  1442  06D6  0779               	addwf	(??_main+0)+0,w
+  1443  06D7  3E20               	addlw	_b&0ffh
+  1444  06D8  0084               	movwf	fsr0
+  1445  06D9  3009               	movlw	low(09h)
+  1446  06DA  1383               	bcf	status, 7	;select IRP bank0
+  1447  06DB  0080               	movwf	indf
+  1448  06DC  0A84               	incf	fsr0,f
+  1449  06DD  3000               	movlw	high(09h)
+  1450  06DE  0080               	movwf	indf
+  1451                           	line	167
+  1452                           	
+  1453  06DF                     l2372:	
+  1454                           ;one rupee coin box.c: 167: j++;
+  1455  06DF  3001               	movlw	low(01h)
+  1456  06E0  07FA               	addwf	(_j),f
+  1457  06E1  1803               	skipnc
+  1458  06E2  0AFB               	incf	(_j+1),f
+  1459  06E3  3000               	movlw	high(01h)
+  1460  06E4  07FB               	addwf	(_j+1),f
+  1461                           	line	168
+  1462                           	
+  1463  06E5                     l651:	
+  1464                           	line	169
+  1465                           	
+  1466  06E5                     l2374:	
+  1467                           ;one rupee coin box.c: 168: }
+  1468                           ;one rupee coin box.c: 169: if(RB3==1)
+  1469  06E5  1283               	bcf	status, 5	;RP0=0, select bank0
+  1470  06E6  1303               	bcf	status, 6	;RP1=0, select bank0
+  1471  06E7  1D86               	btfss	(51/8),(51)&7
+  1472  06E8  2EEA               	goto	u3021
+  1473  06E9  2EEB               	goto	u3020
+  1474  06EA                     u3021:
+  1475  06EA  2EF6               	goto	l655
+  1476  06EB                     u3020:
+  1477                           	line	171
+  1478                           	
+  1479  06EB                     l2376:	
+  1480                           ;one rupee coin box.c: 170: {
+  1481                           ;one rupee coin box.c: 171: while(RB3==1);
+  1482  06EB  2EEC               	goto	l656
+  1483                           	
+  1484  06EC                     l657:	
+  1485                           	
+  1486  06EC                     l656:	
+  1487  06EC  1986               	btfsc	(51/8),(51)&7
+  1488  06ED  2EEF               	goto	u3031
+  1489  06EE  2EF0               	goto	u3030
+  1490  06EF                     u3031:
+  1491  06EF  2EEC               	goto	l657
+  1492  06F0                     u3030:
+  1493                           	
+  1494  06F0                     l658:	
+  1495                           	line	172
+  1496                           	
+  1497  06F0                     l2378:	
+  1498                           ;one rupee coin box.c: 172: lcd_data('#');
+  1499  06F0  3023               	movlw	(023h)
+  1500  06F1  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1501                           	line	173
+  1502                           	
+  1503  06F6                     l655:	
+  1504                           	line	174
+  1505                           	
+  1506  06F6                     l610:	
+  1507                           	line	176
+  1508                           	
+  1509  06F6                     l2380:	
+  1510                           ;one rupee coin box.c: 173: }
+  1511                           ;one rupee coin box.c: 174: }
+  1512                           ;one rupee coin box.c: 176: if((j>=10)&&(dv2==1))
+  1513  06F6  087B               	movf	(_j+1),w
+  1514  06F7  3A80               	xorlw	80h
+  1515  06F8  00FE               	movwf	btemp+0
+  1516  06F9  3080               	movlw	(high(0Ah))^80h
+  1517  06FA  027E               	subwf	btemp+0,w
+  1518  06FB  1D03               	skipz
+  1519  06FC  2EFF               	goto	u3045
+  1520  06FD  300A               	movlw	low(0Ah)
+  1521  06FE  027A               	subwf	(_j),w
+  1522  06FF                     u3045:
+  1523                           
+  1524  06FF  1C03               	skipc
+  1525  0700  2F02               	goto	u3041
+  1526  0701  2F03               	goto	u3040
+  1527  0702                     u3041:
+  1528  0702  2FFC               	goto	l659
+  1529  0703                     u3040:
+  1530                           	
+  1531  0703                     l2382:	
+  1532  0703  3001               	movlw	01h
+  1533  0704  1283               	bcf	status, 5	;RP0=0, select bank0
+  1534  0705  1303               	bcf	status, 6	;RP1=0, select bank0
+  1535  0706  063C               	xorwf	(_dv2),w
+  1536  0707  043D               	iorwf	(_dv2+1),w
+  1537  0708  1D03               	skipz
+  1538  0709  2F0B               	goto	u3051
+  1539  070A  2F0C               	goto	u3050
+  1540  070B                     u3051:
+  1541  070B  2FFC               	goto	l659
+  1542  070C                     u3050:
+  1543                           	line	178
+  1544                           	
+  1545  070C                     l2384:	
+  1546                           ;one rupee coin box.c: 177: {
+  1547                           ;one rupee coin box.c: 178: RB6=1;
+  1548  070C  1706               	bsf	(54/8),(54)&7
+  1549                           	line	179
+  1550                           	
+  1551  070D                     l2386:	
+  1552                           ;one rupee coin box.c: 179: dv1=0;
+  1553  070D  3000               	movlw	low(0)
+  1554  070E  00B6               	movwf	(_dv1)
+  1555  070F  3000               	movlw	high(0)
+  1556  0710  00B7               	movwf	((_dv1))+1
+  1557                           	line	180
+  1558                           	
+  1559  0711                     l2388:	
+  1560                           ;one rupee coin box.c: 180: lcd_cmd(0xC0);
+  1561  0711  30C0               	movlw	(0C0h)
+  1562  0712  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1563                           	line	181
+  1564                           	
+  1565  0717                     l2390:	
+  1566                           ;one rupee coin box.c: 181: lcd_display("connecting.......");
+  1567  0717  3001               	movlw	((STR_3-__stringbase))&0ffh
+  1568  0718  120A  118A  2417   	fcall	_lcd_display
+              120A  118A         
+  1569                           	line	182
+  1570                           	
+  1571  071D                     l2392:	
+  1572                           ;one rupee coin box.c: 182: delay(10000);
+  1573  071D  3010               	movlw	low(02710h)
+  1574  071E  00F0               	movwf	(?_delay)
+  1575  071F  3027               	movlw	high(02710h)
+  1576  0720  00F1               	movwf	((?_delay))+1
+  1577  0721  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1578                           	line	183
+  1579                           	
+  1580  0726                     l2394:	
+  1581                           ;one rupee coin box.c: 183: lcd_cmd(0x01);
+  1582  0726  3001               	movlw	(01h)
+  1583  0727  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1584                           	line	184
+  1585                           	
+  1586  072C                     l2396:	
+  1587                           ;one rupee coin box.c: 184: for(k=60;k>=0;k--)
+  1588  072C  303C               	movlw	low(03Ch)
+  1589  072D  00FC               	movwf	(_k)
+  1590  072E  3000               	movlw	high(03Ch)
+  1591  072F  00FD               	movwf	((_k))+1
+  1592                           	
+  1593  0730                     l2398:	
+  1594  0730  1FFD               	btfss	(_k+1),7
+  1595  0731  2F33               	goto	u3061
+  1596  0732  2F34               	goto	u3060
+  1597  0733                     u3061:
+  1598  0733  2F35               	goto	l660
+  1599  0734                     u3060:
+  1600                           	
+  1601  0734                     l2400:	
+  1602  0734  2FFC               	goto	l661
+  1603                           	line	185
+  1604                           	
+  1605  0735                     l660:	
+  1606                           	line	186
+  1607                           	
+  1608  0735                     l2402:	
+  1609                           ;one rupee coin box.c: 185: {
+  1610                           ;one rupee coin box.c: 186: a=k/10;
+  1611  0735  300A               	movlw	low(0Ah)
+  1612  0736  00F0               	movwf	(?___awdiv)
+  1613  0737  3000               	movlw	high(0Ah)
+  1614  0738  00F1               	movwf	((?___awdiv))+1
+  1615  0739  087D               	movf	(_k+1),w
+  1616  073A  01F3               	clrf	1+(?___awdiv)+02h
+  1617  073B  07F3               	addwf	1+(?___awdiv)+02h
+  1618  073C  087C               	movf	(_k),w
+  1619  073D  01F2               	clrf	0+(?___awdiv)+02h
+  1620  073E  07F2               	addwf	0+(?___awdiv)+02h
+  1621                           
+  1622  073F  120A  118A  24A2   	fcall	___awdiv
+              120A  118A         
+  1623  0744  0871               	movf	(1+(?___awdiv)),w
+  1624  0745  1283               	bcf	status, 5	;RP0=0, select bank0
+  1625  0746  1303               	bcf	status, 6	;RP1=0, select bank0
+  1626  0747  01B3               	clrf	(_a+1)
+  1627  0748  07B3               	addwf	(_a+1)
+  1628  0749  0870               	movf	(0+(?___awdiv)),w
+  1629  074A  01B2               	clrf	(_a)
+  1630  074B  07B2               	addwf	(_a)
+  1631                           
+  1632                           	line	187
+  1633                           ;one rupee coin box.c: 187: c=k%10;
+  1634  074C  300A               	movlw	low(0Ah)
+  1635  074D  00F0               	movwf	(?___awmod)
+  1636  074E  3000               	movlw	high(0Ah)
+  1637  074F  00F1               	movwf	((?___awmod))+1
+  1638  0750  087D               	movf	(_k+1),w
+  1639  0751  01F3               	clrf	1+(?___awmod)+02h
+  1640  0752  07F3               	addwf	1+(?___awmod)+02h
+  1641  0753  087C               	movf	(_k),w
+  1642  0754  01F2               	clrf	0+(?___awmod)+02h
+  1643  0755  07F2               	addwf	0+(?___awmod)+02h
+  1644                           
+  1645  0756  120A  118A  2442   	fcall	___awmod
+              120A  118A         
+  1646  075B  0871               	movf	(1+(?___awmod)),w
+  1647  075C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1648  075D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1649  075E  01B5               	clrf	(_c+1)
+  1650  075F  07B5               	addwf	(_c+1)
+  1651  0760  0870               	movf	(0+(?___awmod)),w
+  1652  0761  01B4               	clrf	(_c)
+  1653  0762  07B4               	addwf	(_c)
+  1654                           
+  1655                           	line	188
+  1656                           ;one rupee coin box.c: 188: lcd_cmd(0x80);
+  1657  0763  3080               	movlw	(080h)
+  1658  0764  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1659                           	line	189
+  1660                           ;one rupee coin box.c: 189: lcd_data(a+48);
+  1661  0769  1283               	bcf	status, 5	;RP0=0, select bank0
+  1662  076A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1663  076B  0832               	movf	(_a),w
+  1664  076C  3E30               	addlw	030h
+  1665  076D  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1666                           	line	190
+  1667                           ;one rupee coin box.c: 190: delay(1000);
+  1668  0772  30E8               	movlw	low(03E8h)
+  1669  0773  00F0               	movwf	(?_delay)
+  1670  0774  3003               	movlw	high(03E8h)
+  1671  0775  00F1               	movwf	((?_delay))+1
+  1672  0776  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1673                           	line	191
+  1674                           ;one rupee coin box.c: 191: lcd_cmd(0x81);
+  1675  077B  3081               	movlw	(081h)
+  1676  077C  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1677                           	line	192
+  1678                           ;one rupee coin box.c: 192: lcd_data(c+48);
+  1679  0781  1283               	bcf	status, 5	;RP0=0, select bank0
+  1680  0782  1303               	bcf	status, 6	;RP1=0, select bank0
+  1681  0783  0834               	movf	(_c),w
+  1682  0784  3E30               	addlw	030h
+  1683  0785  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1684                           	line	193
+  1685                           ;one rupee coin box.c: 193: delay(1000);
+  1686  078A  30E8               	movlw	low(03E8h)
+  1687  078B  00F0               	movwf	(?_delay)
+  1688  078C  3003               	movlw	high(03E8h)
+  1689  078D  00F1               	movwf	((?_delay))+1
+  1690  078E  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1691                           	line	195
+  1692                           	
+  1693  0793                     l2404:	
+  1694                           ;one rupee coin box.c: 195: if(RB5==1)
+  1695  0793  1283               	bcf	status, 5	;RP0=0, select bank0
+  1696  0794  1303               	bcf	status, 6	;RP1=0, select bank0
+  1697  0795  1E86               	btfss	(53/8),(53)&7
+  1698  0796  2F98               	goto	u3071
+  1699  0797  2F99               	goto	u3070
+  1700  0798                     u3071:
+  1701  0798  2FA1               	goto	l662
+  1702  0799                     u3070:
+  1703                           	line	197
+  1704                           	
+  1705  0799                     l2406:	
+  1706                           ;one rupee coin box.c: 196: {
+  1707                           ;one rupee coin box.c: 197: k=k+60;
+  1708  0799  087C               	movf	(_k),w
+  1709  079A  3E3C               	addlw	low(03Ch)
+  1710  079B  00FC               	movwf	(_k)
+  1711  079C  087D               	movf	(_k+1),w
+  1712  079D  1803               	skipnc
+  1713  079E  3E01               	addlw	1
+  1714  079F  3E00               	addlw	high(03Ch)
+  1715  07A0  00FD               	movwf	1+(_k)
+  1716                           	line	198
+  1717                           	
+  1718  07A1                     l662:	
+  1719                           	line	199
+  1720                           	
+  1721  07A1                     l2408:	
+  1722                           ;one rupee coin box.c: 198: }
+  1723                           ;one rupee coin box.c: 199: if(k<=10)
+  1724  07A1  087D               	movf	(_k+1),w
+  1725  07A2  3A80               	xorlw	80h
+  1726  07A3  00FE               	movwf	btemp+0
+  1727  07A4  3080               	movlw	(high(0Bh))^80h
+  1728  07A5  027E               	subwf	btemp+0,w
+  1729  07A6  1D03               	skipz
+  1730  07A7  2FAA               	goto	u3085
+  1731  07A8  300B               	movlw	low(0Bh)
+  1732  07A9  027C               	subwf	(_k),w
+  1733  07AA                     u3085:
+  1734                           
+  1735  07AA  1803               	skipnc
+  1736  07AB  2FAD               	goto	u3081
+  1737  07AC  2FAE               	goto	u3080
+  1738  07AD                     u3081:
+  1739  07AD  2FC6               	goto	l663
+  1740  07AE                     u3080:
+  1741                           	line	201
+  1742                           	
+  1743  07AE                     l2410:	
+  1744                           ;one rupee coin box.c: 200: {
+  1745                           ;one rupee coin box.c: 201: RB7=1;
+  1746  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1747  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1748  07B0  1786               	bsf	(55/8),(55)&7
+  1749                           	line	202
+  1750                           	
+  1751  07B1                     l2412:	
+  1752                           ;one rupee coin box.c: 202: delay(3000);
+  1753  07B1  30B8               	movlw	low(0BB8h)
+  1754  07B2  00F0               	movwf	(?_delay)
+  1755  07B3  300B               	movlw	high(0BB8h)
+  1756  07B4  00F1               	movwf	((?_delay))+1
+  1757  07B5  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1758                           	line	203
+  1759                           	
+  1760  07BA                     l2414:	
+  1761                           ;one rupee coin box.c: 203: RB7=0;
+  1762  07BA  1283               	bcf	status, 5	;RP0=0, select bank0
+  1763  07BB  1303               	bcf	status, 6	;RP1=0, select bank0
+  1764  07BC  1386               	bcf	(55/8),(55)&7
+  1765                           	line	204
+  1766                           ;one rupee coin box.c: 204: delay(3000);
+  1767  07BD  30B8               	movlw	low(0BB8h)
+  1768  07BE  00F0               	movwf	(?_delay)
+  1769  07BF  300B               	movlw	high(0BB8h)
+  1770  07C0  00F1               	movwf	((?_delay))+1
+  1771  07C1  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1772                           	line	205
+  1773                           	
+  1774  07C6                     l663:	
+  1775                           	line	206
+  1776                           	
+  1777  07C6                     l2416:	
+  1778                           ;one rupee coin box.c: 205: }
+  1779                           ;one rupee coin box.c: 206: if(k==1)
+  1780  07C6  3001               	movlw	01h
+  1781  07C7  067C               	xorwf	(_k),w
+  1782  07C8  047D               	iorwf	(_k+1),w
+  1783  07C9  1D03               	skipz
+  1784  07CA  2FCC               	goto	u3091
+  1785  07CB  2FCD               	goto	u3090
+  1786  07CC                     u3091:
+  1787  07CC  2FF2               	goto	l664
+  1788  07CD                     u3090:
+  1789                           	line	208
+  1790                           	
+  1791  07CD                     l2418:	
+  1792                           ;one rupee coin box.c: 207: {
+  1793                           ;one rupee coin box.c: 208: j=0;
+  1794  07CD  3000               	movlw	low(0)
+  1795  07CE  00FA               	movwf	(_j)
+  1796  07CF  3000               	movlw	high(0)
+  1797  07D0  00FB               	movwf	((_j))+1
+  1798                           	line	209
+  1799                           ;one rupee coin box.c: 209: dv2=0;
+  1800  07D1  3000               	movlw	low(0)
+  1801  07D2  1283               	bcf	status, 5	;RP0=0, select bank0
+  1802  07D3  1303               	bcf	status, 6	;RP1=0, select bank0
+  1803  07D4  00BC               	movwf	(_dv2)
+  1804  07D5  3000               	movlw	high(0)
+  1805  07D6  00BD               	movwf	((_dv2))+1
+  1806                           	line	210
+  1807                           	
+  1808  07D7                     l2420:	
+  1809                           ;one rupee coin box.c: 210: delay(1000);
+  1810  07D7  30E8               	movlw	low(03E8h)
+  1811  07D8  00F0               	movwf	(?_delay)
+  1812  07D9  3003               	movlw	high(03E8h)
+  1813  07DA  00F1               	movwf	((?_delay))+1
+  1814  07DB  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  1815                           	line	211
+  1816                           	
+  1817  07E0                     l2422:	
+  1818                           ;one rupee coin box.c: 211: lcd_cmd(0x01);
+  1819  07E0  3001               	movlw	(01h)
+  1820  07E1  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1821                           	line	212
+  1822                           	
+  1823  07E6                     l2424:	
+  1824                           ;one rupee coin box.c: 212: lcd_display("call ended     ");
+  1825  07E6  3013               	movlw	((STR_4-__stringbase))&0ffh
+  1826  07E7  120A  118A  2417   	fcall	_lcd_display
+              120A  118A         
+  1827                           	line	213
+  1828                           	
+  1829  07EC                     l2426:	
+  1830                           ;one rupee coin box.c: 213: lcd_cmd(0x01);
+  1831  07EC  3001               	movlw	(01h)
+  1832  07ED  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  1833                           	line	214
+  1834                           	
+  1835  07F2                     l664:	
+  1836                           	line	184
+  1837                           	
+  1838  07F2                     l2428:	
+  1839  07F2  30FF               	movlw	low(-1)
+  1840  07F3  07FC               	addwf	(_k),f
+  1841  07F4  1803               	skipnc
+  1842  07F5  0AFD               	incf	(_k+1),f
+  1843  07F6  30FF               	movlw	high(-1)
+  1844  07F7  07FD               	addwf	(_k+1),f
+  1845                           	
+  1846  07F8                     l2430:	
+  1847  07F8  1FFD               	btfss	(_k+1),7
+  1848  07F9  2FFB               	goto	u3101
+  1849  07FA  2FFC               	goto	u3100
+  1850  07FB                     u3101:
+  1851  07FB  2F35               	goto	l660
+  1852  07FC                     u3100:
+  1853                           	
+  1854  07FC                     l661:	
+  1855                           	line	216
+  1856                           	
+  1857  07FC                     l659:	
+  1858                           	line	217
+  1859                           	
+  1860  07FC                     l665:	
+  1861                           	line	70
+  1862  07FC  2D2A               	goto	l598
+  1863                           	
+  1864  07FD                     l666:	
+  1865                           	line	218
+  1866                           	
+  1867  07FD                     l667:	
+  1868                           	global	start
+  1869  07FD  120A  118A  2800   	ljmp	start
+  1870                           	opt stack 0
+  1871                           GLOBAL	__end_of_main
+  1872  0800                     	__end_of_main:
+  1873 ;; =============== function _main ends ============
+  1874                           
+  1875                           	signat	_main,90
+  1876                           	global	_lcd_display
+  1877                           psect	text173,local,class=CODE,delta=2
+  1878                           global __ptext173
+  1879  0417                     __ptext173:
+  1880                           
+  1881 ;; *************** function _lcd_display *****************
+  1882 ;; Defined at:
+  1883 ;;		line 55 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+  1884 ;; Parameters:    Size  Location     Type
+  1885 ;;  m               1    wreg     PTR unsigned char 
+  1886 ;;		 -> STR_4(16), STR_3(18), STR_2(16), STR_1(10), 
+  1887 ;; Auto vars:     Size  Location     Type
+  1888 ;;  m               1    3[COMMON] PTR unsigned char 
+  1889 ;;		 -> STR_4(16), STR_3(18), STR_2(16), STR_1(10), 
+  1890 ;; Return value:  Size  Location     Type
+  1891 ;;		None               void
+  1892 ;; Registers used:
+  1893 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1894 ;; Tracked objects:
+  1895 ;;		On entry : 0/0
+  1896 ;;		On exit  : 0/0
+  1897 ;;		Unchanged: 0/0
+  1898 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1899 ;;      Params:         0       0       0       0       0
+  1900 ;;      Locals:         1       0       0       0       0
+  1901 ;;      Temps:          0       0       0       0       0
+  1902 ;;      Totals:         1       0       0       0       0
+  1903 ;;Total ram usage:        1 bytes
+  1904 ;; Hardware stack levels used:    1
+  1905 ;; Hardware stack levels required when called:    2
+  1906 ;; This function calls:
+  1907 ;;		_lcd_data
+  1908 ;; This function is called by:
+  1909 ;;		_main
+  1910 ;; This function uses a non-reentrant model
+  1911 ;;
+  1912                           psect	text173
+  1913                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+  1914                           	line	55
+  1915                           	global	__size_of_lcd_display
+  1916  002B                     	__size_of_lcd_display	equ	__end_of_lcd_display-_lcd_display
+  1917                           	
+  1918  0417                     _lcd_display:	
+  1919                           	opt	stack 7
+  1920                           ; Regs used in _lcd_display: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1921                           ;lcd_display@m stored from wreg
+  1922  0417  00F3               	movwf	(lcd_display@m)
+  1923                           	line	56
+  1924                           	
+  1925  0418                     l2214:	
+  1926                           ;one rupee coin box.c: 56: for(i=0;m[i]!='\0';i++)
+  1927  0418  3000               	movlw	low(0)
+  1928  0419  1283               	bcf	status, 5	;RP0=0, select bank0
+  1929  041A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1930  041B  00B8               	movwf	(_i)
+  1931  041C  3000               	movlw	high(0)
+  1932  041D  00B9               	movwf	((_i))+1
+  1933  041E  2C34               	goto	l592
+  1934                           	line	57
+  1935                           	
+  1936  041F                     l593:	
+  1937                           	line	58
+  1938                           	
+  1939  041F                     l2216:	
+  1940                           ;one rupee coin box.c: 57: {
+  1941                           ;one rupee coin box.c: 58: lcd_data(m[i]);
+  1942  041F  0838               	movf	(_i),w
+  1943  0420  0773               	addwf	(lcd_display@m),w
+  1944  0421  0084               	movwf	fsr0
+  1945  0422  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1946  0427  120A  118A  239F   	fcall	_lcd_data
+              120A  118A         
+  1947                           	line	56
+  1948                           	
+  1949  042C                     l2218:	
+  1950  042C  3001               	movlw	low(01h)
+  1951  042D  1283               	bcf	status, 5	;RP0=0, select bank0
+  1952  042E  1303               	bcf	status, 6	;RP1=0, select bank0
+  1953  042F  07B8               	addwf	(_i),f
+  1954  0430  1803               	skipnc
+  1955  0431  0AB9               	incf	(_i+1),f
+  1956  0432  3000               	movlw	high(01h)
+  1957  0433  07B9               	addwf	(_i+1),f
+  1958                           	
+  1959  0434                     l592:	
+  1960                           	
+  1961  0434                     l2220:	
+  1962  0434  0838               	movf	(_i),w
+  1963  0435  0773               	addwf	(lcd_display@m),w
+  1964  0436  0084               	movwf	fsr0
+  1965  0437  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1966  043C  3800               	iorlw	0
+  1967  043D  1D03               	skipz
+  1968  043E  2C40               	goto	u2731
+  1969  043F  2C41               	goto	u2730
+  1970  0440                     u2731:
+  1971  0440  2C1F               	goto	l593
+  1972  0441                     u2730:
+  1973                           	
+  1974  0441                     l594:	
+  1975                           	line	60
+  1976                           	
+  1977  0441                     l595:	
+  1978  0441  0008               	return
+  1979                           	opt stack 0
+  1980                           GLOBAL	__end_of_lcd_display
+  1981  0442                     	__end_of_lcd_display:
+  1982 ;; =============== function _lcd_display ends ============
+  1983                           
+  1984                           	signat	_lcd_display,4216
+  1985                           	global	_init
+  1986                           psect	text174,local,class=CODE,delta=2
+  1987                           global __ptext174
+  1988  03C9                     __ptext174:
+  1989                           
+  1990 ;; *************** function _init *****************
+  1991 ;; Defined at:
+  1992 ;;		line 46 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+  1993 ;; Parameters:    Size  Location     Type
+  1994 ;;		None
+  1995 ;; Auto vars:     Size  Location     Type
+  1996 ;;		None
+  1997 ;; Return value:  Size  Location     Type
+  1998 ;;		None               void
+  1999 ;; Registers used:
+  2000 ;;		wreg, status,2, status,0, pclath, cstack
+  2001 ;; Tracked objects:
+  2002 ;;		On entry : 0/0
+  2003 ;;		On exit  : 0/0
+  2004 ;;		Unchanged: 0/0
+  2005 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2006 ;;      Params:         0       0       0       0       0
+  2007 ;;      Locals:         0       0       0       0       0
+  2008 ;;      Temps:          0       0       0       0       0
+  2009 ;;      Totals:         0       0       0       0       0
+  2010 ;;Total ram usage:        0 bytes
+  2011 ;; Hardware stack levels used:    1
+  2012 ;; Hardware stack levels required when called:    2
+  2013 ;; This function calls:
+  2014 ;;		_lcd_cmd
+  2015 ;; This function is called by:
+  2016 ;;		_main
+  2017 ;; This function uses a non-reentrant model
+  2018 ;;
+  2019                           psect	text174
+  2020                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+  2021                           	line	46
+  2022                           	global	__size_of_init
+  2023  0025                     	__size_of_init	equ	__end_of_init-_init
+  2024                           	
+  2025  03C9                     _init:	
+  2026                           	opt	stack 7
+  2027                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
+  2028                           	line	47
+  2029                           	
+  2030  03C9                     l2212:	
+  2031                           ;one rupee coin box.c: 47: lcd_cmd(0x38);
+  2032  03C9  3038               	movlw	(038h)
+  2033  03CA  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2034                           	line	48
+  2035                           ;one rupee coin box.c: 48: lcd_cmd(0x06);
+  2036  03CF  3006               	movlw	(06h)
+  2037  03D0  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2038                           	line	49
+  2039                           ;one rupee coin box.c: 49: lcd_cmd(0x0C);
+  2040  03D5  300C               	movlw	(0Ch)
+  2041  03D6  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2042                           	line	50
+  2043                           ;one rupee coin box.c: 50: lcd_cmd(0x80);
+  2044  03DB  3080               	movlw	(080h)
+  2045  03DC  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2046                           	line	51
+  2047                           ;one rupee coin box.c: 51: lcd_cmd(0xC0);
+  2048  03E1  30C0               	movlw	(0C0h)
+  2049  03E2  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2050                           	line	52
+  2051                           ;one rupee coin box.c: 52: lcd_cmd(0x01);
+  2052  03E7  3001               	movlw	(01h)
+  2053  03E8  120A  118A  23B4   	fcall	_lcd_cmd
+              120A  118A         
+  2054                           	line	53
+  2055                           	
+  2056  03ED                     l589:	
+  2057  03ED  0008               	return
+  2058                           	opt stack 0
+  2059                           GLOBAL	__end_of_init
+  2060  03EE                     	__end_of_init:
+  2061 ;; =============== function _init ends ============
+  2062                           
+  2063                           	signat	_init,88
+  2064                           	global	_lcd_cmd
+  2065                           psect	text175,local,class=CODE,delta=2
+  2066                           global __ptext175
+  2067  03B4                     __ptext175:
+  2068                           
+  2069 ;; *************** function _lcd_cmd *****************
+  2070 ;; Defined at:
+  2071 ;;		line 37 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+  2072 ;; Parameters:    Size  Location     Type
+  2073 ;;  cmd             1    wreg     unsigned char 
+  2074 ;; Auto vars:     Size  Location     Type
+  2075 ;;  cmd             1    2[COMMON] unsigned char 
+  2076 ;; Return value:  Size  Location     Type
+  2077 ;;		None               void
+  2078 ;; Registers used:
+  2079 ;;		wreg, status,2, status,0, pclath, cstack
+  2080 ;; Tracked objects:
+  2081 ;;		On entry : 0/0
+  2082 ;;		On exit  : 0/0
+  2083 ;;		Unchanged: 0/0
+  2084 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2085 ;;      Params:         0       0       0       0       0
+  2086 ;;      Locals:         1       0       0       0       0
+  2087 ;;      Temps:          0       0       0       0       0
+  2088 ;;      Totals:         1       0       0       0       0
+  2089 ;;Total ram usage:        1 bytes
+  2090 ;; Hardware stack levels used:    1
+  2091 ;; Hardware stack levels required when called:    1
+  2092 ;; This function calls:
+  2093 ;;		_delay
+  2094 ;; This function is called by:
+  2095 ;;		_init
+  2096 ;;		_main
+  2097 ;; This function uses a non-reentrant model
+  2098 ;;
+  2099                           psect	text175
+  2100                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+  2101                           	line	37
+  2102                           	global	__size_of_lcd_cmd
+  2103  0015                     	__size_of_lcd_cmd	equ	__end_of_lcd_cmd-_lcd_cmd
+  2104                           	
+  2105  03B4                     _lcd_cmd:	
+  2106                           	opt	stack 7
+  2107                           ; Regs used in _lcd_cmd: [wreg+status,2+status,0+pclath+cstack]
+  2108                           ;lcd_cmd@cmd stored from wreg
+  2109  03B4  00F2               	movwf	(lcd_cmd@cmd)
+  2110                           	line	38
+  2111                           	
+  2112  03B5                     l2200:	
+  2113                           ;one rupee coin box.c: 38: PORTD=cmd;
+  2114  03B5  0872               	movf	(lcd_cmd@cmd),w
+  2115  03B6  1283               	bcf	status, 5	;RP0=0, select bank0
+  2116  03B7  1303               	bcf	status, 6	;RP1=0, select bank0
+  2117  03B8  0088               	movwf	(8)	;volatile
+  2118                           	line	39
+  2119                           	
+  2120  03B9                     l2202:	
+  2121                           ;one rupee coin box.c: 39: RC4=0;
+  2122  03B9  1207               	bcf	(60/8),(60)&7
+  2123                           	line	40
+  2124                           	
+  2125  03BA                     l2204:	
+  2126                           ;one rupee coin box.c: 40: RC5=0;
+  2127  03BA  1287               	bcf	(61/8),(61)&7
+  2128                           	line	41
+  2129                           	
+  2130  03BB                     l2206:	
+  2131                           ;one rupee coin box.c: 41: RC6=1;
+  2132  03BB  1707               	bsf	(62/8),(62)&7
+  2133                           	line	42
+  2134                           	
+  2135  03BC                     l2208:	
+  2136                           ;one rupee coin box.c: 42: delay(3000);
+  2137  03BC  30B8               	movlw	low(0BB8h)
+  2138  03BD  00F0               	movwf	(?_delay)
+  2139  03BE  300B               	movlw	high(0BB8h)
+  2140  03BF  00F1               	movwf	((?_delay))+1
+  2141  03C0  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  2142                           	line	43
+  2143                           	
+  2144  03C5                     l2210:	
+  2145                           ;one rupee coin box.c: 43: RC6=0;
+  2146  03C5  1283               	bcf	status, 5	;RP0=0, select bank0
+  2147  03C6  1303               	bcf	status, 6	;RP1=0, select bank0
+  2148  03C7  1307               	bcf	(62/8),(62)&7
+  2149                           	line	44
+  2150                           	
+  2151  03C8                     l586:	
+  2152  03C8  0008               	return
+  2153                           	opt stack 0
+  2154                           GLOBAL	__end_of_lcd_cmd
+  2155  03C9                     	__end_of_lcd_cmd:
+  2156 ;; =============== function _lcd_cmd ends ============
+  2157                           
+  2158                           	signat	_lcd_cmd,4216
+  2159                           	global	_lcd_data
+  2160                           psect	text176,local,class=CODE,delta=2
+  2161                           global __ptext176
+  2162  039F                     __ptext176:
+  2163                           
+  2164 ;; *************** function _lcd_data *****************
+  2165 ;; Defined at:
+  2166 ;;		line 28 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+  2167 ;; Parameters:    Size  Location     Type
+  2168 ;;  data            1    wreg     unsigned char 
+  2169 ;; Auto vars:     Size  Location     Type
+  2170 ;;  data            1    2[COMMON] unsigned char 
+  2171 ;; Return value:  Size  Location     Type
+  2172 ;;		None               void
+  2173 ;; Registers used:
+  2174 ;;		wreg, status,2, status,0, pclath, cstack
+  2175 ;; Tracked objects:
+  2176 ;;		On entry : 0/0
+  2177 ;;		On exit  : 0/0
+  2178 ;;		Unchanged: 0/0
+  2179 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2180 ;;      Params:         0       0       0       0       0
+  2181 ;;      Locals:         1       0       0       0       0
+  2182 ;;      Temps:          0       0       0       0       0
+  2183 ;;      Totals:         1       0       0       0       0
+  2184 ;;Total ram usage:        1 bytes
+  2185 ;; Hardware stack levels used:    1
+  2186 ;; Hardware stack levels required when called:    1
+  2187 ;; This function calls:
+  2188 ;;		_delay
+  2189 ;; This function is called by:
+  2190 ;;		_lcd_display
+  2191 ;;		_main
+  2192 ;; This function uses a non-reentrant model
+  2193 ;;
+  2194                           psect	text176
+  2195                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+  2196                           	line	28
+  2197                           	global	__size_of_lcd_data
+  2198  0015                     	__size_of_lcd_data	equ	__end_of_lcd_data-_lcd_data
+  2199                           	
+  2200  039F                     _lcd_data:	
+  2201                           	opt	stack 7
+  2202                           ; Regs used in _lcd_data: [wreg+status,2+status,0+pclath+cstack]
+  2203                           ;lcd_data@data stored from wreg
+  2204  039F  00F2               	movwf	(lcd_data@data)
+  2205                           	line	29
+  2206                           	
+  2207  03A0                     l2188:	
+  2208                           ;one rupee coin box.c: 29: PORTD=data;
+  2209  03A0  0872               	movf	(lcd_data@data),w
+  2210  03A1  1283               	bcf	status, 5	;RP0=0, select bank0
+  2211  03A2  1303               	bcf	status, 6	;RP1=0, select bank0
+  2212  03A3  0088               	movwf	(8)	;volatile
+  2213                           	line	30
+  2214                           	
+  2215  03A4                     l2190:	
+  2216                           ;one rupee coin box.c: 30: RC4=1;
+  2217  03A4  1607               	bsf	(60/8),(60)&7
+  2218                           	line	31
+  2219                           	
+  2220  03A5                     l2192:	
+  2221                           ;one rupee coin box.c: 31: RC5=0;
+  2222  03A5  1287               	bcf	(61/8),(61)&7
+  2223                           	line	32
+  2224                           	
+  2225  03A6                     l2194:	
+  2226                           ;one rupee coin box.c: 32: RC6=1;
+  2227  03A6  1707               	bsf	(62/8),(62)&7
+  2228                           	line	33
+  2229                           	
+  2230  03A7                     l2196:	
+  2231                           ;one rupee coin box.c: 33: delay(3000);
+  2232  03A7  30B8               	movlw	low(0BB8h)
+  2233  03A8  00F0               	movwf	(?_delay)
+  2234  03A9  300B               	movlw	high(0BB8h)
+  2235  03AA  00F1               	movwf	((?_delay))+1
+  2236  03AB  120A  118A  238D   	fcall	_delay
+              120A  118A         
+  2237                           	line	34
+  2238                           	
+  2239  03B0                     l2198:	
+  2240                           ;one rupee coin box.c: 34: RC6=0;
+  2241  03B0  1283               	bcf	status, 5	;RP0=0, select bank0
+  2242  03B1  1303               	bcf	status, 6	;RP1=0, select bank0
+  2243  03B2  1307               	bcf	(62/8),(62)&7
+  2244                           	line	35
+  2245                           	
+  2246  03B3                     l583:	
+  2247  03B3  0008               	return
+  2248                           	opt stack 0
+  2249                           GLOBAL	__end_of_lcd_data
+  2250  03B4                     	__end_of_lcd_data:
+  2251 ;; =============== function _lcd_data ends ============
+  2252                           
+  2253                           	signat	_lcd_data,4216
+  2254                           	global	___awmod
+  2255                           psect	text177,local,class=CODE,delta=2
+  2256                           global __ptext177
+  2257  0442                     __ptext177:
+  2258                           
+  2259 ;; *************** function ___awmod *****************
+  2260 ;; Defined at:
+  2261 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awmod.c"
+  2262 ;; Parameters:    Size  Location     Type
+  2263 ;;  divisor         2    0[COMMON] int 
+  2264 ;;  dividend        2    2[COMMON] int 
+  2265 ;; Auto vars:     Size  Location     Type
+  2266 ;;  sign            1    6[COMMON] unsigned char 
+  2267 ;;  counter         1    5[COMMON] unsigned char 
+  2268 ;; Return value:  Size  Location     Type
+  2269 ;;                  2    0[COMMON] int 
+  2270 ;; Registers used:
+  2271 ;;		wreg, status,2, status,0
+  2272 ;; Tracked objects:
+  2273 ;;		On entry : 0/0
+  2274 ;;		On exit  : 0/0
+  2275 ;;		Unchanged: 0/0
+  2276 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2277 ;;      Params:         4       0       0       0       0
+  2278 ;;      Locals:         2       0       0       0       0
+  2279 ;;      Temps:          1       0       0       0       0
+  2280 ;;      Totals:         7       0       0       0       0
+  2281 ;;Total ram usage:        7 bytes
+  2282 ;; Hardware stack levels used:    1
+  2283 ;; This function calls:
+  2284 ;;		Nothing
+  2285 ;; This function is called by:
+  2286 ;;		_main
+  2287 ;; This function uses a non-reentrant model
+  2288 ;;
+  2289                           psect	text177
+  2290                           	file	"C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awmod.c"
+  2291                           	line	5
+  2292                           	global	__size_of___awmod
+  2293  0060                     	__size_of___awmod	equ	__end_of___awmod-___awmod
+  2294                           	
+  2295  0442                     ___awmod:	
+  2296                           	opt	stack 7
+  2297                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+  2298                           	line	8
+  2299                           	
+  2300  0442                     l2152:	
+  2301  0442  1003               	clrc
+  2302  0443  3000               	movlw	0
+  2303  0444  1803               	btfsc	status,0
+  2304  0445  3001               	movlw	1
+  2305  0446  00F6               	movwf	(___awmod@sign)
+  2306                           	line	9
+  2307                           	
+  2308  0447                     l2154:	
+  2309  0447  1FF3               	btfss	(___awmod@dividend+1),7
+  2310  0448  2C4A               	goto	u2641
+  2311  0449  2C4B               	goto	u2640
+  2312  044A                     u2641:
+  2313  044A  2C53               	goto	l884
+  2314  044B                     u2640:
+  2315                           	line	10
+  2316                           	
+  2317  044B                     l2156:	
+  2318  044B  09F2               	comf	(___awmod@dividend),f
+  2319  044C  09F3               	comf	(___awmod@dividend+1),f
+  2320  044D  0AF2               	incf	(___awmod@dividend),f
+  2321  044E  1903               	skipnz
+  2322  044F  0AF3               	incf	(___awmod@dividend+1),f
+  2323                           	line	11
+  2324  0450  01F6               	clrf	(___awmod@sign)
+  2325  0451  1403               	bsf	status,0
+  2326  0452  0DF6               	rlf	(___awmod@sign),f
+  2327                           	line	12
+  2328                           	
+  2329  0453                     l884:	
+  2330                           	line	13
+  2331                           	
+  2332  0453                     l2158:	
+  2333  0453  1FF1               	btfss	(___awmod@divisor+1),7
+  2334  0454  2C56               	goto	u2651
+  2335  0455  2C57               	goto	u2650
+  2336  0456                     u2651:
+  2337  0456  2C5C               	goto	l885
+  2338  0457                     u2650:
+  2339                           	line	14
+  2340                           	
+  2341  0457                     l2160:	
+  2342  0457  09F0               	comf	(___awmod@divisor),f
+  2343  0458  09F1               	comf	(___awmod@divisor+1),f
+  2344  0459  0AF0               	incf	(___awmod@divisor),f
+  2345  045A  1903               	skipnz
+  2346  045B  0AF1               	incf	(___awmod@divisor+1),f
+  2347                           	
+  2348  045C                     l885:	
+  2349                           	line	15
+  2350                           	
+  2351  045C                     l2162:	
+  2352  045C  0871               	movf	(___awmod@divisor+1),w
+  2353  045D  0470               	iorwf	(___awmod@divisor),w
+  2354  045E  1903               	skipnz
+  2355  045F  2C61               	goto	u2661
+  2356  0460  2C62               	goto	u2660
+  2357  0461                     u2661:
+  2358  0461  2C92               	goto	l886
+  2359  0462                     u2660:
+  2360                           	line	16
+  2361                           	
+  2362  0462                     l2164:	
+  2363  0462  01F5               	clrf	(___awmod@counter)
+  2364  0463  1403               	bsf	status,0
+  2365  0464  0DF5               	rlf	(___awmod@counter),f
+  2366                           	line	17
+  2367  0465  2C71               	goto	l887
+  2368                           	
+  2369  0466                     l888:	
+  2370                           	line	18
+  2371                           	
+  2372  0466                     l2166:	
+  2373  0466  3001               	movlw	01h
+  2374                           	
+  2375  0467                     u2675:
+  2376  0467  1003               	clrc
+  2377  0468  0DF0               	rlf	(___awmod@divisor),f
+  2378  0469  0DF1               	rlf	(___awmod@divisor+1),f
+  2379  046A  3EFF               	addlw	-1
+  2380  046B  1D03               	skipz
+  2381  046C  2C67               	goto	u2675
+  2382                           	line	19
+  2383                           	
+  2384  046D                     l2168:	
+  2385  046D  3001               	movlw	(01h)
+  2386  046E  00F4               	movwf	(??___awmod+0)+0
+  2387  046F  0874               	movf	(??___awmod+0)+0,w
+  2388  0470  07F5               	addwf	(___awmod@counter),f
+  2389                           	line	20
+  2390                           	
+  2391  0471                     l887:	
+  2392                           	line	17
+  2393                           	
+  2394  0471                     l2170:	
+  2395  0471  1FF1               	btfss	(___awmod@divisor+1),(15)&7
+  2396  0472  2C74               	goto	u2681
+  2397  0473  2C75               	goto	u2680
+  2398  0474                     u2681:
+  2399  0474  2C66               	goto	l888
+  2400  0475                     u2680:
+  2401                           	
+  2402  0475                     l889:	
+  2403                           	line	21
+  2404                           	
+  2405  0475                     l890:	
+  2406                           	line	22
+  2407                           	
+  2408  0475                     l2172:	
+  2409  0475  0871               	movf	(___awmod@divisor+1),w
+  2410  0476  0273               	subwf	(___awmod@dividend+1),w
+  2411  0477  1D03               	skipz
+  2412  0478  2C7B               	goto	u2695
+  2413  0479  0870               	movf	(___awmod@divisor),w
+  2414  047A  0272               	subwf	(___awmod@dividend),w
+  2415  047B                     u2695:
+  2416  047B  1C03               	skipc
+  2417  047C  2C7E               	goto	u2691
+  2418  047D  2C7F               	goto	u2690
+  2419  047E                     u2691:
+  2420  047E  2C85               	goto	l891
+  2421  047F                     u2690:
+  2422                           	line	23
+  2423                           	
+  2424  047F                     l2174:	
+  2425  047F  0870               	movf	(___awmod@divisor),w
+  2426  0480  02F2               	subwf	(___awmod@dividend),f
+  2427  0481  0871               	movf	(___awmod@divisor+1),w
+  2428  0482  1C03               	skipc
+  2429  0483  03F3               	decf	(___awmod@dividend+1),f
+  2430  0484  02F3               	subwf	(___awmod@dividend+1),f
+  2431                           	
+  2432  0485                     l891:	
+  2433                           	line	24
+  2434                           	
+  2435  0485                     l2176:	
+  2436  0485  3001               	movlw	01h
+  2437                           	
+  2438  0486                     u2705:
+  2439  0486  1003               	clrc
+  2440  0487  0CF1               	rrf	(___awmod@divisor+1),f
+  2441  0488  0CF0               	rrf	(___awmod@divisor),f
+  2442  0489  3EFF               	addlw	-1
+  2443  048A  1D03               	skipz
+  2444  048B  2C86               	goto	u2705
+  2445                           	line	25
+  2446                           	
+  2447  048C                     l2178:	
+  2448  048C  3001               	movlw	low(01h)
+  2449  048D  02F5               	subwf	(___awmod@counter),f
+  2450  048E  1D03               	btfss	status,2
+  2451  048F  2C91               	goto	u2711
+  2452  0490  2C92               	goto	u2710
+  2453  0491                     u2711:
+  2454  0491  2C75               	goto	l890
+  2455  0492                     u2710:
+  2456                           	
+  2457  0492                     l892:	
+  2458                           	line	26
+  2459                           	
+  2460  0492                     l886:	
+  2461                           	line	27
+  2462                           	
+  2463  0492                     l2180:	
+  2464  0492  0876               	movf	(___awmod@sign),w
+  2465  0493  1D03               	skipz
+  2466  0494  2C96               	goto	u2720
+  2467  0495  2C9B               	goto	l893
+  2468  0496                     u2720:
+  2469                           	line	28
+  2470                           	
+  2471  0496                     l2182:	
+  2472  0496  09F2               	comf	(___awmod@dividend),f
+  2473  0497  09F3               	comf	(___awmod@dividend+1),f
+  2474  0498  0AF2               	incf	(___awmod@dividend),f
+  2475  0499  1903               	skipnz
+  2476  049A  0AF3               	incf	(___awmod@dividend+1),f
+  2477                           	
+  2478  049B                     l893:	
+  2479                           	line	29
+  2480                           	
+  2481  049B                     l2184:	
+  2482  049B  0873               	movf	(___awmod@dividend+1),w
+  2483  049C  01F1               	clrf	(?___awmod+1)
+  2484  049D  07F1               	addwf	(?___awmod+1)
+  2485  049E  0872               	movf	(___awmod@dividend),w
+  2486  049F  01F0               	clrf	(?___awmod)
+  2487  04A0  07F0               	addwf	(?___awmod)
+  2488                           
+  2489                           	
+  2490  04A1                     l2186:	
+  2491                           	line	30
+  2492                           	
+  2493  04A1                     l894:	
+  2494  04A1  0008               	return
+  2495                           	opt stack 0
+  2496                           GLOBAL	__end_of___awmod
+  2497  04A2                     	__end_of___awmod:
+  2498 ;; =============== function ___awmod ends ============
+  2499                           
+  2500                           	signat	___awmod,8314
+  2501                           	global	___awdiv
+  2502                           psect	text178,local,class=CODE,delta=2
+  2503                           global __ptext178
+  2504  04A2                     __ptext178:
+  2505                           
+  2506 ;; *************** function ___awdiv *****************
+  2507 ;; Defined at:
+  2508 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awdiv.c"
+  2509 ;; Parameters:    Size  Location     Type
+  2510 ;;  divisor         2    0[COMMON] int 
+  2511 ;;  dividend        2    2[COMMON] int 
+  2512 ;; Auto vars:     Size  Location     Type
+  2513 ;;  quotient        2    7[COMMON] int 
+  2514 ;;  sign            1    6[COMMON] unsigned char 
+  2515 ;;  counter         1    5[COMMON] unsigned char 
+  2516 ;; Return value:  Size  Location     Type
+  2517 ;;                  2    0[COMMON] int 
+  2518 ;; Registers used:
+  2519 ;;		wreg, status,2, status,0
+  2520 ;; Tracked objects:
+  2521 ;;		On entry : 0/0
+  2522 ;;		On exit  : 0/0
+  2523 ;;		Unchanged: 0/0
+  2524 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2525 ;;      Params:         4       0       0       0       0
+  2526 ;;      Locals:         4       0       0       0       0
+  2527 ;;      Temps:          1       0       0       0       0
+  2528 ;;      Totals:         9       0       0       0       0
+  2529 ;;Total ram usage:        9 bytes
+  2530 ;; Hardware stack levels used:    1
+  2531 ;; This function calls:
+  2532 ;;		Nothing
+  2533 ;; This function is called by:
+  2534 ;;		_main
+  2535 ;; This function uses a non-reentrant model
+  2536 ;;
+  2537                           psect	text178
+  2538                           	file	"C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awdiv.c"
+  2539                           	line	5
+  2540                           	global	__size_of___awdiv
+  2541  0070                     	__size_of___awdiv	equ	__end_of___awdiv-___awdiv
+  2542                           	
+  2543  04A2                     ___awdiv:	
+  2544                           	opt	stack 7
+  2545                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  2546                           	line	9
+  2547                           	
+  2548  04A2                     l2114:	
+  2549  04A2  1003               	clrc
+  2550  04A3  3000               	movlw	0
+  2551  04A4  1803               	btfsc	status,0
+  2552  04A5  3001               	movlw	1
+  2553  04A6  00F6               	movwf	(___awdiv@sign)
+  2554                           	line	10
+  2555                           	
+  2556  04A7                     l2116:	
+  2557  04A7  1FF1               	btfss	(___awdiv@divisor+1),7
+  2558  04A8  2CAA               	goto	u2541
+  2559  04A9  2CAB               	goto	u2540
+  2560  04AA                     u2541:
+  2561  04AA  2CB3               	goto	l816
+  2562  04AB                     u2540:
+  2563                           	line	11
+  2564                           	
+  2565  04AB                     l2118:	
+  2566  04AB  09F0               	comf	(___awdiv@divisor),f
+  2567  04AC  09F1               	comf	(___awdiv@divisor+1),f
+  2568  04AD  0AF0               	incf	(___awdiv@divisor),f
+  2569  04AE  1903               	skipnz
+  2570  04AF  0AF1               	incf	(___awdiv@divisor+1),f
+  2571                           	line	12
+  2572  04B0  01F6               	clrf	(___awdiv@sign)
+  2573  04B1  1403               	bsf	status,0
+  2574  04B2  0DF6               	rlf	(___awdiv@sign),f
+  2575                           	line	13
+  2576                           	
+  2577  04B3                     l816:	
+  2578                           	line	14
+  2579                           	
+  2580  04B3                     l2120:	
+  2581  04B3  1FF3               	btfss	(___awdiv@dividend+1),7
+  2582  04B4  2CB6               	goto	u2551
+  2583  04B5  2CB7               	goto	u2550
+  2584  04B6                     u2551:
+  2585  04B6  2CC0               	goto	l817
+  2586  04B7                     u2550:
+  2587                           	line	15
+  2588                           	
+  2589  04B7                     l2122:	
+  2590  04B7  09F2               	comf	(___awdiv@dividend),f
+  2591  04B8  09F3               	comf	(___awdiv@dividend+1),f
+  2592  04B9  0AF2               	incf	(___awdiv@dividend),f
+  2593  04BA  1903               	skipnz
+  2594  04BB  0AF3               	incf	(___awdiv@dividend+1),f
+  2595                           	line	16
+  2596                           	
+  2597  04BC                     l2124:	
+  2598  04BC  3001               	movlw	(01h)
+  2599  04BD  00F4               	movwf	(??___awdiv+0)+0
+  2600  04BE  0874               	movf	(??___awdiv+0)+0,w
+  2601  04BF  06F6               	xorwf	(___awdiv@sign),f
+  2602                           	line	17
+  2603                           	
+  2604  04C0                     l817:	
+  2605                           	line	18
+  2606  04C0  3000               	movlw	low(0)
+  2607  04C1  00F7               	movwf	(___awdiv@quotient)
+  2608  04C2  3000               	movlw	high(0)
+  2609  04C3  00F8               	movwf	((___awdiv@quotient))+1
+  2610                           	line	19
+  2611  04C4  0871               	movf	(___awdiv@divisor+1),w
+  2612  04C5  0470               	iorwf	(___awdiv@divisor),w
+  2613  04C6  1903               	skipnz
+  2614  04C7  2CC9               	goto	u2561
+  2615  04C8  2CCA               	goto	u2560
+  2616  04C9                     u2561:
+  2617  04C9  2D02               	goto	l818
+  2618  04CA                     u2560:
+  2619                           	line	20
+  2620                           	
+  2621  04CA                     l2126:	
+  2622  04CA  01F5               	clrf	(___awdiv@counter)
+  2623  04CB  1403               	bsf	status,0
+  2624  04CC  0DF5               	rlf	(___awdiv@counter),f
+  2625                           	line	21
+  2626  04CD  2CD9               	goto	l819
+  2627                           	
+  2628  04CE                     l820:	
+  2629                           	line	22
+  2630                           	
+  2631  04CE                     l2128:	
+  2632  04CE  3001               	movlw	01h
+  2633                           	
+  2634  04CF                     u2575:
+  2635  04CF  1003               	clrc
+  2636  04D0  0DF0               	rlf	(___awdiv@divisor),f
+  2637  04D1  0DF1               	rlf	(___awdiv@divisor+1),f
+  2638  04D2  3EFF               	addlw	-1
+  2639  04D3  1D03               	skipz
+  2640  04D4  2CCF               	goto	u2575
+  2641                           	line	23
+  2642                           	
+  2643  04D5                     l2130:	
+  2644  04D5  3001               	movlw	(01h)
+  2645  04D6  00F4               	movwf	(??___awdiv+0)+0
+  2646  04D7  0874               	movf	(??___awdiv+0)+0,w
+  2647  04D8  07F5               	addwf	(___awdiv@counter),f
+  2648                           	line	24
+  2649                           	
+  2650  04D9                     l819:	
+  2651                           	line	21
+  2652                           	
+  2653  04D9                     l2132:	
+  2654  04D9  1FF1               	btfss	(___awdiv@divisor+1),(15)&7
+  2655  04DA  2CDC               	goto	u2581
+  2656  04DB  2CDD               	goto	u2580
+  2657  04DC                     u2581:
+  2658  04DC  2CCE               	goto	l820
+  2659  04DD                     u2580:
+  2660                           	
+  2661  04DD                     l821:	
+  2662                           	line	25
+  2663                           	
+  2664  04DD                     l822:	
+  2665                           	line	26
+  2666                           	
+  2667  04DD                     l2134:	
+  2668  04DD  3001               	movlw	01h
+  2669                           	
+  2670  04DE                     u2595:
+  2671  04DE  1003               	clrc
+  2672  04DF  0DF7               	rlf	(___awdiv@quotient),f
+  2673  04E0  0DF8               	rlf	(___awdiv@quotient+1),f
+  2674  04E1  3EFF               	addlw	-1
+  2675  04E2  1D03               	skipz
+  2676  04E3  2CDE               	goto	u2595
+  2677                           	line	27
+  2678  04E4  0871               	movf	(___awdiv@divisor+1),w
+  2679  04E5  0273               	subwf	(___awdiv@dividend+1),w
+  2680  04E6  1D03               	skipz
+  2681  04E7  2CEA               	goto	u2605
+  2682  04E8  0870               	movf	(___awdiv@divisor),w
+  2683  04E9  0272               	subwf	(___awdiv@dividend),w
+  2684  04EA                     u2605:
+  2685  04EA  1C03               	skipc
+  2686  04EB  2CED               	goto	u2601
+  2687  04EC  2CEE               	goto	u2600
+  2688  04ED                     u2601:
+  2689  04ED  2CF5               	goto	l823
+  2690  04EE                     u2600:
+  2691                           	line	28
+  2692                           	
+  2693  04EE                     l2136:	
+  2694  04EE  0870               	movf	(___awdiv@divisor),w
+  2695  04EF  02F2               	subwf	(___awdiv@dividend),f
+  2696  04F0  0871               	movf	(___awdiv@divisor+1),w
+  2697  04F1  1C03               	skipc
+  2698  04F2  03F3               	decf	(___awdiv@dividend+1),f
+  2699  04F3  02F3               	subwf	(___awdiv@dividend+1),f
+  2700                           	line	29
+  2701                           	
+  2702  04F4                     l2138:	
+  2703  04F4  1477               	bsf	(___awdiv@quotient)+(0/8),(0)&7
+  2704                           	line	30
+  2705                           	
+  2706  04F5                     l823:	
+  2707                           	line	31
+  2708                           	
+  2709  04F5                     l2140:	
+  2710  04F5  3001               	movlw	01h
+  2711                           	
+  2712  04F6                     u2615:
+  2713  04F6  1003               	clrc
+  2714  04F7  0CF1               	rrf	(___awdiv@divisor+1),f
+  2715  04F8  0CF0               	rrf	(___awdiv@divisor),f
+  2716  04F9  3EFF               	addlw	-1
+  2717  04FA  1D03               	skipz
+  2718  04FB  2CF6               	goto	u2615
+  2719                           	line	32
+  2720                           	
+  2721  04FC                     l2142:	
+  2722  04FC  3001               	movlw	low(01h)
+  2723  04FD  02F5               	subwf	(___awdiv@counter),f
+  2724  04FE  1D03               	btfss	status,2
+  2725  04FF  2D01               	goto	u2621
+  2726  0500  2D02               	goto	u2620
+  2727  0501                     u2621:
+  2728  0501  2CDD               	goto	l822
+  2729  0502                     u2620:
+  2730                           	
+  2731  0502                     l824:	
+  2732                           	line	33
+  2733                           	
+  2734  0502                     l818:	
+  2735                           	line	34
+  2736                           	
+  2737  0502                     l2144:	
+  2738  0502  0876               	movf	(___awdiv@sign),w
+  2739  0503  1D03               	skipz
+  2740  0504  2D06               	goto	u2630
+  2741  0505  2D0B               	goto	l825
+  2742  0506                     u2630:
+  2743                           	line	35
+  2744                           	
+  2745  0506                     l2146:	
+  2746  0506  09F7               	comf	(___awdiv@quotient),f
+  2747  0507  09F8               	comf	(___awdiv@quotient+1),f
+  2748  0508  0AF7               	incf	(___awdiv@quotient),f
+  2749  0509  1903               	skipnz
+  2750  050A  0AF8               	incf	(___awdiv@quotient+1),f
+  2751                           	
+  2752  050B                     l825:	
+  2753                           	line	36
+  2754                           	
+  2755  050B                     l2148:	
+  2756  050B  0878               	movf	(___awdiv@quotient+1),w
+  2757  050C  01F1               	clrf	(?___awdiv+1)
+  2758  050D  07F1               	addwf	(?___awdiv+1)
+  2759  050E  0877               	movf	(___awdiv@quotient),w
+  2760  050F  01F0               	clrf	(?___awdiv)
+  2761  0510  07F0               	addwf	(?___awdiv)
+  2762                           
+  2763                           	
+  2764  0511                     l2150:	
+  2765                           	line	37
+  2766                           	
+  2767  0511                     l826:	
+  2768  0511  0008               	return
+  2769                           	opt stack 0
+  2770                           GLOBAL	__end_of___awdiv
+  2771  0512                     	__end_of___awdiv:
+  2772 ;; =============== function ___awdiv ends ============
+  2773                           
+  2774                           	signat	___awdiv,8314
+  2775                           	global	_delay
+  2776                           psect	text179,local,class=CODE,delta=2
+  2777                           global __ptext179
+  2778  038D                     __ptext179:
+  2779                           
+  2780 ;; *************** function _delay *****************
+  2781 ;; Defined at:
+  2782 ;;		line 24 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee coin box.c"
+  2783 ;; Parameters:    Size  Location     Type
+  2784 ;;  x               2    0[COMMON] unsigned int 
+  2785 ;; Auto vars:     Size  Location     Type
+  2786 ;;		None
+  2787 ;; Return value:  Size  Location     Type
+  2788 ;;		None               void
+  2789 ;; Registers used:
+  2790 ;;		wreg
+  2791 ;; Tracked objects:
+  2792 ;;		On entry : 0/0
+  2793 ;;		On exit  : 0/0
+  2794 ;;		Unchanged: 0/0
+  2795 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2796 ;;      Params:         2       0       0       0       0
+  2797 ;;      Locals:         0       0       0       0       0
+  2798 ;;      Temps:          0       0       0       0       0
+  2799 ;;      Totals:         2       0       0       0       0
+  2800 ;;Total ram usage:        2 bytes
+  2801 ;; Hardware stack levels used:    1
+  2802 ;; This function calls:
+  2803 ;;		Nothing
+  2804 ;; This function is called by:
+  2805 ;;		_lcd_data
+  2806 ;;		_lcd_cmd
+  2807 ;;		_main
+  2808 ;; This function uses a non-reentrant model
+  2809 ;;
+  2810                           psect	text179
+  2811                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\lcd\one rupee coin box\one rupee c
+                                 oin box.c"
+  2812                           	line	24
+  2813                           	global	__size_of_delay
+  2814  0012                     	__size_of_delay	equ	__end_of_delay-_delay
+  2815                           	
+  2816  038D                     _delay:	
+  2817                           	opt	stack 6
+  2818                           ; Regs used in _delay: [wreg]
+  2819                           	line	25
+  2820                           	
+  2821  038D                     l2110:	
+  2822                           ;one rupee coin box.c: 25: while(x--);
+  2823  038D  2B8E               	goto	l577
+  2824                           	
+  2825  038E                     l578:	
+  2826                           	
+  2827  038E                     l577:	
+  2828                           	
+  2829  038E                     l2112:	
+  2830  038E  3001               	movlw	low(01h)
+  2831  038F  02F0               	subwf	(delay@x),f
+  2832  0390  3000               	movlw	high(01h)
+  2833  0391  1C03               	skipc
+  2834  0392  03F1               	decf	(delay@x+1),f
+  2835  0393  02F1               	subwf	(delay@x+1),f
+  2836  0394  30FF               	movlw	high(0FFFFh)
+  2837  0395  0671               	xorwf	((delay@x+1)),w
+  2838  0396  1D03               	skipz
+  2839  0397  2B9A               	goto	u2535
+  2840  0398  30FF               	movlw	low(0FFFFh)
+  2841  0399  0670               	xorwf	((delay@x)),w
+  2842  039A                     u2535:
+  2843                           
+  2844  039A  1D03               	skipz
+  2845  039B  2B9D               	goto	u2531
+  2846  039C  2B9E               	goto	u2530
+  2847  039D                     u2531:
+  2848  039D  2B8E               	goto	l578
+  2849  039E                     u2530:
+  2850                           	
+  2851  039E                     l579:	
+  2852                           	line	26
+  2853                           	
+  2854  039E                     l580:	
+  2855  039E  0008               	return
+  2856                           	opt stack 0
+  2857                           GLOBAL	__end_of_delay
+  2858  039F                     	__end_of_delay:
+  2859 ;; =============== function _delay ends ============
+  2860                           
+  2861                           	signat	_delay,4216
+  2862                           psect	text180,local,class=CODE,delta=2
+  2863                           global __ptext180
+  2864  0000                     __ptext180:
+  2865                           	global	btemp
+  2866  007E                     	btemp set 07Eh
+  2867                           
+  2868                           	DABS	1,126,2	;btemp
+  2869                           	global	wtemp0
+  2870  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Tue Mar 21 18:47:56 2023
+
+                   _a 0032                     _b 0020                     _c 0034                     _d 003A  
+                   _i 0038                     _j 007A                     _k 007C                     pc 0002  
+        lcd_data@data 0072          ___awdiv@sign 0076                    fsr 0004                   l600 0531  
+                 l601 0531                   l610 06F6                   l602 0535                   l611 059C  
+                 l603 0542                   l620 05C5                   l612 0581                   l604 0542  
+                 l621 05C5                   l613 0581                   l605 0548                   l630 05FF  
+                 l622 05C9                   l614 0585                   l606 0570                   l631 0638  
+                 l623 05F1                   l615 05BE                   l607 054D                   l640 0661  
+                 l632 061D                   l624 05E7                   l616 05A3                   l608 054D  
+                 l641 0661                   l633 061D                   l625 05E7                   l617 05A3  
+                 l609 0551                   l650 06AC                   l642 0665                   l634 0621  
+                 l626 05EB                   l618 05A7                   l651 06E5                   l643 06A1  
+                 l635 065A                   l627 0616                   l619 05E0                   l580 039E  
+                 l820 04CE                   l660 0735                   l652 06CA                   l644 0686  
+                 l636 063F                   l628 05FB                   l821 04DD                   l661 07FC  
+                 l653 06CA                   l645 0686                   l637 063F                   l629 05FB  
+                 l822 04DD                   l662 07A1                   l654 06CE                   l646 068A  
+                 l638 0643                   l823 04F5                   l583 03B3                   l663 07C6  
+                 l655 06F6                   l647 06C3                   l639 067C                   l824 0502  
+                 l816 04B3                   l592 0434                   l664 07F2                   l656 06EC  
+                 l648 06A8                   l577 038E                   l825 050B                   l817 04C0  
+                 l593 041F                   l665 07FC                   l657 06EC                   l649 06A8  
+                 l578 038E                   l826 0511                   l818 0502                   l586 03C8  
+                 l594 0441                   l666 07FD                   l658 06F0                   l579 039E  
+                 l819 04D9                   l595 0441                   l667 07FD                   l659 07FC  
+                 l589 03ED                   l598 052A                   l599 0570                   l890 0475  
+                 l891 0485                   l892 0492                   l884 0453                   l893 049B  
+                 l885 045C                   l894 04A1                   l886 0492                   l887 0471  
+                 l888 0466                   l889 0475                   _RB0 0030                   _RB1 0031  
+                 _RC0 0038                   _RB2 0032                   _RC1 0039                   _RB3 0033  
+                 _RC2 003A                   _RB4 0034                   _RB5 0035                   _RC4 003C  
+                 _RB6 0036                   _RC5 003D                   _RB7 0037                   _RC6 003E  
+                 _dv1 0036                   _dv2 003C                   fsr0 0004                   indf 0000  
+        ___awmod@sign 0076          lcd_display@m 0073                  l2110 038D                  l2112 038E  
+                l2120 04B3                  l2200 03B5                  l2130 04D5                  l2122 04B7  
+                l2114 04A2                  l2210 03C5                  l2202 03B9                  l2140 04F5  
+                l2132 04D9                  l2124 04BC                  l2116 04A7                  l2204 03BA  
+                l2212 03C9                  l2220 0434                  l2300 05FA                  l2150 0511  
+                l2142 04FC                  l2134 04DD                  l2126 04CA                  l2118 04AB  
+                l2206 03BB                  l2214 0418                  l2310 061C                  l2302 05FF  
+                l2230 0522                  l2222 0512                  l2144 0502                  l2136 04EE  
+                l2128 04CE                  l2160 0457                  l2152 0442                  l2208 03BC  
+                l2216 041F                  l2400 0734                  l2320 063E                  l2312 0621  
+                l2304 0605                  l2240 053B                  l2232 0525                  l2224 0518  
+                l2146 0506                  l2138 04F4                  l2170 0471                  l2162 045C  
+                l2154 0447                  l2218 042C                  l2410 07AE                  l2402 0735  
+                l2330 0660                  l2322 0643                  l2314 0627                  l2306 0610  
+                l2250 0561                  l2242 054C                  l2234 052A                  l2226 051C  
+                l2148 050B                  l2180 0492                  l2172 0475                  l2164 0462  
+                l2156 044B                  l2420 07D7                  l2412 07B1                  l2404 0793  
+                l2340 067F                  l2332 0665                  l2324 0649                  l2316 0632  
+                l2308 0616                  l2260 0585                  l2252 056A                  l2244 0551  
+                l2236 0530                  l2228 051F                  l2182 0496                  l2174 047F  
+                l2166 0466                  l2158 0453                  l2190 03A4                  l2430 07F8  
+                l2422 07E0                  l2414 07BA                  l2406 0799                  l2350 0690  
+                l2342 0680                  l2334 066B                  l2326 0654                  l2318 0638  
+                l2270 05A7                  l2262 058B                  l2254 0570                  l2246 0555  
+                l2238 0535                  l2184 049B                  l2176 0485                  l2168 046D  
+                l2192 03A5                  l2424 07E6                  l2416 07C6                  l2408 07A1  
+                l2360 06B2                  l2352 069B                  l2344 0681                  l2336 0676  
+                l2328 065A                  l2280 05C9                  l2272 05AD                  l2264 0596  
+                l2256 0579                  l2248 055B                  l2186 04A1                  l2178 048C  
+                l2194 03A6                  l2426 07EC                  l2418 07CD                  l2370 06D4  
+                l2362 06BD                  l2354 06A1                  l2346 0685                  l2338 067C  
+                l2290 05EB                  l2282 05CF                  l2274 05B8                  l2266 059C  
+                l2258 0580                  l2196 03A7                  l2188 03A0                  l2428 07F2  
+                l2380 06F6                  l2372 06DF                  l2364 06C3                  l2356 06A7  
+                l2348 068A                  l2292 05F1                  l2284 05DA                  l2276 05BE  
+                l2268 05A2                  l2198 03B0                  l2390 0717                  l2382 0703  
+                l2374 06E5                  l2366 06C9                  l2358 06AC                  l2294 05F4  
+                l2286 05E0                  l2278 05C4                  l2392 071D                  l2384 070C  
+                l2376 06EB                  l2368 06CE                  l2296 05F5                  l2288 05E6  
+                l2394 0726                  l2386 070D                  l2378 06F0                  l2298 05F6  
+                l2396 072C                  l2388 0711                  l2398 0730                  STR_1 003B  
+                STR_2 002B                  STR_3 0009                  STR_4 001B                  u3000 06C9  
+                u3001 06C8                  u3010 06CE                  u3011 06CD                  u3100 07FC  
+                u3020 06EB                  u3101 07FB                  u3021 06EA                  u3030 06F0  
+                u3031 06EF                  u3040 0703                  u3041 0702                  u3050 070C  
+                u3051 070B                  u3060 0734                  u3061 0733                  u3045 06FF  
+                u3070 0799                  u3071 0798                  u2600 04EE                  u3080 07AE  
+                u2601 04ED                  u3081 07AD                  u2530 039E                  u3090 07CD  
+                u2531 039D                  u3091 07CC                  u2620 0502                  u2540 04AB  
+                u2621 0501                  u2605 04EA                  u2541 04AA                  u3085 07AA  
+                u2630 0506                  u2550 04B7                  u2710 0492                  u2535 039A  
+                u2615 04F6                  u2551 04B6                  u2711 0491                  u2560 04CA  
+                u2720 0496                  u2640 044B                  u2800 0580                  u2561 04C9  
+                u2705 0486                  u2641 044A                  u2801 057F                  u2650 0457  
+                u2730 0441                  u2810 0585                  u2651 0456                  u2731 0440  
+                u2811 0584                  u2580 04DD                  u2660 0462                  u2900 061C  
+                u2820 05A2                  u2740 0530                  u2581 04DC                  u2661 0461  
+                u2901 061B                  u2821 05A1                  u2741 052F                  u2910 0621  
+                u2830 05A7                  u2750 0535                  u2575 04CF                  u2911 0620  
+                u2831 05A6                  u2751 0534                  u2680 0475                  u2920 063E  
+                u2840 05C4                  u2760 0548                  u2681 0474                  u2921 063D  
+                u2841 05C3                  u2761 0547                  u2690 047F                  u2930 0643  
+                u2850 05C9                  u2770 054C                  u2595 04DE                  u2691 047E  
+                u2675 0467                  u2931 0642                  u2851 05C8                  u2771 054B  
+                u2940 0660                  u2860 05E6                  u2780 0551                  u2941 065F  
+                u2861 05E5                  u2781 0550                  u2950 0665                  u2870 05EB  
+                u2790 0579                  u2695 047B                  u2951 0664                  u2871 05EA  
+                u2791 0578                  u2960 0685                  u2880 05FA                  u2961 0684  
+                u2881 05F9                  u2970 068A                  u2890 05FF                  u2971 0689  
+                u2891 05FE                  u2980 06A7                  u2981 06A6                  u2990 06AC  
+                u2991 06AB                  _main 0512                  _init 03C9                  btemp 007E  
+                start 0000                 ?_main 0070                 ?_init 0070       __end_of___awdiv 0512  
+     __end_of___awmod 04A2       ___awdiv@divisor 0070       ___awdiv@counter 0075                 _PORTB 0006  
+               _PORTC 0007                 _PORTD 0008                 _TRISB 0086                 _TRISC 0087  
+               _TRISD 0088       __end_of_lcd_cmd 03C9                 _delay 038D                 pclath 000A  
+               status 0003                 wtemp0 007E          __end_of_main 0800          __end_of_init 03EE  
+              ??_main 0079                ??_init 0073                ?_delay 0070      ___awdiv@dividend 0072  
+    __end_of_lcd_data 03B4  __size_of_lcd_display 002B             ??___awdiv 0074             ??___awmod 0074  
+              delay@x 0070      ___awdiv@quotient 0077       ___awmod@divisor 0070       ___awmod@counter 0075  
+           ??_lcd_cmd 0072                clrloop 0386        __pcstackCOMMON 0070          __pidataBANK0 0381  
+       __end_of_delay 039F               ??_delay 0072            __pbssBANK0 0020            __pmaintext 0512  
+           ?_lcd_data 0070               ___awdiv 04A2               ___awmod 0442               _lcd_cmd 03B4  
+    ___awmod@dividend 0072            ??_lcd_data 0072  end_of_initialization 0413            lcd_cmd@cmd 0072  
+       ??_lcd_display 0073   start_initialization 03EE   __end_of_lcd_display 0442           __pdataBANK0 003A  
+         __pbssCOMMON 007A     __size_of_lcd_data 0015              ?___awdiv 0070             __ptext180 0000  
+           __ptext173 0417             __ptext174 03C9             __ptext175 03B4             __ptext176 039F  
+           __ptext177 0442             __ptext178 04A2             __ptext179 038D              ?___awmod 0070  
+           __pstrings 0003              ?_lcd_cmd 0070        __size_of_delay 0012           _lcd_display 0417  
+         __stringbase 0008      __size_of___awdiv 0070      __size_of___awmod 0060      __size_of_lcd_cmd 0015  
+            _lcd_data 039F         __size_of_main 02EE         __size_of_init 0025              clear_ram 0385  
+           stringcode 0003              stringdir 0003              stringtab 0003          ?_lcd_display 0070  
