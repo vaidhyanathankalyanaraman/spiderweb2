@@ -1,0 +1,3022 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Mon Apr 03 19:24:57 2023
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_lcd_init
+    43                           	FNCALL	_main,_delay
+    44                           	FNCALL	_main,___awdiv
+    45                           	FNCALL	_main,___awmod
+    46                           	FNCALL	_main,_lcd_cmd
+    47                           	FNCALL	_main,_lcd_data
+    48                           	FNCALL	_main,_lcd_display
+    49                           	FNCALL	_lcd_display,_lcd_data
+    50                           	FNCALL	_lcd_init,_lcd_cmd
+    51                           	FNCALL	_lcd_cmd,_delay
+    52                           	FNCALL	_lcd_data,_delay
+    53                           	FNROOT	_main
+    54                           	global	_a
+    55                           	global	_b
+    56                           	global	_c
+    57                           	global	_d
+    58                           psect	idataBANK0,class=CODE,space=0,delta=2
+    59                           global __pidataBANK0
+    60  02A0                     __pidataBANK0:
+    61                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+    62                           	line	7
+    63                           
+    64                           ;initializer for _a
+    65  02A0  3401               	retlw	01h
+    66  02A1  3400               	retlw	0
+    67                           
+    68                           
+    69                           ;initializer for _b
+    70  02A2  3401               	retlw	01h
+    71  02A3  3400               	retlw	0
+    72                           
+    73                           
+    74                           ;initializer for _c
+    75  02A4  3401               	retlw	01h
+    76  02A5  3400               	retlw	0
+    77                           
+    78                           
+    79                           ;initializer for _d
+    80  02A6  3401               	retlw	01h
+    81  02A7  3400               	retlw	0
+    82                           
+    83                           	global	_a1
+    84                           	global	_a2
+    85                           	global	_a3
+    86                           	global	_b1
+    87                           	global	_b2
+    88                           	global	_b3
+    89                           	global	_c1
+    90                           	global	_c2
+    91                           	global	_c3
+    92                           	global	_d1
+    93                           	global	_d2
+    94                           	global	_d3
+    95                           	global	_e1
+    96                           	global	_e2
+    97                           	global	_e3
+    98                           	global	_f1
+    99                           	global	_f2
+   100                           	global	_f3
+   101                           	global	_i
+   102                           	global	_temp1
+   103                           	global	_temp2
+   104                           	global	_temp3
+   105                           	global	_ADCON0
+   106  001F                     _ADCON0	set	31
+   107                           	global	_ADRESH
+   108  001E                     _ADRESH	set	30
+   109                           	global	_PORTB
+   110  0006                     _PORTB	set	6
+   111                           	global	_PORTC
+   112  0007                     _PORTC	set	7
+   113                           	global	_PORTD
+   114  0008                     _PORTD	set	8
+   115                           	global	_ADON
+   116  00F8                     _ADON	set	248
+   117                           	global	_CHS0
+   118  00FB                     _CHS0	set	251
+   119                           	global	_CHS1
+   120  00FC                     _CHS1	set	252
+   121                           	global	_CHS2
+   122  00FD                     _CHS2	set	253
+   123                           	global	_RB0
+   124  0030                     _RB0	set	48
+   125                           	global	_RB6
+   126  0036                     _RB6	set	54
+   127                           	global	_RC0
+   128  0038                     _RC0	set	56
+   129                           	global	_RC1
+   130  0039                     _RC1	set	57
+   131                           	global	_RC2
+   132  003A                     _RC2	set	58
+   133                           	global	_ADCON1
+   134  009F                     _ADCON1	set	159
+   135                           	global	_ADRESL
+   136  009E                     _ADRESL	set	158
+   137                           	global	_TRISB
+   138  0086                     _TRISB	set	134
+   139                           	global	_TRISC
+   140  0087                     _TRISC	set	135
+   141                           	global	_TRISD
+   142  0088                     _TRISD	set	136
+   143                           psect	strings,class=STRING,delta=2
+   144                           global __pstrings
+   145  0003                     __pstrings:
+   146                           ;	global	stringdir,stringtab,__stringbase
+   147  0003                     stringtab:
+   148                           ;	String table - string pointers are 1 byte each
+   149  0003                     stringcode:stringdir:
+      + 0003                     stringdir:	
+   150  0003  3000               movlw high(stringdir)
+   151  0004  008A               movwf pclath
+   152  0005  0804               movf fsr,w
+   153  0006  0A84               incf fsr
+   154  0007  0782               	addwf pc
+   155  0008                     __stringbase:
+   156  0008  3400               	retlw	0
+   157                           psect	strings
+   158                           	
+   159  0009                     STR_2:	
+   160  0009  3448               	retlw	72	;'H'
+   161  000A  342E               	retlw	46	;'.'
+   162  000B  3477               	retlw	119	;'w'
+   163  000C  3469               	retlw	105	;'i'
+   164  000D  346E               	retlw	110	;'n'
+   165  000E  3464               	retlw	100	;'d'
+   166  000F  3400               	retlw	0
+   167                           psect	strings
+   168                           	
+   169  0010                     STR_3:	
+   170  0010  3448               	retlw	72	;'H'
+   171  0011  342E               	retlw	46	;'.'
+   172  0012  3472               	retlw	114	;'r'
+   173  0013  3461               	retlw	97	;'a'
+   174  0014  3469               	retlw	105	;'i'
+   175  0015  346E               	retlw	110	;'n'
+   176  0016  3400               	retlw	0
+   177                           psect	strings
+   178                           	
+   179  0017                     STR_4:	
+   180  0017  3457               	retlw	87	;'W'
+   181  0018  3469               	retlw	105	;'i'
+   182  0019  346E               	retlw	110	;'n'
+   183  001A  3464               	retlw	100	;'d'
+   184  001B  3400               	retlw	0
+   185                           psect	strings
+   186  000B                     STR_1	equ	STR_2+2
+   187                           	file	"weather monitor.as"
+   188                           	line	#
+   189                           psect cinit,class=CODE,delta=2
+   190                           global start_initialization
+   191  02F5                     start_initialization:
+   192                           
+   193                           psect	bssCOMMON,class=COMMON,space=1
+   194                           global __pbssCOMMON
+   195  007B                     __pbssCOMMON:
+   196  007B                     _temp3:
+   197  007B                            ds      2
+   198                           
+   199                           psect	bssBANK0,class=BANK0,space=1
+   200                           global __pbssBANK0
+   201  0020                     __pbssBANK0:
+   202  0020                     _a1:
+   203  0020                            ds      2
+   204                           
+   205  0022                     _a2:
+   206  0022                            ds      2
+   207                           
+   208  0024                     _a3:
+   209  0024                            ds      2
+   210                           
+   211  0026                     _b1:
+   212  0026                            ds      2
+   213                           
+   214  0028                     _b2:
+   215  0028                            ds      2
+   216                           
+   217  002A                     _b3:
+   218  002A                            ds      2
+   219                           
+   220  002C                     _c1:
+   221  002C                            ds      2
+   222                           
+   223  002E                     _c2:
+   224  002E                            ds      2
+   225                           
+   226  0030                     _c3:
+   227  0030                            ds      2
+   228                           
+   229  0032                     _d1:
+   230  0032                            ds      2
+   231                           
+   232  0034                     _d2:
+   233  0034                            ds      2
+   234                           
+   235  0036                     _d3:
+   236  0036                            ds      2
+   237                           
+   238  0038                     _e1:
+   239  0038                            ds      2
+   240                           
+   241  003A                     _e2:
+   242  003A                            ds      2
+   243                           
+   244  003C                     _e3:
+   245  003C                            ds      2
+   246                           
+   247  003E                     _f1:
+   248  003E                            ds      2
+   249                           
+   250  0040                     _f2:
+   251  0040                            ds      2
+   252                           
+   253  0042                     _f3:
+   254  0042                            ds      2
+   255                           
+   256  0044                     _i:
+   257  0044                            ds      2
+   258                           
+   259  0046                     _temp1:
+   260  0046                            ds      2
+   261                           
+   262  0048                     _temp2:
+   263  0048                            ds      2
+   264                           
+   265                           psect	dataBANK0,class=BANK0,space=1
+   266                           global __pdataBANK0
+   267  004A                     __pdataBANK0:
+   268                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   269  004A                     _a:
+   270  004A                            ds      2
+   271                           
+   272                           psect	dataBANK0
+   273                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   274  004C                     _b:
+   275  004C                            ds      2
+   276                           
+   277                           psect	dataBANK0
+   278                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   279  004E                     _c:
+   280  004E                            ds      2
+   281                           
+   282                           psect	dataBANK0
+   283                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   284  0050                     _d:
+   285  0050                            ds      2
+   286                           
+   287                           psect clrtext,class=CODE,delta=2
+   288                           global clear_ram
+   289                           ;	Called with FSR containing the base address, and
+   290                           ;	W with the last address+1
+   291  0298                     clear_ram:
+   292  0298  0064               	clrwdt			;clear the watchdog before getting into this loop
+   293  0299                     clrloop:
+   294  0299  0180               	clrf	indf		;clear RAM location pointed to by FSR
+   295  029A  0A84               	incf	fsr,f		;increment pointer
+   296  029B  0604               	xorwf	fsr,w		;XOR with final address
+   297  029C  1903               	btfsc	status,2	;have we reached the end yet?
+   298  029D  3400               	retlw	0		;all done for this memory range, return
+   299  029E  0604               	xorwf	fsr,w		;XOR again to restore value
+   300  029F  2A99               	goto	clrloop		;do the next byte
+   301                           
+   302                           ; Clear objects allocated to COMMON
+   303                           psect cinit,class=CODE,delta=2
+   304  02F5  01FB               	clrf	((__pbssCOMMON)+0)&07Fh
+   305  02F6  01FC               	clrf	((__pbssCOMMON)+1)&07Fh
+   306                           ; Clear objects allocated to BANK0
+   307                           psect cinit,class=CODE,delta=2
+   308  02F7  1383               	bcf	status, 7	;select IRP bank0
+   309  02F8  3020               	movlw	low(__pbssBANK0)
+   310  02F9  0084               	movwf	fsr
+   311  02FA  304A               	movlw	low((__pbssBANK0)+02Ah)
+   312  02FB  120A  118A  2298   	fcall	clear_ram
+              120A  118A         
+   313                           global btemp
+   314                           psect inittext,class=CODE,delta=2
+   315                           global init_fetch,btemp
+   316                           ;	Called with low address in FSR and high address in W
+   317  02A8                     init_fetch:
+   318  02A8  087E               	movf btemp,w
+   319  02A9  008A               	movwf pclath
+   320  02AA  087F               	movf btemp+1,w
+   321  02AB  0082               	movwf pc
+   322                           global init_ram
+   323                           ;Called with:
+   324                           ;	high address of idata address in btemp 
+   325                           ;	low address of idata address in btemp+1 
+   326                           ;	low address of data in FSR
+   327                           ;	high address + 1 of data in btemp-1
+   328  02AC                     init_ram:
+   329  02AC  22A8  120A  118A   	fcall init_fetch
+   330  02AF  0080               	movwf indf,f
+   331  02B0  0A84               	incf fsr,f
+   332  02B1  0804               	movf fsr,w
+   333  02B2  067D               	xorwf btemp-1,w
+   334  02B3  1903               	btfsc status,2
+   335  02B4  3400               	retlw 0
+   336  02B5  0AFF               	incf btemp+1,f
+   337  02B6  1903               	btfsc status,2
+   338  02B7  0AFE               	incf btemp,f
+   339  02B8  2AAC               	goto init_ram
+   340                           ; Initialize objects allocated to BANK0
+   341                           psect cinit,class=CODE,delta=2
+   342                           global init_ram, __pidataBANK0
+   343  0300  3052               	movlw low(__pdataBANK0+8)
+   344  0301  00FD               	movwf btemp-1,f
+   345  0302  3002               	movlw high(__pidataBANK0)
+   346  0303  00FE               	movwf btemp,f
+   347  0304  30A0               	movlw low(__pidataBANK0)
+   348  0305  00FF               	movwf btemp+1,f
+   349  0306  304A               	movlw low(__pdataBANK0)
+   350  0307  0084               	movwf fsr,f
+   351  0308  120A  118A  22AC   	fcall init_ram
+              120A  118A         
+   352                           psect cinit,class=CODE,delta=2
+   353                           global end_of_initialization
+   354                           
+   355                           ;End of C runtime variable initialization code
+   356                           
+   357  030D                     end_of_initialization:
+   358  030D  0183               clrf status
+   359  030E  120A  118A  2C2B   ljmp _main	;jump to C main() function
+   360                           psect	cstackCOMMON,class=COMMON,space=1
+   361                           global __pcstackCOMMON
+   362  0070                     __pcstackCOMMON:
+   363                           	global	?_delay
+   364  0070                     ?_delay:	; 0 bytes @ 0x0
+   365                           	global	?_lcd_data
+   366  0070                     ?_lcd_data:	; 0 bytes @ 0x0
+   367                           	global	?_lcd_cmd
+   368  0070                     ?_lcd_cmd:	; 0 bytes @ 0x0
+   369                           	global	?_lcd_init
+   370  0070                     ?_lcd_init:	; 0 bytes @ 0x0
+   371                           	global	?_lcd_display
+   372  0070                     ?_lcd_display:	; 0 bytes @ 0x0
+   373                           	global	?_main
+   374  0070                     ?_main:	; 2 bytes @ 0x0
+   375                           	global	?___awdiv
+   376  0070                     ?___awdiv:	; 2 bytes @ 0x0
+   377                           	global	?___awmod
+   378  0070                     ?___awmod:	; 2 bytes @ 0x0
+   379                           	global	delay@x
+   380  0070                     delay@x:	; 2 bytes @ 0x0
+   381                           	global	___awdiv@divisor
+   382  0070                     ___awdiv@divisor:	; 2 bytes @ 0x0
+   383                           	global	___awmod@divisor
+   384  0070                     ___awmod@divisor:	; 2 bytes @ 0x0
+   385  0070                     	ds	2
+   386                           	global	??_delay
+   387  0072                     ??_delay:	; 0 bytes @ 0x2
+   388                           	global	??_lcd_data
+   389  0072                     ??_lcd_data:	; 0 bytes @ 0x2
+   390                           	global	??_lcd_cmd
+   391  0072                     ??_lcd_cmd:	; 0 bytes @ 0x2
+   392                           	global	lcd_data@data
+   393  0072                     lcd_data@data:	; 1 bytes @ 0x2
+   394                           	global	lcd_cmd@cmd
+   395  0072                     lcd_cmd@cmd:	; 1 bytes @ 0x2
+   396                           	global	___awdiv@dividend
+   397  0072                     ___awdiv@dividend:	; 2 bytes @ 0x2
+   398                           	global	___awmod@dividend
+   399  0072                     ___awmod@dividend:	; 2 bytes @ 0x2
+   400  0072                     	ds	1
+   401                           	global	??_lcd_init
+   402  0073                     ??_lcd_init:	; 0 bytes @ 0x3
+   403                           	global	??_lcd_display
+   404  0073                     ??_lcd_display:	; 0 bytes @ 0x3
+   405                           	global	lcd_display@m
+   406  0073                     lcd_display@m:	; 1 bytes @ 0x3
+   407  0073                     	ds	1
+   408                           	global	??___awdiv
+   409  0074                     ??___awdiv:	; 0 bytes @ 0x4
+   410                           	global	??___awmod
+   411  0074                     ??___awmod:	; 0 bytes @ 0x4
+   412  0074                     	ds	1
+   413                           	global	___awdiv@counter
+   414  0075                     ___awdiv@counter:	; 1 bytes @ 0x5
+   415                           	global	___awmod@counter
+   416  0075                     ___awmod@counter:	; 1 bytes @ 0x5
+   417  0075                     	ds	1
+   418                           	global	___awdiv@sign
+   419  0076                     ___awdiv@sign:	; 1 bytes @ 0x6
+   420                           	global	___awmod@sign
+   421  0076                     ___awmod@sign:	; 1 bytes @ 0x6
+   422  0076                     	ds	1
+   423                           	global	___awdiv@quotient
+   424  0077                     ___awdiv@quotient:	; 2 bytes @ 0x7
+   425  0077                     	ds	2
+   426                           	global	??_main
+   427  0079                     ??_main:	; 0 bytes @ 0x9
+   428  0079                     	ds	2
+   429 ;;Data sizes: Strings 19, constant 0, data 8, bss 44, persistent 0 stack 0
+   430 ;;Auto spaces:   Size  Autos    Used
+   431 ;; COMMON          14     11      13
+   432 ;; BANK0           80      0      50
+   433 ;; BANK1           80      0       0
+   434 ;; BANK3           96      0       0
+   435 ;; BANK2           96      0       0
+   436                           
+   437 ;;
+   438 ;; Pointer list with targets:
+   439                           
+   440 ;; ?___awmod	int  size(1) Largest target is 0
+   441 ;;
+   442 ;; ?___awdiv	int  size(1) Largest target is 0
+   443 ;;
+   444 ;; lcd_display@m	PTR unsigned char  size(1) Largest target is 7
+   445 ;;		 -> STR_4(CODE[5]), STR_3(CODE[7]), STR_2(CODE[7]), STR_1(CODE[5]), 
+   446 ;;
+   447                           
+   448                           
+   449 ;;
+   450 ;; Critical Paths under _main in COMMON
+   451 ;;
+   452 ;;   _main->___awdiv
+   453 ;;   _lcd_display->_lcd_data
+   454 ;;   _lcd_init->_lcd_cmd
+   455 ;;   _lcd_cmd->_delay
+   456 ;;   _lcd_data->_delay
+   457 ;;
+   458 ;; Critical Paths under _main in BANK0
+   459 ;;
+   460 ;;   None.
+   461 ;;
+   462 ;; Critical Paths under _main in BANK1
+   463 ;;
+   464 ;;   None.
+   465 ;;
+   466 ;; Critical Paths under _main in BANK3
+   467 ;;
+   468 ;;   None.
+   469 ;;
+   470 ;; Critical Paths under _main in BANK2
+   471 ;;
+   472 ;;   None.
+   473                           
+   474 ;;
+   475 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   476 ;;
+   477                           
+   478 ;;
+   479 ;;Call Graph Tables:
+   480 ;;
+   481 ;; ---------------------------------------------------------------------------------
+   482 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   483 ;; ---------------------------------------------------------------------------------
+   484 ;; (0) _main                                                 2     2      0     838
+   485 ;;                                              9 COMMON     2     2      0
+   486 ;;                           _lcd_init
+   487 ;;                              _delay
+   488 ;;                            ___awdiv
+   489 ;;                            ___awmod
+   490 ;;                            _lcd_cmd
+   491 ;;                           _lcd_data
+   492 ;;                        _lcd_display
+   493 ;; ---------------------------------------------------------------------------------
+   494 ;; (1) _lcd_display                                          1     1      0      88
+   495 ;;                                              3 COMMON     1     1      0
+   496 ;;                           _lcd_data
+   497 ;; ---------------------------------------------------------------------------------
+   498 ;; (1) _lcd_init                                             0     0      0      44
+   499 ;;                            _lcd_cmd
+   500 ;; ---------------------------------------------------------------------------------
+   501 ;; (1) _lcd_cmd                                              1     1      0      44
+   502 ;;                                              2 COMMON     1     1      0
+   503 ;;                              _delay
+   504 ;; ---------------------------------------------------------------------------------
+   505 ;; (2) _lcd_data                                             1     1      0      44
+   506 ;;                                              2 COMMON     1     1      0
+   507 ;;                              _delay
+   508 ;; ---------------------------------------------------------------------------------
+   509 ;; (1) ___awmod                                              7     3      4     296
+   510 ;;                                              0 COMMON     7     3      4
+   511 ;; ---------------------------------------------------------------------------------
+   512 ;; (1) ___awdiv                                              9     5      4     300
+   513 ;;                                              0 COMMON     9     5      4
+   514 ;; ---------------------------------------------------------------------------------
+   515 ;; (3) _delay                                                2     0      2      22
+   516 ;;                                              0 COMMON     2     0      2
+   517 ;; ---------------------------------------------------------------------------------
+   518 ;; Estimated maximum stack depth 3
+   519 ;; ---------------------------------------------------------------------------------
+   520                           
+   521 ;; Call Graph Graphs:
+   522                           
+   523 ;; _main (ROOT)
+   524 ;;   _lcd_init
+   525 ;;     _lcd_cmd
+   526 ;;       _delay
+   527 ;;   _delay
+   528 ;;   ___awdiv
+   529 ;;   ___awmod
+   530 ;;   _lcd_cmd
+   531 ;;     _delay
+   532 ;;   _lcd_data
+   533 ;;     _delay
+   534 ;;   _lcd_display
+   535 ;;     _lcd_data
+   536 ;;       _delay
+   537 ;;
+   538                           
+   539 ;; Address spaces:
+   540                           
+   541 ;;Name               Size   Autos  Total    Cost      Usage
+   542 ;;BANK3               60      0       0       9        0.0%
+   543 ;;BITBANK3            60      0       0       8        0.0%
+   544 ;;SFR3                 0      0       0       4        0.0%
+   545 ;;BITSFR3              0      0       0       4        0.0%
+   546 ;;BANK2               60      0       0      11        0.0%
+   547 ;;BITBANK2            60      0       0      10        0.0%
+   548 ;;SFR2                 0      0       0       5        0.0%
+   549 ;;BITSFR2              0      0       0       5        0.0%
+   550 ;;SFR1                 0      0       0       2        0.0%
+   551 ;;BITSFR1              0      0       0       2        0.0%
+   552 ;;BANK1               50      0       0       7        0.0%
+   553 ;;BITBANK1            50      0       0       6        0.0%
+   554 ;;CODE                 0      0       0       0        0.0%
+   555 ;;DATA                 0      0      42      12        0.0%
+   556 ;;ABS                  0      0      3F       3        0.0%
+   557 ;;NULL                 0      0       0       0        0.0%
+   558 ;;STACK                0      0       3       2        0.0%
+   559 ;;BANK0               50      0      32       5       62.5%
+   560 ;;BITBANK0            50      0       0       4        0.0%
+   561 ;;SFR0                 0      0       0       1        0.0%
+   562 ;;BITSFR0              0      0       0       1        0.0%
+   563 ;;COMMON               E      B       D       1       92.9%
+   564 ;;BITCOMMON            E      0       0       0        0.0%
+   565 ;;EEDATA             100      0       0       0        0.0%
+   566                           
+   567                           	global	_main
+   568                           psect	maintext,global,class=CODE,delta=2
+   569                           global __pmaintext
+   570  042B                     __pmaintext:
+   571                           
+   572 ;; *************** function _main *****************
+   573 ;; Defined at:
+   574 ;;		line 48 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   575 ;; Parameters:    Size  Location     Type
+   576 ;;		None
+   577 ;; Auto vars:     Size  Location     Type
+   578 ;;		None
+   579 ;; Return value:  Size  Location     Type
+   580 ;;                  2  631[COMMON] int 
+   581 ;; Registers used:
+   582 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, pclath, cstack
+   583 ;; Tracked objects:
+   584 ;;		On entry : 17F/0
+   585 ;;		On exit  : 0/0
+   586 ;;		Unchanged: 0/0
+   587 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   588 ;;      Params:         0       0       0       0       0
+   589 ;;      Locals:         0       0       0       0       0
+   590 ;;      Temps:          2       0       0       0       0
+   591 ;;      Totals:         2       0       0       0       0
+   592 ;;Total ram usage:        2 bytes
+   593 ;; Hardware stack levels required when called:    3
+   594 ;; This function calls:
+   595 ;;		_lcd_init
+   596 ;;		_delay
+   597 ;;		___awdiv
+   598 ;;		___awmod
+   599 ;;		_lcd_cmd
+   600 ;;		_lcd_data
+   601 ;;		_lcd_display
+   602 ;; This function is called by:
+   603 ;;		Startup code after reset
+   604 ;; This function uses a non-reentrant model
+   605 ;;
+   606                           psect	maintext
+   607                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+   608                           	line	48
+   609                           	global	__size_of_main
+   610  03D5                     	__size_of_main	equ	__end_of_main-_main
+   611                           	
+   612  042B                     _main:	
+   613                           	opt	stack 8
+   614                           ; Regs used in _main: [wreg-fsr0h+status,2-btemp+0+pclath+cstack]
+   615                           	line	49
+   616                           	
+   617  042B                     l2436:	
+   618                           ;weather monitor.c: 49: TRISB=0x40;
+   619  042B  3040               	movlw	(040h)
+   620  042C  1683               	bsf	status, 5	;RP0=1, select bank1
+   621  042D  1303               	bcf	status, 6	;RP1=0, select bank1
+   622  042E  0086               	movwf	(134)^080h	;volatile
+   623                           	line	50
+   624                           	
+   625  042F                     l2438:	
+   626                           ;weather monitor.c: 50: PORTB=0x00;
+   627  042F  1283               	bcf	status, 5	;RP0=0, select bank0
+   628  0430  1303               	bcf	status, 6	;RP1=0, select bank0
+   629  0431  0186               	clrf	(6)	;volatile
+   630                           	line	51
+   631                           	
+   632  0432                     l2440:	
+   633                           ;weather monitor.c: 51: TRISC=0x00;
+   634  0432  1683               	bsf	status, 5	;RP0=1, select bank1
+   635  0433  1303               	bcf	status, 6	;RP1=0, select bank1
+   636  0434  0187               	clrf	(135)^080h	;volatile
+   637                           	line	52
+   638                           	
+   639  0435                     l2442:	
+   640                           ;weather monitor.c: 52: PORTC=0x00;
+   641  0435  1283               	bcf	status, 5	;RP0=0, select bank0
+   642  0436  1303               	bcf	status, 6	;RP1=0, select bank0
+   643  0437  0187               	clrf	(7)	;volatile
+   644                           	line	53
+   645                           	
+   646  0438                     l2444:	
+   647                           ;weather monitor.c: 53: TRISD=0x00;
+   648  0438  1683               	bsf	status, 5	;RP0=1, select bank1
+   649  0439  1303               	bcf	status, 6	;RP1=0, select bank1
+   650  043A  0188               	clrf	(136)^080h	;volatile
+   651                           	line	54
+   652                           	
+   653  043B                     l2446:	
+   654                           ;weather monitor.c: 54: PORTD=0x00;
+   655  043B  1283               	bcf	status, 5	;RP0=0, select bank0
+   656  043C  1303               	bcf	status, 6	;RP1=0, select bank0
+   657  043D  0188               	clrf	(8)	;volatile
+   658                           	line	55
+   659                           	
+   660  043E                     l2448:	
+   661                           ;weather monitor.c: 55: ADCON0=0x48;
+   662  043E  3048               	movlw	(048h)
+   663  043F  009F               	movwf	(31)	;volatile
+   664                           	line	56
+   665                           	
+   666  0440                     l2450:	
+   667                           ;weather monitor.c: 56: ADCON1=0x8E;
+   668  0440  308E               	movlw	(08Eh)
+   669  0441  1683               	bsf	status, 5	;RP0=1, select bank1
+   670  0442  1303               	bcf	status, 6	;RP1=0, select bank1
+   671  0443  009F               	movwf	(159)^080h	;volatile
+   672                           	line	57
+   673                           	
+   674  0444                     l2452:	
+   675                           ;weather monitor.c: 57: lcd_init();
+   676  0444  120A  118A  2311   	fcall	_lcd_init
+              120A  118A         
+   677                           	line	59
+   678                           ;weather monitor.c: 59: while(1)
+   679                           	
+   680  0449                     l632:	
+   681                           	line	61
+   682                           	
+   683  0449                     l2454:	
+   684                           ;weather monitor.c: 60: {
+   685                           ;weather monitor.c: 61: CHS2=0;
+   686  0449  1283               	bcf	status, 5	;RP0=0, select bank0
+   687  044A  1303               	bcf	status, 6	;RP1=0, select bank0
+   688  044B  129F               	bcf	(253/8),(253)&7
+   689                           	line	62
+   690                           	
+   691  044C                     l2456:	
+   692                           ;weather monitor.c: 62: CHS1=0;
+   693  044C  121F               	bcf	(252/8),(252)&7
+   694                           	line	63
+   695                           	
+   696  044D                     l2458:	
+   697                           ;weather monitor.c: 63: CHS0=0;
+   698  044D  119F               	bcf	(251/8),(251)&7
+   699                           	line	64
+   700                           	
+   701  044E                     l2460:	
+   702                           ;weather monitor.c: 64: ADON=1;
+   703  044E  141F               	bsf	(248/8),(248)&7
+   704                           	line	65
+   705                           	
+   706  044F                     l2462:	
+   707                           ;weather monitor.c: 65: delay(300);
+   708  044F  302C               	movlw	low(012Ch)
+   709  0450  00F0               	movwf	(?_delay)
+   710  0451  3001               	movlw	high(012Ch)
+   711  0452  00F1               	movwf	((?_delay))+1
+   712  0453  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+   713                           	line	66
+   714                           ;weather monitor.c: 66: ADCON0=(ADCON0|0x04);
+   715  0458  1283               	bcf	status, 5	;RP0=0, select bank0
+   716  0459  1303               	bcf	status, 6	;RP1=0, select bank0
+   717  045A  081F               	movf	(31),w	;volatile
+   718  045B  3804               	iorlw	04h
+   719  045C  009F               	movwf	(31)	;volatile
+   720                           	line	67
+   721                           	
+   722  045D                     l2464:	
+   723                           ;weather monitor.c: 67: delay(300);
+   724  045D  302C               	movlw	low(012Ch)
+   725  045E  00F0               	movwf	(?_delay)
+   726  045F  3001               	movlw	high(012Ch)
+   727  0460  00F1               	movwf	((?_delay))+1
+   728  0461  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+   729                           	line	68
+   730                           	
+   731  0466                     l2466:	
+   732                           ;weather monitor.c: 68: temp1=ADRESH<<8;
+   733  0466  1283               	bcf	status, 5	;RP0=0, select bank0
+   734  0467  1303               	bcf	status, 6	;RP1=0, select bank0
+   735  0468  081E               	movf	(30),w	;volatile
+   736  0469  00F9               	movwf	(??_main+0)+0
+   737  046A  01FA               	clrf	(??_main+0)+0+1
+   738  046B  3008               	movlw	08h
+   739  046C  00FE               	movwf	btemp+0
+   740  046D                     u2485:
+   741  046D  1003               	clrc
+   742  046E  0DF9               	rlf	(??_main+0)+0,f
+   743  046F  0DFA               	rlf	(??_main+0)+1,f
+   744  0470  0BFE               	decfsz	btemp+0,f
+   745  0471  2C6D               	goto	u2485
+   746  0472  0879               	movf	0+(??_main+0)+0,w
+   747  0473  00C6               	movwf	(_temp1)
+   748  0474  087A               	movf	1+(??_main+0)+0,w
+   749  0475  00C7               	movwf	(_temp1+1)
+   750                           	line	69
+   751                           	
+   752  0476                     l2468:	
+   753                           ;weather monitor.c: 69: delay(300);
+   754  0476  302C               	movlw	low(012Ch)
+   755  0477  00F0               	movwf	(?_delay)
+   756  0478  3001               	movlw	high(012Ch)
+   757  0479  00F1               	movwf	((?_delay))+1
+   758  047A  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+   759                           	line	70
+   760                           	
+   761  047F                     l2470:	
+   762                           ;weather monitor.c: 70: temp1=temp1+ADRESL;
+   763  047F  1683               	bsf	status, 5	;RP0=1, select bank1
+   764  0480  1303               	bcf	status, 6	;RP1=0, select bank1
+   765  0481  081E               	movf	(158)^080h,w	;volatile
+   766  0482  1283               	bcf	status, 5	;RP0=0, select bank0
+   767  0483  1303               	bcf	status, 6	;RP1=0, select bank0
+   768  0484  0746               	addwf	(_temp1),w
+   769  0485  00C6               	movwf	(_temp1)
+   770  0486  0847               	movf	(_temp1+1),w
+   771  0487  1803               	skipnc
+   772  0488  0A47               	incf	(_temp1+1),w
+   773  0489  00C7               	movwf	((_temp1))+1
+   774                           	line	71
+   775                           	
+   776  048A                     l2472:	
+   777                           ;weather monitor.c: 71: delay(300);
+   778  048A  302C               	movlw	low(012Ch)
+   779  048B  00F0               	movwf	(?_delay)
+   780  048C  3001               	movlw	high(012Ch)
+   781  048D  00F1               	movwf	((?_delay))+1
+   782  048E  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+   783                           	line	72
+   784                           	
+   785  0493                     l2474:	
+   786                           ;weather monitor.c: 72: a1=temp1/1000;
+   787  0493  30E8               	movlw	low(03E8h)
+   788  0494  00F0               	movwf	(?___awdiv)
+   789  0495  3003               	movlw	high(03E8h)
+   790  0496  00F1               	movwf	((?___awdiv))+1
+   791  0497  1283               	bcf	status, 5	;RP0=0, select bank0
+   792  0498  1303               	bcf	status, 6	;RP1=0, select bank0
+   793  0499  0847               	movf	(_temp1+1),w
+   794  049A  01F3               	clrf	1+(?___awdiv)+02h
+   795  049B  07F3               	addwf	1+(?___awdiv)+02h
+   796  049C  0846               	movf	(_temp1),w
+   797  049D  01F2               	clrf	0+(?___awdiv)+02h
+   798  049E  07F2               	addwf	0+(?___awdiv)+02h
+   799                           
+   800  049F  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+   801  04A4  0871               	movf	(1+(?___awdiv)),w
+   802  04A5  1283               	bcf	status, 5	;RP0=0, select bank0
+   803  04A6  1303               	bcf	status, 6	;RP1=0, select bank0
+   804  04A7  01A1               	clrf	(_a1+1)
+   805  04A8  07A1               	addwf	(_a1+1)
+   806  04A9  0870               	movf	(0+(?___awdiv)),w
+   807  04AA  01A0               	clrf	(_a1)
+   808  04AB  07A0               	addwf	(_a1)
+   809                           
+   810                           	line	73
+   811                           	
+   812  04AC                     l2476:	
+   813                           ;weather monitor.c: 73: b1=temp1%1000;
+   814  04AC  30E8               	movlw	low(03E8h)
+   815  04AD  00F0               	movwf	(?___awmod)
+   816  04AE  3003               	movlw	high(03E8h)
+   817  04AF  00F1               	movwf	((?___awmod))+1
+   818  04B0  0847               	movf	(_temp1+1),w
+   819  04B1  01F3               	clrf	1+(?___awmod)+02h
+   820  04B2  07F3               	addwf	1+(?___awmod)+02h
+   821  04B3  0846               	movf	(_temp1),w
+   822  04B4  01F2               	clrf	0+(?___awmod)+02h
+   823  04B5  07F2               	addwf	0+(?___awmod)+02h
+   824                           
+   825  04B6  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+   826  04BB  0871               	movf	(1+(?___awmod)),w
+   827  04BC  1283               	bcf	status, 5	;RP0=0, select bank0
+   828  04BD  1303               	bcf	status, 6	;RP1=0, select bank0
+   829  04BE  01A7               	clrf	(_b1+1)
+   830  04BF  07A7               	addwf	(_b1+1)
+   831  04C0  0870               	movf	(0+(?___awmod)),w
+   832  04C1  01A6               	clrf	(_b1)
+   833  04C2  07A6               	addwf	(_b1)
+   834                           
+   835                           	line	74
+   836                           	
+   837  04C3                     l2478:	
+   838                           ;weather monitor.c: 74: c1=b1/100;
+   839  04C3  3064               	movlw	low(064h)
+   840  04C4  00F0               	movwf	(?___awdiv)
+   841  04C5  3000               	movlw	high(064h)
+   842  04C6  00F1               	movwf	((?___awdiv))+1
+   843  04C7  0827               	movf	(_b1+1),w
+   844  04C8  01F3               	clrf	1+(?___awdiv)+02h
+   845  04C9  07F3               	addwf	1+(?___awdiv)+02h
+   846  04CA  0826               	movf	(_b1),w
+   847  04CB  01F2               	clrf	0+(?___awdiv)+02h
+   848  04CC  07F2               	addwf	0+(?___awdiv)+02h
+   849                           
+   850  04CD  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+   851  04D2  0871               	movf	(1+(?___awdiv)),w
+   852  04D3  1283               	bcf	status, 5	;RP0=0, select bank0
+   853  04D4  1303               	bcf	status, 6	;RP1=0, select bank0
+   854  04D5  01AD               	clrf	(_c1+1)
+   855  04D6  07AD               	addwf	(_c1+1)
+   856  04D7  0870               	movf	(0+(?___awdiv)),w
+   857  04D8  01AC               	clrf	(_c1)
+   858  04D9  07AC               	addwf	(_c1)
+   859                           
+   860                           	line	75
+   861                           	
+   862  04DA                     l2480:	
+   863                           ;weather monitor.c: 75: d1=b1%100;
+   864  04DA  3064               	movlw	low(064h)
+   865  04DB  00F0               	movwf	(?___awmod)
+   866  04DC  3000               	movlw	high(064h)
+   867  04DD  00F1               	movwf	((?___awmod))+1
+   868  04DE  0827               	movf	(_b1+1),w
+   869  04DF  01F3               	clrf	1+(?___awmod)+02h
+   870  04E0  07F3               	addwf	1+(?___awmod)+02h
+   871  04E1  0826               	movf	(_b1),w
+   872  04E2  01F2               	clrf	0+(?___awmod)+02h
+   873  04E3  07F2               	addwf	0+(?___awmod)+02h
+   874                           
+   875  04E4  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+   876  04E9  0871               	movf	(1+(?___awmod)),w
+   877  04EA  1283               	bcf	status, 5	;RP0=0, select bank0
+   878  04EB  1303               	bcf	status, 6	;RP1=0, select bank0
+   879  04EC  01B3               	clrf	(_d1+1)
+   880  04ED  07B3               	addwf	(_d1+1)
+   881  04EE  0870               	movf	(0+(?___awmod)),w
+   882  04EF  01B2               	clrf	(_d1)
+   883  04F0  07B2               	addwf	(_d1)
+   884                           
+   885                           	line	76
+   886                           	
+   887  04F1                     l2482:	
+   888                           ;weather monitor.c: 76: e1=d1/10;
+   889  04F1  300A               	movlw	low(0Ah)
+   890  04F2  00F0               	movwf	(?___awdiv)
+   891  04F3  3000               	movlw	high(0Ah)
+   892  04F4  00F1               	movwf	((?___awdiv))+1
+   893  04F5  0833               	movf	(_d1+1),w
+   894  04F6  01F3               	clrf	1+(?___awdiv)+02h
+   895  04F7  07F3               	addwf	1+(?___awdiv)+02h
+   896  04F8  0832               	movf	(_d1),w
+   897  04F9  01F2               	clrf	0+(?___awdiv)+02h
+   898  04FA  07F2               	addwf	0+(?___awdiv)+02h
+   899                           
+   900  04FB  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+   901  0500  0871               	movf	(1+(?___awdiv)),w
+   902  0501  1283               	bcf	status, 5	;RP0=0, select bank0
+   903  0502  1303               	bcf	status, 6	;RP1=0, select bank0
+   904  0503  01B9               	clrf	(_e1+1)
+   905  0504  07B9               	addwf	(_e1+1)
+   906  0505  0870               	movf	(0+(?___awdiv)),w
+   907  0506  01B8               	clrf	(_e1)
+   908  0507  07B8               	addwf	(_e1)
+   909                           
+   910                           	line	77
+   911                           	
+   912  0508                     l2484:	
+   913                           ;weather monitor.c: 77: f1=d1%10;
+   914  0508  300A               	movlw	low(0Ah)
+   915  0509  00F0               	movwf	(?___awmod)
+   916  050A  3000               	movlw	high(0Ah)
+   917  050B  00F1               	movwf	((?___awmod))+1
+   918  050C  0833               	movf	(_d1+1),w
+   919  050D  01F3               	clrf	1+(?___awmod)+02h
+   920  050E  07F3               	addwf	1+(?___awmod)+02h
+   921  050F  0832               	movf	(_d1),w
+   922  0510  01F2               	clrf	0+(?___awmod)+02h
+   923  0511  07F2               	addwf	0+(?___awmod)+02h
+   924                           
+   925  0512  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+   926  0517  0871               	movf	(1+(?___awmod)),w
+   927  0518  1283               	bcf	status, 5	;RP0=0, select bank0
+   928  0519  1303               	bcf	status, 6	;RP1=0, select bank0
+   929  051A  01BF               	clrf	(_f1+1)
+   930  051B  07BF               	addwf	(_f1+1)
+   931  051C  0870               	movf	(0+(?___awmod)),w
+   932  051D  01BE               	clrf	(_f1)
+   933  051E  07BE               	addwf	(_f1)
+   934                           
+   935                           	line	78
+   936                           	
+   937  051F                     l2486:	
+   938                           ;weather monitor.c: 78: lcd_cmd(0x80);
+   939  051F  3080               	movlw	(080h)
+   940  0520  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+   941                           	line	79
+   942                           	
+   943  0525                     l2488:	
+   944                           ;weather monitor.c: 79: lcd_data(a1+48);
+   945  0525  1283               	bcf	status, 5	;RP0=0, select bank0
+   946  0526  1303               	bcf	status, 6	;RP1=0, select bank0
+   947  0527  0820               	movf	(_a1),w
+   948  0528  3E30               	addlw	030h
+   949  0529  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+   950                           	line	80
+   951                           	
+   952  052E                     l2490:	
+   953                           ;weather monitor.c: 80: lcd_data(c1+48);
+   954  052E  1283               	bcf	status, 5	;RP0=0, select bank0
+   955  052F  1303               	bcf	status, 6	;RP1=0, select bank0
+   956  0530  082C               	movf	(_c1),w
+   957  0531  3E30               	addlw	030h
+   958  0532  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+   959                           	line	81
+   960                           	
+   961  0537                     l2492:	
+   962                           ;weather monitor.c: 81: lcd_data(e1+48);
+   963  0537  1283               	bcf	status, 5	;RP0=0, select bank0
+   964  0538  1303               	bcf	status, 6	;RP1=0, select bank0
+   965  0539  0838               	movf	(_e1),w
+   966  053A  3E30               	addlw	030h
+   967  053B  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+   968                           	line	82
+   969                           	
+   970  0540                     l2494:	
+   971                           ;weather monitor.c: 82: lcd_data(f1+48);
+   972  0540  1283               	bcf	status, 5	;RP0=0, select bank0
+   973  0541  1303               	bcf	status, 6	;RP1=0, select bank0
+   974  0542  083E               	movf	(_f1),w
+   975  0543  3E30               	addlw	030h
+   976  0544  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+   977                           	line	83
+   978                           	
+   979  0549                     l2496:	
+   980                           ;weather monitor.c: 83: if((temp1>500)&&(b==1))
+   981  0549  1283               	bcf	status, 5	;RP0=0, select bank0
+   982  054A  1303               	bcf	status, 6	;RP1=0, select bank0
+   983  054B  0847               	movf	(_temp1+1),w
+   984  054C  3A80               	xorlw	80h
+   985  054D  00FE               	movwf	btemp+0
+   986  054E  3081               	movlw	(high(01F5h))^80h
+   987  054F  027E               	subwf	btemp+0,w
+   988  0550  1D03               	skipz
+   989  0551  2D54               	goto	u2495
+   990  0552  30F5               	movlw	low(01F5h)
+   991  0553  0246               	subwf	(_temp1),w
+   992  0554                     u2495:
+   993                           
+   994  0554  1C03               	skipc
+   995  0555  2D57               	goto	u2491
+   996  0556  2D58               	goto	u2490
+   997  0557                     u2491:
+   998  0557  2D7C               	goto	l633
+   999  0558                     u2490:
+  1000                           	
+  1001  0558                     l2498:	
+  1002  0558  3001               	movlw	01h
+  1003  0559  1283               	bcf	status, 5	;RP0=0, select bank0
+  1004  055A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1005  055B  064C               	xorwf	(_b),w
+  1006  055C  044D               	iorwf	(_b+1),w
+  1007  055D  1D03               	skipz
+  1008  055E  2D60               	goto	u2501
+  1009  055F  2D61               	goto	u2500
+  1010  0560                     u2501:
+  1011  0560  2D7C               	goto	l633
+  1012  0561                     u2500:
+  1013                           	line	85
+  1014                           	
+  1015  0561                     l2500:	
+  1016                           ;weather monitor.c: 84: {
+  1017                           ;weather monitor.c: 85: lcd_cmd(0xC0);
+  1018  0561  30C0               	movlw	(0C0h)
+  1019  0562  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1020                           	line	86
+  1021                           	
+  1022  0567                     l2502:	
+  1023                           ;weather monitor.c: 86: lcd_display("wind");
+  1024  0567  3003               	movlw	((STR_1-__stringbase))&0ffh
+  1025  0568  120A  118A  2330   	fcall	_lcd_display
+              120A  118A         
+  1026                           	line	87
+  1027                           	
+  1028  056D                     l2504:	
+  1029                           ;weather monitor.c: 87: b=0;
+  1030  056D  3000               	movlw	low(0)
+  1031  056E  1283               	bcf	status, 5	;RP0=0, select bank0
+  1032  056F  1303               	bcf	status, 6	;RP1=0, select bank0
+  1033  0570  00CC               	movwf	(_b)
+  1034  0571  3000               	movlw	high(0)
+  1035  0572  00CD               	movwf	((_b))+1
+  1036                           	line	88
+  1037                           	
+  1038  0573                     l2506:	
+  1039                           ;weather monitor.c: 88: delay(1000);
+  1040  0573  30E8               	movlw	low(03E8h)
+  1041  0574  00F0               	movwf	(?_delay)
+  1042  0575  3003               	movlw	high(03E8h)
+  1043  0576  00F1               	movwf	((?_delay))+1
+  1044  0577  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1045                           	line	89
+  1046                           	
+  1047  057C                     l633:	
+  1048                           	line	90
+  1049                           	
+  1050  057C                     l2508:	
+  1051                           ;weather monitor.c: 89: }
+  1052                           ;weather monitor.c: 90: CHS2=0;
+  1053  057C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1054  057D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1055  057E  129F               	bcf	(253/8),(253)&7
+  1056                           	line	91
+  1057                           	
+  1058  057F                     l2510:	
+  1059                           ;weather monitor.c: 91: CHS1=0;
+  1060  057F  121F               	bcf	(252/8),(252)&7
+  1061                           	line	92
+  1062                           	
+  1063  0580                     l2512:	
+  1064                           ;weather monitor.c: 92: CHS0=1;
+  1065  0580  159F               	bsf	(251/8),(251)&7
+  1066                           	line	93
+  1067                           	
+  1068  0581                     l2514:	
+  1069                           ;weather monitor.c: 93: ADON=1;
+  1070  0581  141F               	bsf	(248/8),(248)&7
+  1071                           	line	94
+  1072                           	
+  1073  0582                     l2516:	
+  1074                           ;weather monitor.c: 94: delay(300);
+  1075  0582  302C               	movlw	low(012Ch)
+  1076  0583  00F0               	movwf	(?_delay)
+  1077  0584  3001               	movlw	high(012Ch)
+  1078  0585  00F1               	movwf	((?_delay))+1
+  1079  0586  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1080                           	line	95
+  1081                           	
+  1082  058B                     l2518:	
+  1083                           ;weather monitor.c: 95: ADCON0=(ADCON0|0x04);
+  1084  058B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1085  058C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1086  058D  081F               	movf	(31),w	;volatile
+  1087  058E  3804               	iorlw	04h
+  1088  058F  009F               	movwf	(31)	;volatile
+  1089                           	line	96
+  1090                           	
+  1091  0590                     l2520:	
+  1092                           ;weather monitor.c: 96: delay(300);
+  1093  0590  302C               	movlw	low(012Ch)
+  1094  0591  00F0               	movwf	(?_delay)
+  1095  0592  3001               	movlw	high(012Ch)
+  1096  0593  00F1               	movwf	((?_delay))+1
+  1097  0594  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1098                           	line	97
+  1099                           	
+  1100  0599                     l2522:	
+  1101                           ;weather monitor.c: 97: temp2=ADRESH<<8;
+  1102  0599  1283               	bcf	status, 5	;RP0=0, select bank0
+  1103  059A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1104  059B  081E               	movf	(30),w	;volatile
+  1105  059C  00F9               	movwf	(??_main+0)+0
+  1106  059D  01FA               	clrf	(??_main+0)+0+1
+  1107  059E  3008               	movlw	08h
+  1108  059F  00FE               	movwf	btemp+0
+  1109  05A0                     u2515:
+  1110  05A0  1003               	clrc
+  1111  05A1  0DF9               	rlf	(??_main+0)+0,f
+  1112  05A2  0DFA               	rlf	(??_main+0)+1,f
+  1113  05A3  0BFE               	decfsz	btemp+0,f
+  1114  05A4  2DA0               	goto	u2515
+  1115  05A5  0879               	movf	0+(??_main+0)+0,w
+  1116  05A6  00C8               	movwf	(_temp2)
+  1117  05A7  087A               	movf	1+(??_main+0)+0,w
+  1118  05A8  00C9               	movwf	(_temp2+1)
+  1119                           	line	98
+  1120                           	
+  1121  05A9                     l2524:	
+  1122                           ;weather monitor.c: 98: delay(300);
+  1123  05A9  302C               	movlw	low(012Ch)
+  1124  05AA  00F0               	movwf	(?_delay)
+  1125  05AB  3001               	movlw	high(012Ch)
+  1126  05AC  00F1               	movwf	((?_delay))+1
+  1127  05AD  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1128                           	line	99
+  1129                           	
+  1130  05B2                     l2526:	
+  1131                           ;weather monitor.c: 99: temp2=temp2+ADRESL;
+  1132  05B2  1683               	bsf	status, 5	;RP0=1, select bank1
+  1133  05B3  1303               	bcf	status, 6	;RP1=0, select bank1
+  1134  05B4  081E               	movf	(158)^080h,w	;volatile
+  1135  05B5  1283               	bcf	status, 5	;RP0=0, select bank0
+  1136  05B6  1303               	bcf	status, 6	;RP1=0, select bank0
+  1137  05B7  0748               	addwf	(_temp2),w
+  1138  05B8  00C8               	movwf	(_temp2)
+  1139  05B9  0849               	movf	(_temp2+1),w
+  1140  05BA  1803               	skipnc
+  1141  05BB  0A49               	incf	(_temp2+1),w
+  1142  05BC  00C9               	movwf	((_temp2))+1
+  1143                           	line	100
+  1144                           	
+  1145  05BD                     l2528:	
+  1146                           ;weather monitor.c: 100: delay(300);
+  1147  05BD  302C               	movlw	low(012Ch)
+  1148  05BE  00F0               	movwf	(?_delay)
+  1149  05BF  3001               	movlw	high(012Ch)
+  1150  05C0  00F1               	movwf	((?_delay))+1
+  1151  05C1  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1152                           	line	101
+  1153                           	
+  1154  05C6                     l2530:	
+  1155                           ;weather monitor.c: 101: a2=temp2/1000;
+  1156  05C6  30E8               	movlw	low(03E8h)
+  1157  05C7  00F0               	movwf	(?___awdiv)
+  1158  05C8  3003               	movlw	high(03E8h)
+  1159  05C9  00F1               	movwf	((?___awdiv))+1
+  1160  05CA  1283               	bcf	status, 5	;RP0=0, select bank0
+  1161  05CB  1303               	bcf	status, 6	;RP1=0, select bank0
+  1162  05CC  0849               	movf	(_temp2+1),w
+  1163  05CD  01F3               	clrf	1+(?___awdiv)+02h
+  1164  05CE  07F3               	addwf	1+(?___awdiv)+02h
+  1165  05CF  0848               	movf	(_temp2),w
+  1166  05D0  01F2               	clrf	0+(?___awdiv)+02h
+  1167  05D1  07F2               	addwf	0+(?___awdiv)+02h
+  1168                           
+  1169  05D2  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1170  05D7  0871               	movf	(1+(?___awdiv)),w
+  1171  05D8  1283               	bcf	status, 5	;RP0=0, select bank0
+  1172  05D9  1303               	bcf	status, 6	;RP1=0, select bank0
+  1173  05DA  01A3               	clrf	(_a2+1)
+  1174  05DB  07A3               	addwf	(_a2+1)
+  1175  05DC  0870               	movf	(0+(?___awdiv)),w
+  1176  05DD  01A2               	clrf	(_a2)
+  1177  05DE  07A2               	addwf	(_a2)
+  1178                           
+  1179                           	line	102
+  1180                           	
+  1181  05DF                     l2532:	
+  1182                           ;weather monitor.c: 102: b2=temp2%1000;
+  1183  05DF  30E8               	movlw	low(03E8h)
+  1184  05E0  00F0               	movwf	(?___awmod)
+  1185  05E1  3003               	movlw	high(03E8h)
+  1186  05E2  00F1               	movwf	((?___awmod))+1
+  1187  05E3  0849               	movf	(_temp2+1),w
+  1188  05E4  01F3               	clrf	1+(?___awmod)+02h
+  1189  05E5  07F3               	addwf	1+(?___awmod)+02h
+  1190  05E6  0848               	movf	(_temp2),w
+  1191  05E7  01F2               	clrf	0+(?___awmod)+02h
+  1192  05E8  07F2               	addwf	0+(?___awmod)+02h
+  1193                           
+  1194  05E9  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1195  05EE  0871               	movf	(1+(?___awmod)),w
+  1196  05EF  1283               	bcf	status, 5	;RP0=0, select bank0
+  1197  05F0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1198  05F1  01A9               	clrf	(_b2+1)
+  1199  05F2  07A9               	addwf	(_b2+1)
+  1200  05F3  0870               	movf	(0+(?___awmod)),w
+  1201  05F4  01A8               	clrf	(_b2)
+  1202  05F5  07A8               	addwf	(_b2)
+  1203                           
+  1204                           	line	103
+  1205                           	
+  1206  05F6                     l2534:	
+  1207                           ;weather monitor.c: 103: c2=b2/100;
+  1208  05F6  3064               	movlw	low(064h)
+  1209  05F7  00F0               	movwf	(?___awdiv)
+  1210  05F8  3000               	movlw	high(064h)
+  1211  05F9  00F1               	movwf	((?___awdiv))+1
+  1212  05FA  0829               	movf	(_b2+1),w
+  1213  05FB  01F3               	clrf	1+(?___awdiv)+02h
+  1214  05FC  07F3               	addwf	1+(?___awdiv)+02h
+  1215  05FD  0828               	movf	(_b2),w
+  1216  05FE  01F2               	clrf	0+(?___awdiv)+02h
+  1217  05FF  07F2               	addwf	0+(?___awdiv)+02h
+  1218                           
+  1219  0600  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1220  0605  0871               	movf	(1+(?___awdiv)),w
+  1221  0606  1283               	bcf	status, 5	;RP0=0, select bank0
+  1222  0607  1303               	bcf	status, 6	;RP1=0, select bank0
+  1223  0608  01AF               	clrf	(_c2+1)
+  1224  0609  07AF               	addwf	(_c2+1)
+  1225  060A  0870               	movf	(0+(?___awdiv)),w
+  1226  060B  01AE               	clrf	(_c2)
+  1227  060C  07AE               	addwf	(_c2)
+  1228                           
+  1229                           	line	104
+  1230                           	
+  1231  060D                     l2536:	
+  1232                           ;weather monitor.c: 104: d2=b2%100;
+  1233  060D  3064               	movlw	low(064h)
+  1234  060E  00F0               	movwf	(?___awmod)
+  1235  060F  3000               	movlw	high(064h)
+  1236  0610  00F1               	movwf	((?___awmod))+1
+  1237  0611  0829               	movf	(_b2+1),w
+  1238  0612  01F3               	clrf	1+(?___awmod)+02h
+  1239  0613  07F3               	addwf	1+(?___awmod)+02h
+  1240  0614  0828               	movf	(_b2),w
+  1241  0615  01F2               	clrf	0+(?___awmod)+02h
+  1242  0616  07F2               	addwf	0+(?___awmod)+02h
+  1243                           
+  1244  0617  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1245  061C  0871               	movf	(1+(?___awmod)),w
+  1246  061D  1283               	bcf	status, 5	;RP0=0, select bank0
+  1247  061E  1303               	bcf	status, 6	;RP1=0, select bank0
+  1248  061F  01B5               	clrf	(_d2+1)
+  1249  0620  07B5               	addwf	(_d2+1)
+  1250  0621  0870               	movf	(0+(?___awmod)),w
+  1251  0622  01B4               	clrf	(_d2)
+  1252  0623  07B4               	addwf	(_d2)
+  1253                           
+  1254                           	line	105
+  1255                           	
+  1256  0624                     l2538:	
+  1257                           ;weather monitor.c: 105: e2=d2/10;
+  1258  0624  300A               	movlw	low(0Ah)
+  1259  0625  00F0               	movwf	(?___awdiv)
+  1260  0626  3000               	movlw	high(0Ah)
+  1261  0627  00F1               	movwf	((?___awdiv))+1
+  1262  0628  0835               	movf	(_d2+1),w
+  1263  0629  01F3               	clrf	1+(?___awdiv)+02h
+  1264  062A  07F3               	addwf	1+(?___awdiv)+02h
+  1265  062B  0834               	movf	(_d2),w
+  1266  062C  01F2               	clrf	0+(?___awdiv)+02h
+  1267  062D  07F2               	addwf	0+(?___awdiv)+02h
+  1268                           
+  1269  062E  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1270  0633  0871               	movf	(1+(?___awdiv)),w
+  1271  0634  1283               	bcf	status, 5	;RP0=0, select bank0
+  1272  0635  1303               	bcf	status, 6	;RP1=0, select bank0
+  1273  0636  01BB               	clrf	(_e2+1)
+  1274  0637  07BB               	addwf	(_e2+1)
+  1275  0638  0870               	movf	(0+(?___awdiv)),w
+  1276  0639  01BA               	clrf	(_e2)
+  1277  063A  07BA               	addwf	(_e2)
+  1278                           
+  1279                           	line	106
+  1280                           	
+  1281  063B                     l2540:	
+  1282                           ;weather monitor.c: 106: f2=d2%10;
+  1283  063B  300A               	movlw	low(0Ah)
+  1284  063C  00F0               	movwf	(?___awmod)
+  1285  063D  3000               	movlw	high(0Ah)
+  1286  063E  00F1               	movwf	((?___awmod))+1
+  1287  063F  0835               	movf	(_d2+1),w
+  1288  0640  01F3               	clrf	1+(?___awmod)+02h
+  1289  0641  07F3               	addwf	1+(?___awmod)+02h
+  1290  0642  0834               	movf	(_d2),w
+  1291  0643  01F2               	clrf	0+(?___awmod)+02h
+  1292  0644  07F2               	addwf	0+(?___awmod)+02h
+  1293                           
+  1294  0645  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1295  064A  0871               	movf	(1+(?___awmod)),w
+  1296  064B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1297  064C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1298  064D  01C1               	clrf	(_f2+1)
+  1299  064E  07C1               	addwf	(_f2+1)
+  1300  064F  0870               	movf	(0+(?___awmod)),w
+  1301  0650  01C0               	clrf	(_f2)
+  1302  0651  07C0               	addwf	(_f2)
+  1303                           
+  1304                           	line	107
+  1305                           	
+  1306  0652                     l2542:	
+  1307                           ;weather monitor.c: 107: lcd_cmd(0x85);
+  1308  0652  3085               	movlw	(085h)
+  1309  0653  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1310                           	line	108
+  1311                           	
+  1312  0658                     l2544:	
+  1313                           ;weather monitor.c: 108: lcd_data(a2+48);
+  1314  0658  1283               	bcf	status, 5	;RP0=0, select bank0
+  1315  0659  1303               	bcf	status, 6	;RP1=0, select bank0
+  1316  065A  0822               	movf	(_a2),w
+  1317  065B  3E30               	addlw	030h
+  1318  065C  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1319                           	line	109
+  1320                           	
+  1321  0661                     l2546:	
+  1322                           ;weather monitor.c: 109: lcd_data(c2+48);
+  1323  0661  1283               	bcf	status, 5	;RP0=0, select bank0
+  1324  0662  1303               	bcf	status, 6	;RP1=0, select bank0
+  1325  0663  082E               	movf	(_c2),w
+  1326  0664  3E30               	addlw	030h
+  1327  0665  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1328                           	line	110
+  1329                           	
+  1330  066A                     l2548:	
+  1331                           ;weather monitor.c: 110: lcd_data(e2+48);
+  1332  066A  1283               	bcf	status, 5	;RP0=0, select bank0
+  1333  066B  1303               	bcf	status, 6	;RP1=0, select bank0
+  1334  066C  083A               	movf	(_e2),w
+  1335  066D  3E30               	addlw	030h
+  1336  066E  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1337                           	line	111
+  1338                           	
+  1339  0673                     l2550:	
+  1340                           ;weather monitor.c: 111: lcd_data(f2+48);
+  1341  0673  1283               	bcf	status, 5	;RP0=0, select bank0
+  1342  0674  1303               	bcf	status, 6	;RP1=0, select bank0
+  1343  0675  0840               	movf	(_f2),w
+  1344  0676  3E30               	addlw	030h
+  1345  0677  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1346                           	line	113
+  1347                           	
+  1348  067C                     l2552:	
+  1349                           ;weather monitor.c: 113: if((temp2>800)&&(c==1))
+  1350  067C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1351  067D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1352  067E  0849               	movf	(_temp2+1),w
+  1353  067F  3A80               	xorlw	80h
+  1354  0680  00FE               	movwf	btemp+0
+  1355  0681  3083               	movlw	(high(0321h))^80h
+  1356  0682  027E               	subwf	btemp+0,w
+  1357  0683  1D03               	skipz
+  1358  0684  2E87               	goto	u2525
+  1359  0685  3021               	movlw	low(0321h)
+  1360  0686  0248               	subwf	(_temp2),w
+  1361  0687                     u2525:
+  1362                           
+  1363  0687  1C03               	skipc
+  1364  0688  2E8A               	goto	u2521
+  1365  0689  2E8B               	goto	u2520
+  1366  068A                     u2521:
+  1367  068A  2EAF               	goto	l634
+  1368  068B                     u2520:
+  1369                           	
+  1370  068B                     l2554:	
+  1371  068B  3001               	movlw	01h
+  1372  068C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1373  068D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1374  068E  064E               	xorwf	(_c),w
+  1375  068F  044F               	iorwf	(_c+1),w
+  1376  0690  1D03               	skipz
+  1377  0691  2E93               	goto	u2531
+  1378  0692  2E94               	goto	u2530
+  1379  0693                     u2531:
+  1380  0693  2EAF               	goto	l634
+  1381  0694                     u2530:
+  1382                           	line	115
+  1383                           	
+  1384  0694                     l2556:	
+  1385                           ;weather monitor.c: 114: {
+  1386                           ;weather monitor.c: 115: lcd_cmd(0xC5);
+  1387  0694  30C5               	movlw	(0C5h)
+  1388  0695  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1389                           	line	116
+  1390                           	
+  1391  069A                     l2558:	
+  1392                           ;weather monitor.c: 116: lcd_display("H.wind");
+  1393  069A  3001               	movlw	((STR_2-__stringbase))&0ffh
+  1394  069B  120A  118A  2330   	fcall	_lcd_display
+              120A  118A         
+  1395                           	line	117
+  1396                           	
+  1397  06A0                     l2560:	
+  1398                           ;weather monitor.c: 117: c=0;
+  1399  06A0  3000               	movlw	low(0)
+  1400  06A1  1283               	bcf	status, 5	;RP0=0, select bank0
+  1401  06A2  1303               	bcf	status, 6	;RP1=0, select bank0
+  1402  06A3  00CE               	movwf	(_c)
+  1403  06A4  3000               	movlw	high(0)
+  1404  06A5  00CF               	movwf	((_c))+1
+  1405                           	line	118
+  1406                           	
+  1407  06A6                     l2562:	
+  1408                           ;weather monitor.c: 118: delay(1000);
+  1409  06A6  30E8               	movlw	low(03E8h)
+  1410  06A7  00F0               	movwf	(?_delay)
+  1411  06A8  3003               	movlw	high(03E8h)
+  1412  06A9  00F1               	movwf	((?_delay))+1
+  1413  06AA  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1414                           	line	120
+  1415                           	
+  1416  06AF                     l634:	
+  1417                           	line	121
+  1418                           	
+  1419  06AF                     l2564:	
+  1420                           ;weather monitor.c: 120: }
+  1421                           ;weather monitor.c: 121: CHS2=0;
+  1422  06AF  1283               	bcf	status, 5	;RP0=0, select bank0
+  1423  06B0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1424  06B1  129F               	bcf	(253/8),(253)&7
+  1425                           	line	122
+  1426                           	
+  1427  06B2                     l2566:	
+  1428                           ;weather monitor.c: 122: CHS1=1;
+  1429  06B2  161F               	bsf	(252/8),(252)&7
+  1430                           	line	123
+  1431                           	
+  1432  06B3                     l2568:	
+  1433                           ;weather monitor.c: 123: CHS0=0;
+  1434  06B3  119F               	bcf	(251/8),(251)&7
+  1435                           	line	124
+  1436                           	
+  1437  06B4                     l2570:	
+  1438                           ;weather monitor.c: 124: ADON=1;
+  1439  06B4  141F               	bsf	(248/8),(248)&7
+  1440                           	line	125
+  1441                           	
+  1442  06B5                     l2572:	
+  1443                           ;weather monitor.c: 125: delay(300);
+  1444  06B5  302C               	movlw	low(012Ch)
+  1445  06B6  00F0               	movwf	(?_delay)
+  1446  06B7  3001               	movlw	high(012Ch)
+  1447  06B8  00F1               	movwf	((?_delay))+1
+  1448  06B9  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1449                           	line	126
+  1450                           	
+  1451  06BE                     l2574:	
+  1452                           ;weather monitor.c: 126: ADCON0=(ADCON0|0x04);
+  1453  06BE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1454  06BF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1455  06C0  081F               	movf	(31),w	;volatile
+  1456  06C1  3804               	iorlw	04h
+  1457  06C2  009F               	movwf	(31)	;volatile
+  1458                           	line	127
+  1459                           	
+  1460  06C3                     l2576:	
+  1461                           ;weather monitor.c: 127: delay(300);
+  1462  06C3  302C               	movlw	low(012Ch)
+  1463  06C4  00F0               	movwf	(?_delay)
+  1464  06C5  3001               	movlw	high(012Ch)
+  1465  06C6  00F1               	movwf	((?_delay))+1
+  1466  06C7  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1467                           	line	128
+  1468                           	
+  1469  06CC                     l2578:	
+  1470                           ;weather monitor.c: 128: temp3=ADRESH<<8;
+  1471  06CC  1283               	bcf	status, 5	;RP0=0, select bank0
+  1472  06CD  1303               	bcf	status, 6	;RP1=0, select bank0
+  1473  06CE  081E               	movf	(30),w	;volatile
+  1474  06CF  00F9               	movwf	(??_main+0)+0
+  1475  06D0  01FA               	clrf	(??_main+0)+0+1
+  1476  06D1  3008               	movlw	08h
+  1477  06D2  00FE               	movwf	btemp+0
+  1478  06D3                     u2545:
+  1479  06D3  1003               	clrc
+  1480  06D4  0DF9               	rlf	(??_main+0)+0,f
+  1481  06D5  0DFA               	rlf	(??_main+0)+1,f
+  1482  06D6  0BFE               	decfsz	btemp+0,f
+  1483  06D7  2ED3               	goto	u2545
+  1484  06D8  0879               	movf	0+(??_main+0)+0,w
+  1485  06D9  00FB               	movwf	(_temp3)
+  1486  06DA  087A               	movf	1+(??_main+0)+0,w
+  1487  06DB  00FC               	movwf	(_temp3+1)
+  1488                           	line	129
+  1489                           	
+  1490  06DC                     l2580:	
+  1491                           ;weather monitor.c: 129: delay(300);
+  1492  06DC  302C               	movlw	low(012Ch)
+  1493  06DD  00F0               	movwf	(?_delay)
+  1494  06DE  3001               	movlw	high(012Ch)
+  1495  06DF  00F1               	movwf	((?_delay))+1
+  1496  06E0  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1497                           	line	130
+  1498                           	
+  1499  06E5                     l2582:	
+  1500                           ;weather monitor.c: 130: temp3=temp3+ADRESL;
+  1501  06E5  1683               	bsf	status, 5	;RP0=1, select bank1
+  1502  06E6  1303               	bcf	status, 6	;RP1=0, select bank1
+  1503  06E7  081E               	movf	(158)^080h,w	;volatile
+  1504  06E8  077B               	addwf	(_temp3),w
+  1505  06E9  00FB               	movwf	(_temp3)
+  1506  06EA  087C               	movf	(_temp3+1),w
+  1507  06EB  1803               	skipnc
+  1508  06EC  0A7C               	incf	(_temp3+1),w
+  1509  06ED  00FC               	movwf	((_temp3))+1
+  1510                           	line	131
+  1511                           	
+  1512  06EE                     l2584:	
+  1513                           ;weather monitor.c: 131: delay(300);
+  1514  06EE  302C               	movlw	low(012Ch)
+  1515  06EF  00F0               	movwf	(?_delay)
+  1516  06F0  3001               	movlw	high(012Ch)
+  1517  06F1  00F1               	movwf	((?_delay))+1
+  1518  06F2  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1519                           	line	132
+  1520                           	
+  1521  06F7                     l2586:	
+  1522                           ;weather monitor.c: 132: a3=temp3/1000;
+  1523  06F7  30E8               	movlw	low(03E8h)
+  1524  06F8  00F0               	movwf	(?___awdiv)
+  1525  06F9  3003               	movlw	high(03E8h)
+  1526  06FA  00F1               	movwf	((?___awdiv))+1
+  1527  06FB  087C               	movf	(_temp3+1),w
+  1528  06FC  01F3               	clrf	1+(?___awdiv)+02h
+  1529  06FD  07F3               	addwf	1+(?___awdiv)+02h
+  1530  06FE  087B               	movf	(_temp3),w
+  1531  06FF  01F2               	clrf	0+(?___awdiv)+02h
+  1532  0700  07F2               	addwf	0+(?___awdiv)+02h
+  1533                           
+  1534  0701  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1535  0706  0871               	movf	(1+(?___awdiv)),w
+  1536  0707  1283               	bcf	status, 5	;RP0=0, select bank0
+  1537  0708  1303               	bcf	status, 6	;RP1=0, select bank0
+  1538  0709  01A5               	clrf	(_a3+1)
+  1539  070A  07A5               	addwf	(_a3+1)
+  1540  070B  0870               	movf	(0+(?___awdiv)),w
+  1541  070C  01A4               	clrf	(_a3)
+  1542  070D  07A4               	addwf	(_a3)
+  1543                           
+  1544                           	line	133
+  1545                           	
+  1546  070E                     l2588:	
+  1547                           ;weather monitor.c: 133: b3=temp3%1000;
+  1548  070E  30E8               	movlw	low(03E8h)
+  1549  070F  00F0               	movwf	(?___awmod)
+  1550  0710  3003               	movlw	high(03E8h)
+  1551  0711  00F1               	movwf	((?___awmod))+1
+  1552  0712  087C               	movf	(_temp3+1),w
+  1553  0713  01F3               	clrf	1+(?___awmod)+02h
+  1554  0714  07F3               	addwf	1+(?___awmod)+02h
+  1555  0715  087B               	movf	(_temp3),w
+  1556  0716  01F2               	clrf	0+(?___awmod)+02h
+  1557  0717  07F2               	addwf	0+(?___awmod)+02h
+  1558                           
+  1559  0718  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1560  071D  0871               	movf	(1+(?___awmod)),w
+  1561  071E  1283               	bcf	status, 5	;RP0=0, select bank0
+  1562  071F  1303               	bcf	status, 6	;RP1=0, select bank0
+  1563  0720  01AB               	clrf	(_b3+1)
+  1564  0721  07AB               	addwf	(_b3+1)
+  1565  0722  0870               	movf	(0+(?___awmod)),w
+  1566  0723  01AA               	clrf	(_b3)
+  1567  0724  07AA               	addwf	(_b3)
+  1568                           
+  1569                           	line	134
+  1570                           	
+  1571  0725                     l2590:	
+  1572                           ;weather monitor.c: 134: c3=b3/100;
+  1573  0725  3064               	movlw	low(064h)
+  1574  0726  00F0               	movwf	(?___awdiv)
+  1575  0727  3000               	movlw	high(064h)
+  1576  0728  00F1               	movwf	((?___awdiv))+1
+  1577  0729  082B               	movf	(_b3+1),w
+  1578  072A  01F3               	clrf	1+(?___awdiv)+02h
+  1579  072B  07F3               	addwf	1+(?___awdiv)+02h
+  1580  072C  082A               	movf	(_b3),w
+  1581  072D  01F2               	clrf	0+(?___awdiv)+02h
+  1582  072E  07F2               	addwf	0+(?___awdiv)+02h
+  1583                           
+  1584  072F  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1585  0734  0871               	movf	(1+(?___awdiv)),w
+  1586  0735  1283               	bcf	status, 5	;RP0=0, select bank0
+  1587  0736  1303               	bcf	status, 6	;RP1=0, select bank0
+  1588  0737  01B1               	clrf	(_c3+1)
+  1589  0738  07B1               	addwf	(_c3+1)
+  1590  0739  0870               	movf	(0+(?___awdiv)),w
+  1591  073A  01B0               	clrf	(_c3)
+  1592  073B  07B0               	addwf	(_c3)
+  1593                           
+  1594                           	line	135
+  1595                           	
+  1596  073C                     l2592:	
+  1597                           ;weather monitor.c: 135: d3=b3%100;
+  1598  073C  3064               	movlw	low(064h)
+  1599  073D  00F0               	movwf	(?___awmod)
+  1600  073E  3000               	movlw	high(064h)
+  1601  073F  00F1               	movwf	((?___awmod))+1
+  1602  0740  082B               	movf	(_b3+1),w
+  1603  0741  01F3               	clrf	1+(?___awmod)+02h
+  1604  0742  07F3               	addwf	1+(?___awmod)+02h
+  1605  0743  082A               	movf	(_b3),w
+  1606  0744  01F2               	clrf	0+(?___awmod)+02h
+  1607  0745  07F2               	addwf	0+(?___awmod)+02h
+  1608                           
+  1609  0746  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1610  074B  0871               	movf	(1+(?___awmod)),w
+  1611  074C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1612  074D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1613  074E  01B7               	clrf	(_d3+1)
+  1614  074F  07B7               	addwf	(_d3+1)
+  1615  0750  0870               	movf	(0+(?___awmod)),w
+  1616  0751  01B6               	clrf	(_d3)
+  1617  0752  07B6               	addwf	(_d3)
+  1618                           
+  1619                           	line	136
+  1620                           	
+  1621  0753                     l2594:	
+  1622                           ;weather monitor.c: 136: e3=d3/10;
+  1623  0753  300A               	movlw	low(0Ah)
+  1624  0754  00F0               	movwf	(?___awdiv)
+  1625  0755  3000               	movlw	high(0Ah)
+  1626  0756  00F1               	movwf	((?___awdiv))+1
+  1627  0757  0837               	movf	(_d3+1),w
+  1628  0758  01F3               	clrf	1+(?___awdiv)+02h
+  1629  0759  07F3               	addwf	1+(?___awdiv)+02h
+  1630  075A  0836               	movf	(_d3),w
+  1631  075B  01F2               	clrf	0+(?___awdiv)+02h
+  1632  075C  07F2               	addwf	0+(?___awdiv)+02h
+  1633                           
+  1634  075D  120A  118A  23BB   	fcall	___awdiv
+              120A  118A         
+  1635  0762  0871               	movf	(1+(?___awdiv)),w
+  1636  0763  1283               	bcf	status, 5	;RP0=0, select bank0
+  1637  0764  1303               	bcf	status, 6	;RP1=0, select bank0
+  1638  0765  01BD               	clrf	(_e3+1)
+  1639  0766  07BD               	addwf	(_e3+1)
+  1640  0767  0870               	movf	(0+(?___awdiv)),w
+  1641  0768  01BC               	clrf	(_e3)
+  1642  0769  07BC               	addwf	(_e3)
+  1643                           
+  1644                           	line	137
+  1645                           	
+  1646  076A                     l2596:	
+  1647                           ;weather monitor.c: 137: f3=d3%10;
+  1648  076A  300A               	movlw	low(0Ah)
+  1649  076B  00F0               	movwf	(?___awmod)
+  1650  076C  3000               	movlw	high(0Ah)
+  1651  076D  00F1               	movwf	((?___awmod))+1
+  1652  076E  0837               	movf	(_d3+1),w
+  1653  076F  01F3               	clrf	1+(?___awmod)+02h
+  1654  0770  07F3               	addwf	1+(?___awmod)+02h
+  1655  0771  0836               	movf	(_d3),w
+  1656  0772  01F2               	clrf	0+(?___awmod)+02h
+  1657  0773  07F2               	addwf	0+(?___awmod)+02h
+  1658                           
+  1659  0774  120A  118A  235B   	fcall	___awmod
+              120A  118A         
+  1660  0779  0871               	movf	(1+(?___awmod)),w
+  1661  077A  1283               	bcf	status, 5	;RP0=0, select bank0
+  1662  077B  1303               	bcf	status, 6	;RP1=0, select bank0
+  1663  077C  01C3               	clrf	(_f3+1)
+  1664  077D  07C3               	addwf	(_f3+1)
+  1665  077E  0870               	movf	(0+(?___awmod)),w
+  1666  077F  01C2               	clrf	(_f3)
+  1667  0780  07C2               	addwf	(_f3)
+  1668                           
+  1669                           	line	138
+  1670                           	
+  1671  0781                     l2598:	
+  1672                           ;weather monitor.c: 138: lcd_cmd(0x8A);
+  1673  0781  308A               	movlw	(08Ah)
+  1674  0782  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1675                           	line	139
+  1676                           	
+  1677  0787                     l2600:	
+  1678                           ;weather monitor.c: 139: lcd_data(a3+48);
+  1679  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+  1680  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+  1681  0789  0824               	movf	(_a3),w
+  1682  078A  3E30               	addlw	030h
+  1683  078B  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1684                           	line	140
+  1685                           	
+  1686  0790                     l2602:	
+  1687                           ;weather monitor.c: 140: lcd_data(c3+48);
+  1688  0790  1283               	bcf	status, 5	;RP0=0, select bank0
+  1689  0791  1303               	bcf	status, 6	;RP1=0, select bank0
+  1690  0792  0830               	movf	(_c3),w
+  1691  0793  3E30               	addlw	030h
+  1692  0794  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1693                           	line	141
+  1694                           	
+  1695  0799                     l2604:	
+  1696                           ;weather monitor.c: 141: lcd_data(e3+48);
+  1697  0799  1283               	bcf	status, 5	;RP0=0, select bank0
+  1698  079A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1699  079B  083C               	movf	(_e3),w
+  1700  079C  3E30               	addlw	030h
+  1701  079D  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1702                           	line	142
+  1703                           	
+  1704  07A2                     l2606:	
+  1705                           ;weather monitor.c: 142: lcd_data(f3+48);
+  1706  07A2  1283               	bcf	status, 5	;RP0=0, select bank0
+  1707  07A3  1303               	bcf	status, 6	;RP1=0, select bank0
+  1708  07A4  0842               	movf	(_f3),w
+  1709  07A5  3E30               	addlw	030h
+  1710  07A6  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1711                           	line	144
+  1712                           	
+  1713  07AB                     l2608:	
+  1714                           ;weather monitor.c: 144: if((temp3>1000)&&(d==1))
+  1715  07AB  087C               	movf	(_temp3+1),w
+  1716  07AC  3A80               	xorlw	80h
+  1717  07AD  00FE               	movwf	btemp+0
+  1718  07AE  3083               	movlw	(high(03E9h))^80h
+  1719  07AF  027E               	subwf	btemp+0,w
+  1720  07B0  1D03               	skipz
+  1721  07B1  2FB4               	goto	u2555
+  1722  07B2  30E9               	movlw	low(03E9h)
+  1723  07B3  027B               	subwf	(_temp3),w
+  1724  07B4                     u2555:
+  1725                           
+  1726  07B4  1C03               	skipc
+  1727  07B5  2FB7               	goto	u2551
+  1728  07B6  2FB8               	goto	u2550
+  1729  07B7                     u2551:
+  1730  07B7  2FDC               	goto	l635
+  1731  07B8                     u2550:
+  1732                           	
+  1733  07B8                     l2610:	
+  1734  07B8  3001               	movlw	01h
+  1735  07B9  1283               	bcf	status, 5	;RP0=0, select bank0
+  1736  07BA  1303               	bcf	status, 6	;RP1=0, select bank0
+  1737  07BB  0650               	xorwf	(_d),w
+  1738  07BC  0451               	iorwf	(_d+1),w
+  1739  07BD  1D03               	skipz
+  1740  07BE  2FC0               	goto	u2561
+  1741  07BF  2FC1               	goto	u2560
+  1742  07C0                     u2561:
+  1743  07C0  2FDC               	goto	l635
+  1744  07C1                     u2560:
+  1745                           	line	146
+  1746                           	
+  1747  07C1                     l2612:	
+  1748                           ;weather monitor.c: 145: {
+  1749                           ;weather monitor.c: 146: lcd_cmd(0xCA);
+  1750  07C1  30CA               	movlw	(0CAh)
+  1751  07C2  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1752                           	line	147
+  1753                           	
+  1754  07C7                     l2614:	
+  1755                           ;weather monitor.c: 147: lcd_display("H.rain");
+  1756  07C7  3008               	movlw	((STR_3-__stringbase))&0ffh
+  1757  07C8  120A  118A  2330   	fcall	_lcd_display
+              120A  118A         
+  1758                           	line	148
+  1759                           	
+  1760  07CD                     l2616:	
+  1761                           ;weather monitor.c: 148: d=0;
+  1762  07CD  3000               	movlw	low(0)
+  1763  07CE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1764  07CF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1765  07D0  00D0               	movwf	(_d)
+  1766  07D1  3000               	movlw	high(0)
+  1767  07D2  00D1               	movwf	((_d))+1
+  1768                           	line	149
+  1769                           	
+  1770  07D3                     l2618:	
+  1771                           ;weather monitor.c: 149: delay(1000);
+  1772  07D3  30E8               	movlw	low(03E8h)
+  1773  07D4  00F0               	movwf	(?_delay)
+  1774  07D5  3003               	movlw	high(03E8h)
+  1775  07D6  00F1               	movwf	((?_delay))+1
+  1776  07D7  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  1777                           	line	150
+  1778                           	
+  1779  07DC                     l635:	
+  1780                           	line	152
+  1781                           	
+  1782  07DC                     l2620:	
+  1783                           ;weather monitor.c: 150: }
+  1784                           ;weather monitor.c: 152: if((RB6==1)&&(a==1))
+  1785  07DC  1283               	bcf	status, 5	;RP0=0, select bank0
+  1786  07DD  1303               	bcf	status, 6	;RP1=0, select bank0
+  1787  07DE  1F06               	btfss	(54/8),(54)&7
+  1788  07DF  2FE1               	goto	u2571
+  1789  07E0  2FE2               	goto	u2570
+  1790  07E1                     u2571:
+  1791  07E1  2FFC               	goto	l636
+  1792  07E2                     u2570:
+  1793                           	
+  1794  07E2                     l2622:	
+  1795  07E2  3001               	movlw	01h
+  1796  07E3  064A               	xorwf	(_a),w
+  1797  07E4  044B               	iorwf	(_a+1),w
+  1798  07E5  1D03               	skipz
+  1799  07E6  2FE8               	goto	u2581
+  1800  07E7  2FE9               	goto	u2580
+  1801  07E8                     u2581:
+  1802  07E8  2FFC               	goto	l636
+  1803  07E9                     u2580:
+  1804                           	line	154
+  1805                           	
+  1806  07E9                     l2624:	
+  1807                           ;weather monitor.c: 153: {
+  1808                           ;weather monitor.c: 154: RB0=1;
+  1809  07E9  1406               	bsf	(48/8),(48)&7
+  1810                           	line	155
+  1811                           	
+  1812  07EA                     l2626:	
+  1813                           ;weather monitor.c: 155: lcd_cmd(0xC5);
+  1814  07EA  30C5               	movlw	(0C5h)
+  1815  07EB  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  1816                           	line	156
+  1817                           	
+  1818  07F0                     l2628:	
+  1819                           ;weather monitor.c: 156: lcd_display("Wind");
+  1820  07F0  300F               	movlw	((STR_4-__stringbase))&0ffh
+  1821  07F1  120A  118A  2330   	fcall	_lcd_display
+              120A  118A         
+  1822                           	line	157
+  1823                           	
+  1824  07F6                     l2630:	
+  1825                           ;weather monitor.c: 157: a=0;
+  1826  07F6  3000               	movlw	low(0)
+  1827  07F7  1283               	bcf	status, 5	;RP0=0, select bank0
+  1828  07F8  1303               	bcf	status, 6	;RP1=0, select bank0
+  1829  07F9  00CA               	movwf	(_a)
+  1830  07FA  3000               	movlw	high(0)
+  1831  07FB  00CB               	movwf	((_a))+1
+  1832                           	line	158
+  1833                           	
+  1834  07FC                     l636:	
+  1835                           	line	159
+  1836                           	
+  1837  07FC                     l637:	
+  1838                           	line	59
+  1839  07FC  2C49               	goto	l632
+  1840                           	
+  1841  07FD                     l638:	
+  1842                           	line	161
+  1843                           	
+  1844  07FD                     l639:	
+  1845                           	global	start
+  1846  07FD  120A  118A  2800   	ljmp	start
+  1847                           	opt stack 0
+  1848                           GLOBAL	__end_of_main
+  1849  0800                     	__end_of_main:
+  1850 ;; =============== function _main ends ============
+  1851                           
+  1852                           	signat	_main,90
+  1853                           	global	_lcd_display
+  1854                           psect	text173,local,class=CODE,delta=2
+  1855                           global __ptext173
+  1856  0330                     __ptext173:
+  1857                           
+  1858 ;; *************** function _lcd_display *****************
+  1859 ;; Defined at:
+  1860 ;;		line 41 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  1861 ;; Parameters:    Size  Location     Type
+  1862 ;;  m               1    wreg     PTR unsigned char 
+  1863 ;;		 -> STR_4(5), STR_3(7), STR_2(7), STR_1(5), 
+  1864 ;; Auto vars:     Size  Location     Type
+  1865 ;;  m               1    3[COMMON] PTR unsigned char 
+  1866 ;;		 -> STR_4(5), STR_3(7), STR_2(7), STR_1(5), 
+  1867 ;; Return value:  Size  Location     Type
+  1868 ;;		None               void
+  1869 ;; Registers used:
+  1870 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1871 ;; Tracked objects:
+  1872 ;;		On entry : 0/0
+  1873 ;;		On exit  : 0/0
+  1874 ;;		Unchanged: 0/0
+  1875 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1876 ;;      Params:         0       0       0       0       0
+  1877 ;;      Locals:         1       0       0       0       0
+  1878 ;;      Temps:          0       0       0       0       0
+  1879 ;;      Totals:         1       0       0       0       0
+  1880 ;;Total ram usage:        1 bytes
+  1881 ;; Hardware stack levels used:    1
+  1882 ;; Hardware stack levels required when called:    2
+  1883 ;; This function calls:
+  1884 ;;		_lcd_data
+  1885 ;; This function is called by:
+  1886 ;;		_main
+  1887 ;; This function uses a non-reentrant model
+  1888 ;;
+  1889                           psect	text173
+  1890                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  1891                           	line	41
+  1892                           	global	__size_of_lcd_display
+  1893  002B                     	__size_of_lcd_display	equ	__end_of_lcd_display-_lcd_display
+  1894                           	
+  1895  0330                     _lcd_display:	
+  1896                           	opt	stack 7
+  1897                           ; Regs used in _lcd_display: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1898                           ;lcd_display@m stored from wreg
+  1899  0330  00F3               	movwf	(lcd_display@m)
+  1900                           	line	42
+  1901                           	
+  1902  0331                     l2428:	
+  1903                           ;weather monitor.c: 42: for(i=0;m[i]!='0';i++)
+  1904  0331  3000               	movlw	low(0)
+  1905  0332  1283               	bcf	status, 5	;RP0=0, select bank0
+  1906  0333  1303               	bcf	status, 6	;RP1=0, select bank0
+  1907  0334  00C4               	movwf	(_i)
+  1908  0335  3000               	movlw	high(0)
+  1909  0336  00C5               	movwf	((_i))+1
+  1910  0337  2B4D               	goto	l626
+  1911                           	line	43
+  1912                           	
+  1913  0338                     l627:	
+  1914                           	line	44
+  1915                           	
+  1916  0338                     l2430:	
+  1917                           ;weather monitor.c: 43: {
+  1918                           ;weather monitor.c: 44: lcd_data(m[i]);
+  1919  0338  0844               	movf	(_i),w
+  1920  0339  0773               	addwf	(lcd_display@m),w
+  1921  033A  0084               	movwf	fsr0
+  1922  033B  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1923  0340  120A  118A  22CB   	fcall	_lcd_data
+              120A  118A         
+  1924                           	line	42
+  1925                           	
+  1926  0345                     l2432:	
+  1927  0345  3001               	movlw	low(01h)
+  1928  0346  1283               	bcf	status, 5	;RP0=0, select bank0
+  1929  0347  1303               	bcf	status, 6	;RP1=0, select bank0
+  1930  0348  07C4               	addwf	(_i),f
+  1931  0349  1803               	skipnc
+  1932  034A  0AC5               	incf	(_i+1),f
+  1933  034B  3000               	movlw	high(01h)
+  1934  034C  07C5               	addwf	(_i+1),f
+  1935                           	
+  1936  034D                     l626:	
+  1937                           	
+  1938  034D                     l2434:	
+  1939  034D  0844               	movf	(_i),w
+  1940  034E  0773               	addwf	(lcd_display@m),w
+  1941  034F  0084               	movwf	fsr0
+  1942  0350  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1943  0355  3A30               	xorlw	030h
+  1944  0356  1D03               	skipz
+  1945  0357  2B59               	goto	u2471
+  1946  0358  2B5A               	goto	u2470
+  1947  0359                     u2471:
+  1948  0359  2B38               	goto	l627
+  1949  035A                     u2470:
+  1950                           	
+  1951  035A                     l628:	
+  1952                           	line	46
+  1953                           	
+  1954  035A                     l629:	
+  1955  035A  0008               	return
+  1956                           	opt stack 0
+  1957                           GLOBAL	__end_of_lcd_display
+  1958  035B                     	__end_of_lcd_display:
+  1959 ;; =============== function _lcd_display ends ============
+  1960                           
+  1961                           	signat	_lcd_display,4216
+  1962                           	global	_lcd_init
+  1963                           psect	text174,local,class=CODE,delta=2
+  1964                           global __ptext174
+  1965  0311                     __ptext174:
+  1966                           
+  1967 ;; *************** function _lcd_init *****************
+  1968 ;; Defined at:
+  1969 ;;		line 32 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  1970 ;; Parameters:    Size  Location     Type
+  1971 ;;		None
+  1972 ;; Auto vars:     Size  Location     Type
+  1973 ;;		None
+  1974 ;; Return value:  Size  Location     Type
+  1975 ;;		None               void
+  1976 ;; Registers used:
+  1977 ;;		wreg, status,2, status,0, pclath, cstack
+  1978 ;; Tracked objects:
+  1979 ;;		On entry : 0/0
+  1980 ;;		On exit  : 0/0
+  1981 ;;		Unchanged: 0/0
+  1982 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1983 ;;      Params:         0       0       0       0       0
+  1984 ;;      Locals:         0       0       0       0       0
+  1985 ;;      Temps:          0       0       0       0       0
+  1986 ;;      Totals:         0       0       0       0       0
+  1987 ;;Total ram usage:        0 bytes
+  1988 ;; Hardware stack levels used:    1
+  1989 ;; Hardware stack levels required when called:    2
+  1990 ;; This function calls:
+  1991 ;;		_lcd_cmd
+  1992 ;; This function is called by:
+  1993 ;;		_main
+  1994 ;; This function uses a non-reentrant model
+  1995 ;;
+  1996                           psect	text174
+  1997                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  1998                           	line	32
+  1999                           	global	__size_of_lcd_init
+  2000  001F                     	__size_of_lcd_init	equ	__end_of_lcd_init-_lcd_init
+  2001                           	
+  2002  0311                     _lcd_init:	
+  2003                           	opt	stack 7
+  2004                           ; Regs used in _lcd_init: [wreg+status,2+status,0+pclath+cstack]
+  2005                           	line	33
+  2006                           	
+  2007  0311                     l2426:	
+  2008                           ;weather monitor.c: 33: lcd_cmd(0x38);
+  2009  0311  3038               	movlw	(038h)
+  2010  0312  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  2011                           	line	34
+  2012                           ;weather monitor.c: 34: lcd_cmd(0x0C);
+  2013  0317  300C               	movlw	(0Ch)
+  2014  0318  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  2015                           	line	35
+  2016                           ;weather monitor.c: 35: lcd_cmd(0x80);
+  2017  031D  3080               	movlw	(080h)
+  2018  031E  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  2019                           	line	36
+  2020                           ;weather monitor.c: 36: lcd_cmd(0xC0);
+  2021  0323  30C0               	movlw	(0C0h)
+  2022  0324  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  2023                           	line	37
+  2024                           ;weather monitor.c: 37: lcd_cmd(0x01);
+  2025  0329  3001               	movlw	(01h)
+  2026  032A  120A  118A  22E0   	fcall	_lcd_cmd
+              120A  118A         
+  2027                           	line	38
+  2028                           	
+  2029  032F                     l623:	
+  2030  032F  0008               	return
+  2031                           	opt stack 0
+  2032                           GLOBAL	__end_of_lcd_init
+  2033  0330                     	__end_of_lcd_init:
+  2034 ;; =============== function _lcd_init ends ============
+  2035                           
+  2036                           	signat	_lcd_init,88
+  2037                           	global	_lcd_cmd
+  2038                           psect	text175,local,class=CODE,delta=2
+  2039                           global __ptext175
+  2040  02E0                     __ptext175:
+  2041                           
+  2042 ;; *************** function _lcd_cmd *****************
+  2043 ;; Defined at:
+  2044 ;;		line 23 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2045 ;; Parameters:    Size  Location     Type
+  2046 ;;  cmd             1    wreg     unsigned char 
+  2047 ;; Auto vars:     Size  Location     Type
+  2048 ;;  cmd             1    2[COMMON] unsigned char 
+  2049 ;; Return value:  Size  Location     Type
+  2050 ;;		None               void
+  2051 ;; Registers used:
+  2052 ;;		wreg, status,2, status,0, pclath, cstack
+  2053 ;; Tracked objects:
+  2054 ;;		On entry : 0/0
+  2055 ;;		On exit  : 0/0
+  2056 ;;		Unchanged: 0/0
+  2057 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2058 ;;      Params:         0       0       0       0       0
+  2059 ;;      Locals:         1       0       0       0       0
+  2060 ;;      Temps:          0       0       0       0       0
+  2061 ;;      Totals:         1       0       0       0       0
+  2062 ;;Total ram usage:        1 bytes
+  2063 ;; Hardware stack levels used:    1
+  2064 ;; Hardware stack levels required when called:    1
+  2065 ;; This function calls:
+  2066 ;;		_delay
+  2067 ;; This function is called by:
+  2068 ;;		_lcd_init
+  2069 ;;		_main
+  2070 ;; This function uses a non-reentrant model
+  2071 ;;
+  2072                           psect	text175
+  2073                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2074                           	line	23
+  2075                           	global	__size_of_lcd_cmd
+  2076  0015                     	__size_of_lcd_cmd	equ	__end_of_lcd_cmd-_lcd_cmd
+  2077                           	
+  2078  02E0                     _lcd_cmd:	
+  2079                           	opt	stack 7
+  2080                           ; Regs used in _lcd_cmd: [wreg+status,2+status,0+pclath+cstack]
+  2081                           ;lcd_cmd@cmd stored from wreg
+  2082  02E0  00F2               	movwf	(lcd_cmd@cmd)
+  2083                           	line	24
+  2084                           	
+  2085  02E1                     l2414:	
+  2086                           ;weather monitor.c: 24: PORTD=cmd;
+  2087  02E1  0872               	movf	(lcd_cmd@cmd),w
+  2088  02E2  1283               	bcf	status, 5	;RP0=0, select bank0
+  2089  02E3  1303               	bcf	status, 6	;RP1=0, select bank0
+  2090  02E4  0088               	movwf	(8)	;volatile
+  2091                           	line	25
+  2092                           	
+  2093  02E5                     l2416:	
+  2094                           ;weather monitor.c: 25: RC0=0;
+  2095  02E5  1007               	bcf	(56/8),(56)&7
+  2096                           	line	26
+  2097                           	
+  2098  02E6                     l2418:	
+  2099                           ;weather monitor.c: 26: RC1=0;
+  2100  02E6  1087               	bcf	(57/8),(57)&7
+  2101                           	line	27
+  2102                           	
+  2103  02E7                     l2420:	
+  2104                           ;weather monitor.c: 27: RC2=1;
+  2105  02E7  1507               	bsf	(58/8),(58)&7
+  2106                           	line	28
+  2107                           	
+  2108  02E8                     l2422:	
+  2109                           ;weather monitor.c: 28: delay(1000);
+  2110  02E8  30E8               	movlw	low(03E8h)
+  2111  02E9  00F0               	movwf	(?_delay)
+  2112  02EA  3003               	movlw	high(03E8h)
+  2113  02EB  00F1               	movwf	((?_delay))+1
+  2114  02EC  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  2115                           	line	29
+  2116                           	
+  2117  02F1                     l2424:	
+  2118                           ;weather monitor.c: 29: RC2=0;
+  2119  02F1  1283               	bcf	status, 5	;RP0=0, select bank0
+  2120  02F2  1303               	bcf	status, 6	;RP1=0, select bank0
+  2121  02F3  1107               	bcf	(58/8),(58)&7
+  2122                           	line	30
+  2123                           	
+  2124  02F4                     l620:	
+  2125  02F4  0008               	return
+  2126                           	opt stack 0
+  2127                           GLOBAL	__end_of_lcd_cmd
+  2128  02F5                     	__end_of_lcd_cmd:
+  2129 ;; =============== function _lcd_cmd ends ============
+  2130                           
+  2131                           	signat	_lcd_cmd,4216
+  2132                           	global	_lcd_data
+  2133                           psect	text176,local,class=CODE,delta=2
+  2134                           global __ptext176
+  2135  02CB                     __ptext176:
+  2136                           
+  2137 ;; *************** function _lcd_data *****************
+  2138 ;; Defined at:
+  2139 ;;		line 14 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2140 ;; Parameters:    Size  Location     Type
+  2141 ;;  data            1    wreg     unsigned char 
+  2142 ;; Auto vars:     Size  Location     Type
+  2143 ;;  data            1    2[COMMON] unsigned char 
+  2144 ;; Return value:  Size  Location     Type
+  2145 ;;		None               void
+  2146 ;; Registers used:
+  2147 ;;		wreg, status,2, status,0, pclath, cstack
+  2148 ;; Tracked objects:
+  2149 ;;		On entry : 0/0
+  2150 ;;		On exit  : 0/0
+  2151 ;;		Unchanged: 0/0
+  2152 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2153 ;;      Params:         0       0       0       0       0
+  2154 ;;      Locals:         1       0       0       0       0
+  2155 ;;      Temps:          0       0       0       0       0
+  2156 ;;      Totals:         1       0       0       0       0
+  2157 ;;Total ram usage:        1 bytes
+  2158 ;; Hardware stack levels used:    1
+  2159 ;; Hardware stack levels required when called:    1
+  2160 ;; This function calls:
+  2161 ;;		_delay
+  2162 ;; This function is called by:
+  2163 ;;		_lcd_display
+  2164 ;;		_main
+  2165 ;; This function uses a non-reentrant model
+  2166 ;;
+  2167                           psect	text176
+  2168                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2169                           	line	14
+  2170                           	global	__size_of_lcd_data
+  2171  0015                     	__size_of_lcd_data	equ	__end_of_lcd_data-_lcd_data
+  2172                           	
+  2173  02CB                     _lcd_data:	
+  2174                           	opt	stack 6
+  2175                           ; Regs used in _lcd_data: [wreg+status,2+status,0+pclath+cstack]
+  2176                           ;lcd_data@data stored from wreg
+  2177  02CB  00F2               	movwf	(lcd_data@data)
+  2178                           	line	15
+  2179                           	
+  2180  02CC                     l2402:	
+  2181                           ;weather monitor.c: 15: PORTD=data;
+  2182  02CC  0872               	movf	(lcd_data@data),w
+  2183  02CD  1283               	bcf	status, 5	;RP0=0, select bank0
+  2184  02CE  1303               	bcf	status, 6	;RP1=0, select bank0
+  2185  02CF  0088               	movwf	(8)	;volatile
+  2186                           	line	16
+  2187                           	
+  2188  02D0                     l2404:	
+  2189                           ;weather monitor.c: 16: RC0=1;
+  2190  02D0  1407               	bsf	(56/8),(56)&7
+  2191                           	line	17
+  2192                           	
+  2193  02D1                     l2406:	
+  2194                           ;weather monitor.c: 17: RC1=0;
+  2195  02D1  1087               	bcf	(57/8),(57)&7
+  2196                           	line	18
+  2197                           	
+  2198  02D2                     l2408:	
+  2199                           ;weather monitor.c: 18: RC2=1;
+  2200  02D2  1507               	bsf	(58/8),(58)&7
+  2201                           	line	19
+  2202                           	
+  2203  02D3                     l2410:	
+  2204                           ;weather monitor.c: 19: delay(1000);
+  2205  02D3  30E8               	movlw	low(03E8h)
+  2206  02D4  00F0               	movwf	(?_delay)
+  2207  02D5  3003               	movlw	high(03E8h)
+  2208  02D6  00F1               	movwf	((?_delay))+1
+  2209  02D7  120A  118A  22B9   	fcall	_delay
+              120A  118A         
+  2210                           	line	20
+  2211                           	
+  2212  02DC                     l2412:	
+  2213                           ;weather monitor.c: 20: RC2=0;
+  2214  02DC  1283               	bcf	status, 5	;RP0=0, select bank0
+  2215  02DD  1303               	bcf	status, 6	;RP1=0, select bank0
+  2216  02DE  1107               	bcf	(58/8),(58)&7
+  2217                           	line	21
+  2218                           	
+  2219  02DF                     l617:	
+  2220  02DF  0008               	return
+  2221                           	opt stack 0
+  2222                           GLOBAL	__end_of_lcd_data
+  2223  02E0                     	__end_of_lcd_data:
+  2224 ;; =============== function _lcd_data ends ============
+  2225                           
+  2226                           	signat	_lcd_data,4216
+  2227                           	global	___awmod
+  2228                           psect	text177,local,class=CODE,delta=2
+  2229                           global __ptext177
+  2230  035B                     __ptext177:
+  2231                           
+  2232 ;; *************** function ___awmod *****************
+  2233 ;; Defined at:
+  2234 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awmod.c"
+  2235 ;; Parameters:    Size  Location     Type
+  2236 ;;  divisor         2    0[COMMON] int 
+  2237 ;;  dividend        2    2[COMMON] int 
+  2238 ;; Auto vars:     Size  Location     Type
+  2239 ;;  sign            1    6[COMMON] unsigned char 
+  2240 ;;  counter         1    5[COMMON] unsigned char 
+  2241 ;; Return value:  Size  Location     Type
+  2242 ;;                  2    0[COMMON] int 
+  2243 ;; Registers used:
+  2244 ;;		wreg, status,2, status,0
+  2245 ;; Tracked objects:
+  2246 ;;		On entry : 0/0
+  2247 ;;		On exit  : 0/0
+  2248 ;;		Unchanged: 0/0
+  2249 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2250 ;;      Params:         4       0       0       0       0
+  2251 ;;      Locals:         2       0       0       0       0
+  2252 ;;      Temps:          1       0       0       0       0
+  2253 ;;      Totals:         7       0       0       0       0
+  2254 ;;Total ram usage:        7 bytes
+  2255 ;; Hardware stack levels used:    1
+  2256 ;; This function calls:
+  2257 ;;		Nothing
+  2258 ;; This function is called by:
+  2259 ;;		_main
+  2260 ;; This function uses a non-reentrant model
+  2261 ;;
+  2262                           psect	text177
+  2263                           	file	"C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awmod.c"
+  2264                           	line	5
+  2265                           	global	__size_of___awmod
+  2266  0060                     	__size_of___awmod	equ	__end_of___awmod-___awmod
+  2267                           	
+  2268  035B                     ___awmod:	
+  2269                           	opt	stack 7
+  2270                           ; Regs used in ___awmod: [wreg+status,2+status,0]
+  2271                           	line	8
+  2272                           	
+  2273  035B                     l2366:	
+  2274  035B  1003               	clrc
+  2275  035C  3000               	movlw	0
+  2276  035D  1803               	btfsc	status,0
+  2277  035E  3001               	movlw	1
+  2278  035F  00F6               	movwf	(___awmod@sign)
+  2279                           	line	9
+  2280                           	
+  2281  0360                     l2368:	
+  2282  0360  1FF3               	btfss	(___awmod@dividend+1),7
+  2283  0361  2B63               	goto	u2381
+  2284  0362  2B64               	goto	u2380
+  2285  0363                     u2381:
+  2286  0363  2B6C               	goto	l856
+  2287  0364                     u2380:
+  2288                           	line	10
+  2289                           	
+  2290  0364                     l2370:	
+  2291  0364  09F2               	comf	(___awmod@dividend),f
+  2292  0365  09F3               	comf	(___awmod@dividend+1),f
+  2293  0366  0AF2               	incf	(___awmod@dividend),f
+  2294  0367  1903               	skipnz
+  2295  0368  0AF3               	incf	(___awmod@dividend+1),f
+  2296                           	line	11
+  2297  0369  01F6               	clrf	(___awmod@sign)
+  2298  036A  1403               	bsf	status,0
+  2299  036B  0DF6               	rlf	(___awmod@sign),f
+  2300                           	line	12
+  2301                           	
+  2302  036C                     l856:	
+  2303                           	line	13
+  2304                           	
+  2305  036C                     l2372:	
+  2306  036C  1FF1               	btfss	(___awmod@divisor+1),7
+  2307  036D  2B6F               	goto	u2391
+  2308  036E  2B70               	goto	u2390
+  2309  036F                     u2391:
+  2310  036F  2B75               	goto	l857
+  2311  0370                     u2390:
+  2312                           	line	14
+  2313                           	
+  2314  0370                     l2374:	
+  2315  0370  09F0               	comf	(___awmod@divisor),f
+  2316  0371  09F1               	comf	(___awmod@divisor+1),f
+  2317  0372  0AF0               	incf	(___awmod@divisor),f
+  2318  0373  1903               	skipnz
+  2319  0374  0AF1               	incf	(___awmod@divisor+1),f
+  2320                           	
+  2321  0375                     l857:	
+  2322                           	line	15
+  2323                           	
+  2324  0375                     l2376:	
+  2325  0375  0871               	movf	(___awmod@divisor+1),w
+  2326  0376  0470               	iorwf	(___awmod@divisor),w
+  2327  0377  1903               	skipnz
+  2328  0378  2B7A               	goto	u2401
+  2329  0379  2B7B               	goto	u2400
+  2330  037A                     u2401:
+  2331  037A  2BAB               	goto	l858
+  2332  037B                     u2400:
+  2333                           	line	16
+  2334                           	
+  2335  037B                     l2378:	
+  2336  037B  01F5               	clrf	(___awmod@counter)
+  2337  037C  1403               	bsf	status,0
+  2338  037D  0DF5               	rlf	(___awmod@counter),f
+  2339                           	line	17
+  2340  037E  2B8A               	goto	l859
+  2341                           	
+  2342  037F                     l860:	
+  2343                           	line	18
+  2344                           	
+  2345  037F                     l2380:	
+  2346  037F  3001               	movlw	01h
+  2347                           	
+  2348  0380                     u2415:
+  2349  0380  1003               	clrc
+  2350  0381  0DF0               	rlf	(___awmod@divisor),f
+  2351  0382  0DF1               	rlf	(___awmod@divisor+1),f
+  2352  0383  3EFF               	addlw	-1
+  2353  0384  1D03               	skipz
+  2354  0385  2B80               	goto	u2415
+  2355                           	line	19
+  2356                           	
+  2357  0386                     l2382:	
+  2358  0386  3001               	movlw	(01h)
+  2359  0387  00F4               	movwf	(??___awmod+0)+0
+  2360  0388  0874               	movf	(??___awmod+0)+0,w
+  2361  0389  07F5               	addwf	(___awmod@counter),f
+  2362                           	line	20
+  2363                           	
+  2364  038A                     l859:	
+  2365                           	line	17
+  2366                           	
+  2367  038A                     l2384:	
+  2368  038A  1FF1               	btfss	(___awmod@divisor+1),(15)&7
+  2369  038B  2B8D               	goto	u2421
+  2370  038C  2B8E               	goto	u2420
+  2371  038D                     u2421:
+  2372  038D  2B7F               	goto	l860
+  2373  038E                     u2420:
+  2374                           	
+  2375  038E                     l861:	
+  2376                           	line	21
+  2377                           	
+  2378  038E                     l862:	
+  2379                           	line	22
+  2380                           	
+  2381  038E                     l2386:	
+  2382  038E  0871               	movf	(___awmod@divisor+1),w
+  2383  038F  0273               	subwf	(___awmod@dividend+1),w
+  2384  0390  1D03               	skipz
+  2385  0391  2B94               	goto	u2435
+  2386  0392  0870               	movf	(___awmod@divisor),w
+  2387  0393  0272               	subwf	(___awmod@dividend),w
+  2388  0394                     u2435:
+  2389  0394  1C03               	skipc
+  2390  0395  2B97               	goto	u2431
+  2391  0396  2B98               	goto	u2430
+  2392  0397                     u2431:
+  2393  0397  2B9E               	goto	l863
+  2394  0398                     u2430:
+  2395                           	line	23
+  2396                           	
+  2397  0398                     l2388:	
+  2398  0398  0870               	movf	(___awmod@divisor),w
+  2399  0399  02F2               	subwf	(___awmod@dividend),f
+  2400  039A  0871               	movf	(___awmod@divisor+1),w
+  2401  039B  1C03               	skipc
+  2402  039C  03F3               	decf	(___awmod@dividend+1),f
+  2403  039D  02F3               	subwf	(___awmod@dividend+1),f
+  2404                           	
+  2405  039E                     l863:	
+  2406                           	line	24
+  2407                           	
+  2408  039E                     l2390:	
+  2409  039E  3001               	movlw	01h
+  2410                           	
+  2411  039F                     u2445:
+  2412  039F  1003               	clrc
+  2413  03A0  0CF1               	rrf	(___awmod@divisor+1),f
+  2414  03A1  0CF0               	rrf	(___awmod@divisor),f
+  2415  03A2  3EFF               	addlw	-1
+  2416  03A3  1D03               	skipz
+  2417  03A4  2B9F               	goto	u2445
+  2418                           	line	25
+  2419                           	
+  2420  03A5                     l2392:	
+  2421  03A5  3001               	movlw	low(01h)
+  2422  03A6  02F5               	subwf	(___awmod@counter),f
+  2423  03A7  1D03               	btfss	status,2
+  2424  03A8  2BAA               	goto	u2451
+  2425  03A9  2BAB               	goto	u2450
+  2426  03AA                     u2451:
+  2427  03AA  2B8E               	goto	l862
+  2428  03AB                     u2450:
+  2429                           	
+  2430  03AB                     l864:	
+  2431                           	line	26
+  2432                           	
+  2433  03AB                     l858:	
+  2434                           	line	27
+  2435                           	
+  2436  03AB                     l2394:	
+  2437  03AB  0876               	movf	(___awmod@sign),w
+  2438  03AC  1D03               	skipz
+  2439  03AD  2BAF               	goto	u2460
+  2440  03AE  2BB4               	goto	l865
+  2441  03AF                     u2460:
+  2442                           	line	28
+  2443                           	
+  2444  03AF                     l2396:	
+  2445  03AF  09F2               	comf	(___awmod@dividend),f
+  2446  03B0  09F3               	comf	(___awmod@dividend+1),f
+  2447  03B1  0AF2               	incf	(___awmod@dividend),f
+  2448  03B2  1903               	skipnz
+  2449  03B3  0AF3               	incf	(___awmod@dividend+1),f
+  2450                           	
+  2451  03B4                     l865:	
+  2452                           	line	29
+  2453                           	
+  2454  03B4                     l2398:	
+  2455  03B4  0873               	movf	(___awmod@dividend+1),w
+  2456  03B5  01F1               	clrf	(?___awmod+1)
+  2457  03B6  07F1               	addwf	(?___awmod+1)
+  2458  03B7  0872               	movf	(___awmod@dividend),w
+  2459  03B8  01F0               	clrf	(?___awmod)
+  2460  03B9  07F0               	addwf	(?___awmod)
+  2461                           
+  2462                           	
+  2463  03BA                     l2400:	
+  2464                           	line	30
+  2465                           	
+  2466  03BA                     l866:	
+  2467  03BA  0008               	return
+  2468                           	opt stack 0
+  2469                           GLOBAL	__end_of___awmod
+  2470  03BB                     	__end_of___awmod:
+  2471 ;; =============== function ___awmod ends ============
+  2472                           
+  2473                           	signat	___awmod,8314
+  2474                           	global	___awdiv
+  2475                           psect	text178,local,class=CODE,delta=2
+  2476                           global __ptext178
+  2477  03BB                     __ptext178:
+  2478                           
+  2479 ;; *************** function ___awdiv *****************
+  2480 ;; Defined at:
+  2481 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awdiv.c"
+  2482 ;; Parameters:    Size  Location     Type
+  2483 ;;  divisor         2    0[COMMON] int 
+  2484 ;;  dividend        2    2[COMMON] int 
+  2485 ;; Auto vars:     Size  Location     Type
+  2486 ;;  quotient        2    7[COMMON] int 
+  2487 ;;  sign            1    6[COMMON] unsigned char 
+  2488 ;;  counter         1    5[COMMON] unsigned char 
+  2489 ;; Return value:  Size  Location     Type
+  2490 ;;                  2    0[COMMON] int 
+  2491 ;; Registers used:
+  2492 ;;		wreg, status,2, status,0
+  2493 ;; Tracked objects:
+  2494 ;;		On entry : 0/0
+  2495 ;;		On exit  : 0/0
+  2496 ;;		Unchanged: 0/0
+  2497 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2498 ;;      Params:         4       0       0       0       0
+  2499 ;;      Locals:         4       0       0       0       0
+  2500 ;;      Temps:          1       0       0       0       0
+  2501 ;;      Totals:         9       0       0       0       0
+  2502 ;;Total ram usage:        9 bytes
+  2503 ;; Hardware stack levels used:    1
+  2504 ;; This function calls:
+  2505 ;;		Nothing
+  2506 ;; This function is called by:
+  2507 ;;		_main
+  2508 ;; This function uses a non-reentrant model
+  2509 ;;
+  2510                           psect	text178
+  2511                           	file	"C:\Program Files (x86)\HI-TECH Software\PICC\9.71a\sources\awdiv.c"
+  2512                           	line	5
+  2513                           	global	__size_of___awdiv
+  2514  0070                     	__size_of___awdiv	equ	__end_of___awdiv-___awdiv
+  2515                           	
+  2516  03BB                     ___awdiv:	
+  2517                           	opt	stack 7
+  2518                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  2519                           	line	9
+  2520                           	
+  2521  03BB                     l2328:	
+  2522  03BB  1003               	clrc
+  2523  03BC  3000               	movlw	0
+  2524  03BD  1803               	btfsc	status,0
+  2525  03BE  3001               	movlw	1
+  2526  03BF  00F6               	movwf	(___awdiv@sign)
+  2527                           	line	10
+  2528                           	
+  2529  03C0                     l2330:	
+  2530  03C0  1FF1               	btfss	(___awdiv@divisor+1),7
+  2531  03C1  2BC3               	goto	u2281
+  2532  03C2  2BC4               	goto	u2280
+  2533  03C3                     u2281:
+  2534  03C3  2BCC               	goto	l788
+  2535  03C4                     u2280:
+  2536                           	line	11
+  2537                           	
+  2538  03C4                     l2332:	
+  2539  03C4  09F0               	comf	(___awdiv@divisor),f
+  2540  03C5  09F1               	comf	(___awdiv@divisor+1),f
+  2541  03C6  0AF0               	incf	(___awdiv@divisor),f
+  2542  03C7  1903               	skipnz
+  2543  03C8  0AF1               	incf	(___awdiv@divisor+1),f
+  2544                           	line	12
+  2545  03C9  01F6               	clrf	(___awdiv@sign)
+  2546  03CA  1403               	bsf	status,0
+  2547  03CB  0DF6               	rlf	(___awdiv@sign),f
+  2548                           	line	13
+  2549                           	
+  2550  03CC                     l788:	
+  2551                           	line	14
+  2552                           	
+  2553  03CC                     l2334:	
+  2554  03CC  1FF3               	btfss	(___awdiv@dividend+1),7
+  2555  03CD  2BCF               	goto	u2291
+  2556  03CE  2BD0               	goto	u2290
+  2557  03CF                     u2291:
+  2558  03CF  2BD9               	goto	l789
+  2559  03D0                     u2290:
+  2560                           	line	15
+  2561                           	
+  2562  03D0                     l2336:	
+  2563  03D0  09F2               	comf	(___awdiv@dividend),f
+  2564  03D1  09F3               	comf	(___awdiv@dividend+1),f
+  2565  03D2  0AF2               	incf	(___awdiv@dividend),f
+  2566  03D3  1903               	skipnz
+  2567  03D4  0AF3               	incf	(___awdiv@dividend+1),f
+  2568                           	line	16
+  2569                           	
+  2570  03D5                     l2338:	
+  2571  03D5  3001               	movlw	(01h)
+  2572  03D6  00F4               	movwf	(??___awdiv+0)+0
+  2573  03D7  0874               	movf	(??___awdiv+0)+0,w
+  2574  03D8  06F6               	xorwf	(___awdiv@sign),f
+  2575                           	line	17
+  2576                           	
+  2577  03D9                     l789:	
+  2578                           	line	18
+  2579  03D9  3000               	movlw	low(0)
+  2580  03DA  00F7               	movwf	(___awdiv@quotient)
+  2581  03DB  3000               	movlw	high(0)
+  2582  03DC  00F8               	movwf	((___awdiv@quotient))+1
+  2583                           	line	19
+  2584  03DD  0871               	movf	(___awdiv@divisor+1),w
+  2585  03DE  0470               	iorwf	(___awdiv@divisor),w
+  2586  03DF  1903               	skipnz
+  2587  03E0  2BE2               	goto	u2301
+  2588  03E1  2BE3               	goto	u2300
+  2589  03E2                     u2301:
+  2590  03E2  2C1B               	goto	l790
+  2591  03E3                     u2300:
+  2592                           	line	20
+  2593                           	
+  2594  03E3                     l2340:	
+  2595  03E3  01F5               	clrf	(___awdiv@counter)
+  2596  03E4  1403               	bsf	status,0
+  2597  03E5  0DF5               	rlf	(___awdiv@counter),f
+  2598                           	line	21
+  2599  03E6  2BF2               	goto	l791
+  2600                           	
+  2601  03E7                     l792:	
+  2602                           	line	22
+  2603                           	
+  2604  03E7                     l2342:	
+  2605  03E7  3001               	movlw	01h
+  2606                           	
+  2607  03E8                     u2315:
+  2608  03E8  1003               	clrc
+  2609  03E9  0DF0               	rlf	(___awdiv@divisor),f
+  2610  03EA  0DF1               	rlf	(___awdiv@divisor+1),f
+  2611  03EB  3EFF               	addlw	-1
+  2612  03EC  1D03               	skipz
+  2613  03ED  2BE8               	goto	u2315
+  2614                           	line	23
+  2615                           	
+  2616  03EE                     l2344:	
+  2617  03EE  3001               	movlw	(01h)
+  2618  03EF  00F4               	movwf	(??___awdiv+0)+0
+  2619  03F0  0874               	movf	(??___awdiv+0)+0,w
+  2620  03F1  07F5               	addwf	(___awdiv@counter),f
+  2621                           	line	24
+  2622                           	
+  2623  03F2                     l791:	
+  2624                           	line	21
+  2625                           	
+  2626  03F2                     l2346:	
+  2627  03F2  1FF1               	btfss	(___awdiv@divisor+1),(15)&7
+  2628  03F3  2BF5               	goto	u2321
+  2629  03F4  2BF6               	goto	u2320
+  2630  03F5                     u2321:
+  2631  03F5  2BE7               	goto	l792
+  2632  03F6                     u2320:
+  2633                           	
+  2634  03F6                     l793:	
+  2635                           	line	25
+  2636                           	
+  2637  03F6                     l794:	
+  2638                           	line	26
+  2639                           	
+  2640  03F6                     l2348:	
+  2641  03F6  3001               	movlw	01h
+  2642                           	
+  2643  03F7                     u2335:
+  2644  03F7  1003               	clrc
+  2645  03F8  0DF7               	rlf	(___awdiv@quotient),f
+  2646  03F9  0DF8               	rlf	(___awdiv@quotient+1),f
+  2647  03FA  3EFF               	addlw	-1
+  2648  03FB  1D03               	skipz
+  2649  03FC  2BF7               	goto	u2335
+  2650                           	line	27
+  2651  03FD  0871               	movf	(___awdiv@divisor+1),w
+  2652  03FE  0273               	subwf	(___awdiv@dividend+1),w
+  2653  03FF  1D03               	skipz
+  2654  0400  2C03               	goto	u2345
+  2655  0401  0870               	movf	(___awdiv@divisor),w
+  2656  0402  0272               	subwf	(___awdiv@dividend),w
+  2657  0403                     u2345:
+  2658  0403  1C03               	skipc
+  2659  0404  2C06               	goto	u2341
+  2660  0405  2C07               	goto	u2340
+  2661  0406                     u2341:
+  2662  0406  2C0E               	goto	l795
+  2663  0407                     u2340:
+  2664                           	line	28
+  2665                           	
+  2666  0407                     l2350:	
+  2667  0407  0870               	movf	(___awdiv@divisor),w
+  2668  0408  02F2               	subwf	(___awdiv@dividend),f
+  2669  0409  0871               	movf	(___awdiv@divisor+1),w
+  2670  040A  1C03               	skipc
+  2671  040B  03F3               	decf	(___awdiv@dividend+1),f
+  2672  040C  02F3               	subwf	(___awdiv@dividend+1),f
+  2673                           	line	29
+  2674                           	
+  2675  040D                     l2352:	
+  2676  040D  1477               	bsf	(___awdiv@quotient)+(0/8),(0)&7
+  2677                           	line	30
+  2678                           	
+  2679  040E                     l795:	
+  2680                           	line	31
+  2681                           	
+  2682  040E                     l2354:	
+  2683  040E  3001               	movlw	01h
+  2684                           	
+  2685  040F                     u2355:
+  2686  040F  1003               	clrc
+  2687  0410  0CF1               	rrf	(___awdiv@divisor+1),f
+  2688  0411  0CF0               	rrf	(___awdiv@divisor),f
+  2689  0412  3EFF               	addlw	-1
+  2690  0413  1D03               	skipz
+  2691  0414  2C0F               	goto	u2355
+  2692                           	line	32
+  2693                           	
+  2694  0415                     l2356:	
+  2695  0415  3001               	movlw	low(01h)
+  2696  0416  02F5               	subwf	(___awdiv@counter),f
+  2697  0417  1D03               	btfss	status,2
+  2698  0418  2C1A               	goto	u2361
+  2699  0419  2C1B               	goto	u2360
+  2700  041A                     u2361:
+  2701  041A  2BF6               	goto	l794
+  2702  041B                     u2360:
+  2703                           	
+  2704  041B                     l796:	
+  2705                           	line	33
+  2706                           	
+  2707  041B                     l790:	
+  2708                           	line	34
+  2709                           	
+  2710  041B                     l2358:	
+  2711  041B  0876               	movf	(___awdiv@sign),w
+  2712  041C  1D03               	skipz
+  2713  041D  2C1F               	goto	u2370
+  2714  041E  2C24               	goto	l797
+  2715  041F                     u2370:
+  2716                           	line	35
+  2717                           	
+  2718  041F                     l2360:	
+  2719  041F  09F7               	comf	(___awdiv@quotient),f
+  2720  0420  09F8               	comf	(___awdiv@quotient+1),f
+  2721  0421  0AF7               	incf	(___awdiv@quotient),f
+  2722  0422  1903               	skipnz
+  2723  0423  0AF8               	incf	(___awdiv@quotient+1),f
+  2724                           	
+  2725  0424                     l797:	
+  2726                           	line	36
+  2727                           	
+  2728  0424                     l2362:	
+  2729  0424  0878               	movf	(___awdiv@quotient+1),w
+  2730  0425  01F1               	clrf	(?___awdiv+1)
+  2731  0426  07F1               	addwf	(?___awdiv+1)
+  2732  0427  0877               	movf	(___awdiv@quotient),w
+  2733  0428  01F0               	clrf	(?___awdiv)
+  2734  0429  07F0               	addwf	(?___awdiv)
+  2735                           
+  2736                           	
+  2737  042A                     l2364:	
+  2738                           	line	37
+  2739                           	
+  2740  042A                     l798:	
+  2741  042A  0008               	return
+  2742                           	opt stack 0
+  2743                           GLOBAL	__end_of___awdiv
+  2744  042B                     	__end_of___awdiv:
+  2745 ;; =============== function ___awdiv ends ============
+  2746                           
+  2747                           	signat	___awdiv,8314
+  2748                           	global	_delay
+  2749                           psect	text179,local,class=CODE,delta=2
+  2750                           global __ptext179
+  2751  02B9                     __ptext179:
+  2752                           
+  2753 ;; *************** function _delay *****************
+  2754 ;; Defined at:
+  2755 ;;		line 9 in file "C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2756 ;; Parameters:    Size  Location     Type
+  2757 ;;  x               2    0[COMMON] unsigned int 
+  2758 ;; Auto vars:     Size  Location     Type
+  2759 ;;		None
+  2760 ;; Return value:  Size  Location     Type
+  2761 ;;		None               void
+  2762 ;; Registers used:
+  2763 ;;		wreg
+  2764 ;; Tracked objects:
+  2765 ;;		On entry : 0/0
+  2766 ;;		On exit  : 0/0
+  2767 ;;		Unchanged: 0/0
+  2768 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2769 ;;      Params:         2       0       0       0       0
+  2770 ;;      Locals:         0       0       0       0       0
+  2771 ;;      Temps:          0       0       0       0       0
+  2772 ;;      Totals:         2       0       0       0       0
+  2773 ;;Total ram usage:        2 bytes
+  2774 ;; Hardware stack levels used:    1
+  2775 ;; This function calls:
+  2776 ;;		Nothing
+  2777 ;; This function is called by:
+  2778 ;;		_lcd_data
+  2779 ;;		_lcd_cmd
+  2780 ;;		_main
+  2781 ;; This function uses a non-reentrant model
+  2782 ;;
+  2783                           psect	text179
+  2784                           	file	"C:\Users\vinoth k\OneDrive\Desktop\pic codings\weather monitor\weather monitor.c"
+  2785                           	line	9
+  2786                           	global	__size_of_delay
+  2787  0012                     	__size_of_delay	equ	__end_of_delay-_delay
+  2788                           	
+  2789  02B9                     _delay:	
+  2790                           	opt	stack 5
+  2791                           ; Regs used in _delay: [wreg]
+  2792                           	line	10
+  2793                           	
+  2794  02B9                     l2324:	
+  2795                           ;weather monitor.c: 10: while(x--);
+  2796  02B9  2ABA               	goto	l611
+  2797                           	
+  2798  02BA                     l612:	
+  2799                           	
+  2800  02BA                     l611:	
+  2801                           	
+  2802  02BA                     l2326:	
+  2803  02BA  3001               	movlw	low(01h)
+  2804  02BB  02F0               	subwf	(delay@x),f
+  2805  02BC  3000               	movlw	high(01h)
+  2806  02BD  1C03               	skipc
+  2807  02BE  03F1               	decf	(delay@x+1),f
+  2808  02BF  02F1               	subwf	(delay@x+1),f
+  2809  02C0  30FF               	movlw	high(0FFFFh)
+  2810  02C1  0671               	xorwf	((delay@x+1)),w
+  2811  02C2  1D03               	skipz
+  2812  02C3  2AC6               	goto	u2275
+  2813  02C4  30FF               	movlw	low(0FFFFh)
+  2814  02C5  0670               	xorwf	((delay@x)),w
+  2815  02C6                     u2275:
+  2816                           
+  2817  02C6  1D03               	skipz
+  2818  02C7  2AC9               	goto	u2271
+  2819  02C8  2ACA               	goto	u2270
+  2820  02C9                     u2271:
+  2821  02C9  2ABA               	goto	l612
+  2822  02CA                     u2270:
+  2823                           	
+  2824  02CA                     l613:	
+  2825                           	line	11
+  2826                           	
+  2827  02CA                     l614:	
+  2828  02CA  0008               	return
+  2829                           	opt stack 0
+  2830                           GLOBAL	__end_of_delay
+  2831  02CB                     	__end_of_delay:
+  2832 ;; =============== function _delay ends ============
+  2833                           
+  2834                           	signat	_delay,4216
+  2835                           psect	text180,local,class=CODE,delta=2
+  2836                           global __ptext180
+  2837  0000                     __ptext180:
+  2838                           	global	btemp
+  2839  007E                     	btemp set 07Eh
+  2840                           
+  2841                           	DABS	1,126,2	;btemp
+  2842                           	global	wtemp0
+  2843  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Mon Apr 03 19:24:57 2023
+
+                   _a 004A                     _b 004C                     _c 004E                     _d 0050  
+                   _i 0044                     pc 0002          lcd_data@data 0072                    _a1 0020  
+                  _a2 0022                    _b1 0026                    _a3 0024                    _b2 0028  
+                  _c1 002C                    _b3 002A                    _c2 002E                    _d1 0032  
+                  _c3 0030                    _d2 0034                    _e1 0038                    _d3 0036  
+                  _e2 003A                    _f1 003E                    _e3 003C                    _f2 0040  
+                  _f3 0042          ___awdiv@sign 0076                    fsr 0004                   l611 02BA  
+                 l612 02BA                   l620 02F4                   l613 02CA                   l614 02CA  
+                 l623 032F                   l632 0449                   l617 02DF                   l633 057C  
+                 l626 034D                   l634 06AF                   l627 0338                   l635 07DC  
+                 l628 035A                   l636 07FC                   l629 035A                   l637 07FC  
+                 l638 07FD                   l639 07FD                   l860 037F                   l861 038E  
+                 l790 041B                   l862 038E                   l791 03F2                   l863 039E  
+                 l792 03E7                   l864 03AB                   l856 036C                   l793 03F6  
+                 l865 03B4                   l857 0375                   l794 03F6                   l866 03BA  
+                 l858 03AB                   l795 040E                   l859 038A                   l796 041B  
+                 l788 03CC                   l797 0424                   l789 03D9                   l798 042A  
+                 _RB0 0030                   _RC0 0038                   _RC1 0039                   _RC2 003A  
+                 _RB6 0036                   fsr0 0004                   indf 0000          ___awmod@sign 0076  
+        lcd_display@m 0073                  l2400 03BA                  l2330 03C0                  l2410 02D3  
+                l2402 02CC                  l2324 02B9                  l2340 03E3                  l2332 03C4  
+                l2412 02DC                  l2404 02D0                  l2420 02E7                  l2500 0561  
+                l2326 02BA                  l2350 0407                  l2342 03E7                  l2334 03CC  
+                l2406 02D1                  l2422 02E8                  l2414 02E1                  l2430 0338  
+                l2510 057F                  l2502 0567                  l2360 041F                  l2352 040D  
+                l2344 03EE                  l2336 03D0                  l2328 03BB                  l2408 02D2  
+                l2424 02F1                  l2416 02E5                  l2432 0345                  l2600 0787  
+                l2520 0590                  l2512 0580                  l2504 056D                  l2440 0432  
+                l2362 0424                  l2354 040E                  l2346 03F2                  l2338 03D5  
+                l2370 0364                  l2418 02E6                  l2426 0311                  l2434 034D  
+                l2610 07B8                  l2602 0790                  l2530 05C6                  l2522 0599  
+                l2514 0581                  l2506 0573                  l2450 0440                  l2442 0435  
+                l2364 042A                  l2356 0415                  l2348 03F6                  l2380 037F  
+                l2372 036C                  l2428 0331                  l2620 07DC                  l2612 07C1  
+                l2604 0799                  l2540 063B                  l2532 05DF                  l2524 05A9  
+                l2516 0582                  l2508 057C                  l2460 044E                  l2452 0444  
+                l2444 0438                  l2436 042B                  l2358 041B                  l2390 039E  
+                l2382 0386                  l2374 0370                  l2366 035B                  l2630 07F6  
+                l2622 07E2                  l2614 07C7                  l2606 07A2                  l2550 0673  
+                l2542 0652                  l2534 05F6                  l2526 05B2                  l2518 058B  
+                l2470 047F                  l2462 044F                  l2454 0449                  l2446 043B  
+                l2438 042F                  l2392 03A5                  l2384 038A                  l2376 0375  
+                l2368 0360                  l2624 07E9                  l2616 07CD                  l2608 07AB  
+                l2560 06A0                  l2552 067C                  l2544 0658                  l2536 060D  
+                l2528 05BD                  l2480 04DA                  l2472 048A                  l2464 045D  
+                l2456 044C                  l2448 043E                  l2394 03AB                  l2386 038E  
+                l2378 037B                  l2626 07EA                  l2618 07D3                  l2570 06B4  
+                l2562 06A6                  l2554 068B                  l2546 0661                  l2538 0624  
+                l2490 052E                  l2482 04F1                  l2474 0493                  l2466 0466  
+                l2458 044D                  l2396 03AF                  l2388 0398                  l2628 07F0  
+                l2580 06DC                  l2572 06B5                  l2564 06AF                  l2556 0694  
+                l2548 066A                  l2492 0537                  l2484 0508                  l2476 04AC  
+                l2468 0476                  l2398 03B4                  l2590 0725                  l2582 06E5  
+                l2574 06BE                  l2566 06B2                  l2558 069A                  l2494 0540  
+                l2486 051F                  l2478 04C3                  l2592 073C                  l2584 06EE  
+                l2576 06C3                  l2568 06B3                  l2496 0549                  l2488 0525  
+                l2594 0753                  l2586 06F7                  l2578 06CC                  l2498 0558  
+                l2596 076A                  l2588 070E                  l2598 0781                  _ADON 00F8  
+                _CHS0 00FB                  _CHS1 00FC                  _CHS2 00FD                  STR_1 000B  
+                STR_2 0009                  STR_3 0010                  STR_4 0017                  u2300 03E3  
+                u2301 03E2                  u2320 03F6                  u2400 037B                  u2321 03F5  
+                u2401 037A                  u2315 03E8                  u2340 0407                  u2420 038E  
+                u2500 0561                  u2341 0406                  u2421 038D                  u2501 0560  
+                u2270 02CA                  u2430 0398                  u2271 02C9                  u2335 03F7  
+                u2431 0397                  u2415 0380                  u2360 041B                  u2280 03C4  
+                u2520 068B                  u2361 041A                  u2345 0403                  u2281 03C3  
+                u2521 068A                  u2370 041F                  u2290 03D0                  u2450 03AB  
+                u2530 0694                  u2275 02C6                  u2355 040F                  u2291 03CF  
+                u2451 03AA                  u2435 0394                  u2531 0693                  u2515 05A0  
+                u2460 03AF                  u2380 0364                  u2445 039F                  u2381 0363  
+                u2525 0687                  u2390 0370                  u2470 035A                  u2550 07B8  
+                u2391 036F                  u2471 0359                  u2551 07B7                  u2560 07C1  
+                u2561 07C0                  u2545 06D3                  u2570 07E2                  u2490 0558  
+                u2571 07E1                  u2555 07B4                  u2491 0557                  u2580 07E9  
+                u2581 07E8                  u2485 046D                  u2495 0554                  _main 042B  
+                btemp 007E                  start 0000                 ?_main 0070       __end_of___awdiv 042B  
+     __end_of___awmod 03BB       ___awdiv@divisor 0070       ___awdiv@counter 0075                 _PORTB 0006  
+               _PORTC 0007                 _PORTD 0008                 _TRISB 0086                 _TRISC 0087  
+               _TRISD 0088       __end_of_lcd_cmd 02F5                 _delay 02B9                 _temp1 0046  
+               _temp2 0048                 _temp3 007B                 pclath 000A                 status 0003  
+               wtemp0 007E          __end_of_main 0800                ??_main 0079                ?_delay 0070  
+              _ADCON0 001F                _ADCON1 009F                _ADRESH 001E                _ADRESL 009E  
+    ___awdiv@dividend 0072      __end_of_lcd_data 02E0      __end_of_lcd_init 0330  __size_of_lcd_display 002B  
+           ??___awdiv 0074             ??___awmod 0074                delay@x 0070      ___awdiv@quotient 0077  
+     ___awmod@divisor 0070       ___awmod@counter 0075             ??_lcd_cmd 0072                clrloop 0299  
+      __pcstackCOMMON 0070          __pidataBANK0 02A0         __end_of_delay 02CB               ??_delay 0072  
+          __pbssBANK0 0020            __pmaintext 042B             ?_lcd_data 0070             ?_lcd_init 0070  
+             ___awdiv 03BB               ___awmod 035B               _lcd_cmd 02E0      ___awmod@dividend 0072  
+          ??_lcd_data 0072            ??_lcd_init 0073  end_of_initialization 030D               init_ram 02AC  
+          lcd_cmd@cmd 0072         ??_lcd_display 0073   start_initialization 02F5   __end_of_lcd_display 035B  
+         __pdataBANK0 004A           __pbssCOMMON 007B     __size_of_lcd_data 0015     __size_of_lcd_init 001F  
+            ?___awdiv 0070             __ptext180 0000             __ptext173 0330             __ptext174 0311  
+           __ptext175 02E0             __ptext176 02CB             __ptext177 035B             __ptext178 03BB  
+           __ptext179 02B9              ?___awmod 0070             __pstrings 0003              ?_lcd_cmd 0070  
+      __size_of_delay 0012           _lcd_display 0330           __stringbase 0008             init_fetch 02A8  
+    __size_of___awdiv 0070      __size_of___awmod 0060      __size_of_lcd_cmd 0015              _lcd_data 02CB  
+            _lcd_init 0311         __size_of_main 03D5              clear_ram 0298             stringcode 0003  
+            stringdir 0003              stringtab 0003          ?_lcd_display 0070  
